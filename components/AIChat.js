@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import ReactMarkdown from 'react-markdown'
 
 const SUGGESTIONS = [
   "Quelles sont ses compétences IA ?",
@@ -69,7 +70,9 @@ export default function AIChat() {
                   {m.role === 'ai' ? 'AI' : 'Vous'}
                 </div>
                 <div style={{ ...s.bubble, ...(m.role === 'user' ? s.bubbleUser : {}) }}>
-                  {m.text}
+                  {m.role === 'ai' ? (
+                    <ReactMarkdown components={mdComponents}>{m.text}</ReactMarkdown>
+                  ) : m.text}
                 </div>
               </div>
             ))}
@@ -113,6 +116,21 @@ export default function AIChat() {
       </div>
     </section>
   )
+}
+
+const mdComponents = {
+  p: ({ children }) => <p style={{ margin: '0 0 8px', lineHeight: 1.65 }}>{children}</p>,
+  strong: ({ children }) => <strong style={{ color: 'var(--text)', fontWeight: 700 }}>{children}</strong>,
+  em: ({ children }) => <em style={{ color: 'var(--accent)', fontStyle: 'italic' }}>{children}</em>,
+  ul: ({ children }) => <ul style={{ margin: '6px 0 8px', paddingLeft: 18, display: 'flex', flexDirection: 'column', gap: 4 }}>{children}</ul>,
+  ol: ({ children }) => <ol style={{ margin: '6px 0 8px', paddingLeft: 18, display: 'flex', flexDirection: 'column', gap: 4 }}>{children}</ol>,
+  li: ({ children }) => <li style={{ lineHeight: 1.6 }}>{children}</li>,
+  h1: ({ children }) => <h1 style={{ fontSize: 16, fontWeight: 700, color: 'var(--text)', margin: '10px 0 6px', letterSpacing: '-0.01em' }}>{children}</h1>,
+  h2: ({ children }) => <h2 style={{ fontSize: 15, fontWeight: 700, color: 'var(--text)', margin: '10px 0 6px', letterSpacing: '-0.01em' }}>{children}</h2>,
+  h3: ({ children }) => <h3 style={{ fontSize: 14, fontWeight: 700, color: 'var(--accent)', margin: '8px 0 4px' }}>{children}</h3>,
+  code: ({ children }) => <code style={{ fontFamily: 'var(--mono)', fontSize: 12, background: 'var(--tag-bg)', color: 'var(--accent)', padding: '1px 6px', borderRadius: 4, border: '1px solid var(--tag-border)' }}>{children}</code>,
+  blockquote: ({ children }) => <blockquote style={{ borderLeft: '3px solid var(--accent)', margin: '6px 0', paddingLeft: 12, color: 'var(--text2)', fontStyle: 'italic' }}>{children}</blockquote>,
+  hr: () => <hr style={{ border: 'none', borderTop: '1px solid var(--border)', margin: '10px 0' }} />,
 }
 
 const s = {
