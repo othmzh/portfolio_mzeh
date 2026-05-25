@@ -6,6 +6,7 @@ import Experience from '../components/Experience'
 import Certifications from '../components/Certifications'
 import AIChat from '../components/AIChat'
 import Contact from '../components/Contact'
+import Footer from '../components/Footer'
 
 export default function Home() {
   return (
@@ -18,14 +19,15 @@ export default function Home() {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://omzeh.tn" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="alternate icon" href="/favicon.ico" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://omzeh.tn" />
         <meta property="og:title" content="Othmen Mzeh — Engineering Manager & AI-Driven Leader" />
         <meta property="og:description" content="Engineering Manager avec 15+ ans d'expérience en pilotage d'équipes techniques, delivery agile et intégration de l'IA générative. Basé en Tunisie, disponible à distance." />
-        <meta property="og:image" content="https://omzeh.tn/othmen.png" />
+        <meta property="og:image" content="https://omzeh.tn/og-image.svg" />
         <meta property="og:locale" content="fr_FR" />
         <meta property="og:site_name" content="Othmen Mzeh" />
 
@@ -33,7 +35,7 @@ export default function Home() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Othmen Mzeh — Engineering Manager & AI-Driven Leader" />
         <meta name="twitter:description" content="Engineering Manager avec 15+ ans d'expérience en pilotage d'équipes techniques, delivery agile et intégration de l'IA générative." />
-        <meta name="twitter:image" content="https://omzeh.tn/othmen.png" />
+        <meta name="twitter:image" content="https://omzeh.tn/og-image.svg" />
 
         {/* JSON-LD Structured Data */}
         <script
@@ -70,30 +72,8 @@ export default function Home() {
         <Contact />
       </main>
 
-      <footer style={styles.footer}>
-        // othmen.mzeh — engineering manager &amp; ai-driven leader — tunisie 2025
-      </footer>
-
-      <style>{`
-        .exp-bullet::before {
-          content: '//';
-          position: absolute;
-          left: 0;
-          color: var(--accent);
-          font-family: var(--mono);
-          font-size: 10px;
-          top: 6px;
-        }
-      `}</style>
+      <Footer />
     </>
   )
 }
 
-const styles = {
-  footer: {
-    textAlign: 'center', padding: '2rem 5vw',
-    fontFamily: 'var(--mono)', fontSize: 12, color: 'var(--text3)',
-    borderTop: '1px solid var(--border)', background: 'var(--bg)',
-    position: 'relative', zIndex: 1,
-  },
-}

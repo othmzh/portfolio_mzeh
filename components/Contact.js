@@ -1,4 +1,5 @@
 import styles from '../styles/Contact.module.css'
+import { motion } from 'framer-motion'
 
 const LINKS = [
   { icon: '✉️', label: 'Email',     sub: 'oth.mzh@gmail.com',          href: 'mailto:oth.mzh@gmail.com' },
@@ -10,7 +11,12 @@ export default function Contact() {
   return (
     <section id="contact" className={styles.section}>
       <div className="contact-grid">
-        <div>
+        <motion.div
+          initial={{ opacity: 0, x: -32 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+        >
           <div className={styles.label}>// entrer en contact</div>
           <h2 className={styles.h2}>Travaillons<br />ensemble</h2>
           <p className={styles.intro}>
@@ -19,8 +25,14 @@ export default function Contact() {
           <p className={styles.introSecond}>
             Ouvert à de nouvelles opportunités en Tunisie ou à distance.
           </p>
-        </div>
-        <div className={styles.links}>
+        </motion.div>
+        <motion.div
+          className={styles.links}
+          initial={{ opacity: 0, x: 32 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
+        >
           {LINKS.map(l => (
             <a key={l.label} href={l.href} target={l.href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" className={`contact-link ${styles.link}`}>
               <div className={styles.icon}>{l.icon}</div>
@@ -31,7 +43,7 @@ export default function Contact() {
               <div className={styles.arr}>→</div>
             </a>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )

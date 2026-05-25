@@ -1,6 +1,8 @@
 import ReactMarkdown from 'react-markdown'
 import styles from '../styles/AIChat.module.css'
 import { useChat } from '../hooks/useChat'
+import { motion } from 'framer-motion'
+import { fadeInUp } from '../hooks/useFadeInUp'
 
 const SUGGESTIONS = [
   "Quelles sont ses compétences IA ?",
@@ -37,7 +39,14 @@ export default function AIChat() {
         <h2 className={styles.h2}>Poser une question sur mon profil</h2>
         <p className={styles.sub}>Un assistant IA entraîné sur mon parcours répond en temps réel.</p>
 
-        <div className={styles.wrapper}>
+        <motion.div
+          className={styles.wrapper}
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+        >
           {/* Header */}
           <div className={styles.header}>
             <div className={styles.avatar}>AI</div>
@@ -101,7 +110,7 @@ export default function AIChat() {
               Envoyer ↗
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

@@ -1,4 +1,6 @@
 import styles from '../styles/Experience.module.css'
+import { motion } from 'framer-motion'
+import { fadeInUp } from '../hooks/useFadeInUp'
 
 const EXPERIENCES = [
   {
@@ -59,7 +61,15 @@ export default function Experience() {
         <h2 className={styles.h2}>Expérience</h2>
         <div>
           {EXPERIENCES.map((exp, i) => (
-            <div key={i} className="exp-item">
+            <motion.div
+              key={i}
+              className="exp-item"
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, ease: 'easeOut', delay: i * 0.15 }}
+            >
               <div>
                 <div className={styles.period}>{exp.period}</div>
                 <div className={styles.company}>{exp.company}</div>
@@ -74,7 +84,7 @@ export default function Experience() {
                 </ul>
                 {exp.ai && <span className={styles.badge}>✦ AI-Augmented Engineering Practices</span>}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

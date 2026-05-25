@@ -1,4 +1,6 @@
 import styles from '../styles/Skills.module.css'
+import { motion } from 'framer-motion'
+import { fadeInUp } from '../hooks/useFadeInUp'
 
 const SKILLS = [
   {
@@ -25,8 +27,16 @@ export default function Skills() {
         <div className={styles.label}>// domaines d'expertise</div>
         <h2 className={styles.h2}>Compétences clés</h2>
         <div className="skills-grid">
-          {SKILLS.map(sk => (
-            <div key={sk.title} className={`skill-card ${styles.card}`}>
+          {SKILLS.map((sk, i) => (
+            <motion.div
+              key={sk.title}
+              className={`skill-card ${styles.card}`}
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, ease: 'easeOut', delay: i * 0.1 }}
+            >
               <div className={styles.header}>
                 <div className={styles.icon}>{sk.icon}</div>
                 <h3 className={styles.h3}>{sk.title}</h3>
@@ -35,7 +45,7 @@ export default function Skills() {
               <div className={styles.tags}>
                 {sk.tags.map(tag => <span key={tag} className={styles.tag}>{tag}</span>)}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
