@@ -2,9 +2,11 @@
 
 ## Stack
 - **Next.js 14** (React)
-- **Groq API** (gratuit) — llama3-8b-8192
+- **Groq API** (gratuit) — llama-3.1-8b-instant
 - **API Route** `/pages/api/chat.js` — clé sécurisée côté serveur
 - **Vercel** pour le déploiement
+- **@vercel/analytics** — suivi des pages vues
+- **@vercel/speed-insights** — mesure des Core Web Vitals
 
 ## Démarrage local
 
@@ -42,5 +44,6 @@ portfolio-othmen/
 │   └── Contact.js
 ├── styles/globals.css      # Variables CSS dark/light + responsive
 ├── public/othmen.png       # Photo de profil
-└── .env.local.example
+├── .env.local.example
+└── .gitignore
 ```
