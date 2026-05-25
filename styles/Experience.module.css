@@ -1,0 +1,92 @@
+.section {
+  padding: 100px 5vw;
+  position: relative;
+  z-index: 1;
+  background: var(--bg);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.h2 {
+  font-size: clamp(22px, 3.5vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 3rem;
+  color: var(--text);
+}
+
+.period {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text3);
+  margin-bottom: 0.35rem;
+}
+
+.company {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent2);
+}
+
+.loc {
+  font-size: 12px;
+  color: var(--text3);
+  margin-top: 4px;
+}
+
+.title {
+  font-size: clamp(16px, 2.5vw, 19px);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.bullets {
+  list-style: none;
+}
+
+.bullet {
+  font-size: 13px;
+  color: var(--text2);
+  line-height: 1.7;
+  padding: 0.25rem 0;
+  padding-left: 1.4rem;
+  position: relative;
+}
+
+.bulletMark {
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 10px;
+  top: 6px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 11px;
+  background: var(--ai-badge-bg);
+  color: var(--ai-badge-color);
+  border: 1px solid var(--ai-badge-border);
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-top: 10px;
+}

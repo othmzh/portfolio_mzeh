@@ -1,0 +1,71 @@
+const c = {
+  comment: '#4a5568', key: '#0097ff', str: '#00d4aa',
+  num: '#f97316', bool: '#a78bfa', bracket: '#8896a6',
+}
+
+export const LINES = [
+  { t: 'comment', text: '// Othmen Mzeh — profile' },
+  { t: 'bracket', text: '{' },
+  { t: 'kv', key: '"name"',       val: '"Othmen Mzeh"',        vt: 'str' },
+  { t: 'kv', key: '"role"',       val: '"Engineering Manager"', vt: 'str' },
+  { t: 'kv', key: '"experience"', val: '15',                    vt: 'num' },
+  { t: 'kv', key: '"team_size"',  val: '6',                     vt: 'num' },
+  { t: 'kv', key: '"ai_powered"', val: 'true',                  vt: 'bool' },
+  { t: 'kv', key: '"location"',   val: '"Tunisie 🇹🇳"',        vt: 'str' },
+  { t: 'kv', key: '"status"',     val: '"available"',           vt: 'str', comma: false },
+  { t: 'blank' },
+  { t: 'comment', text: '// Management & Delivery' },
+  { t: 'arrOpen', key: '"management"' },
+  { t: 'items', items: ['"Agile/Scrum"', '"Azure DevOps"'] },
+  { t: 'items', items: ['"Release Mgmt"', '"Leadership"'] },
+  { t: 'arrClose', last: false },
+  { t: 'blank' },
+  { t: 'comment', text: '// IA Générative' },
+  { t: 'arrOpen', key: '"ai_skills"' },
+  { t: 'items', items: ['"Claude Code"', '"Prompt Eng."'] },
+  { t: 'items', items: ['"AI Code Review"', '"QA IA"'] },
+  { t: 'arrClose', last: false },
+  { t: 'blank' },
+  { t: 'comment', text: '// Stack Technique' },
+  { t: 'arrOpen', key: '"tech"' },
+  { t: 'items', items: ['"Symfony"', '"Angular"', '"PHP"'] },
+  { t: 'items', items: ['"JavaScript"', '"Moodle"'] },
+  { t: 'arrClose', last: true },
+  { t: 'end' },
+]
+
+export function Line({ l }) {
+  if (l.t === 'blank') return <br />
+  if (l.t === 'comment') return <div><span style={{ color: c.comment }}>{l.text}</span></div>
+  if (l.t === 'bracket') return <div><span style={{ color: c.bracket }}>{l.text}</span></div>
+  if (l.t === 'end') return (
+    <div>
+      <span style={{ color: c.bracket }}>{'}'}</span>
+      <span style={{ display: 'inline-block', width: 8, height: 14, background: 'var(--accent)', verticalAlign: 'middle', animation: 'blink 1s infinite' }} />
+    </div>
+  )
+  if (l.t === 'kv') return (
+    <div>
+      &nbsp;&nbsp;<span style={{ color: c.key }}>{l.key}</span>
+      <span style={{ color: c.bracket }}>: </span>
+      <span style={{ color: c[l.vt] }}>{l.val}</span>
+      {l.comma !== false && <span style={{ color: c.bracket }}>,</span>}
+    </div>
+  )
+  if (l.t === 'arrOpen') return (
+    <div>&nbsp;&nbsp;<span style={{ color: c.key }}>{l.key}</span><span style={{ color: c.bracket }}>: [</span></div>
+  )
+  if (l.t === 'items') return (
+    <div>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      {l.items.map((item, i) => (
+        <span key={i}>
+          <span style={{ color: c.str }}>{item}</span>
+          {i < l.items.length - 1 && <span style={{ color: c.bracket }}>, </span>}
+        </span>
+      ))}
+    </div>
+  )
+  if (l.t === 'arrClose') return <div>&nbsp;&nbsp;<span style={{ color: c.bracket }}>{l.last ? ']' : '],'}</span></div>
+  return null
+}

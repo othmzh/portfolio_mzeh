@@ -13,7 +13,7 @@
   --accent2: #0097ff;
   --text: #e2e8f0;
   --text2: #8896a6;
-  --text3: #4a5568;
+  --text3: #6b7a8d;
   --nav-bg: rgba(8,12,16,0.92);
   --grid-color: rgba(0,212,170,0.03);
   --btn-primary-text: #080c10;
@@ -37,7 +37,7 @@
   --accent2: #0063cc;
   --text: #0f172a;
   --text2: #3d5068;
-  --text3: #8496aa;
+  --text3: #7a8fa3;
   --nav-bg: rgba(240,244,248,0.92);
   --grid-color: rgba(0,143,115,0.04);
   --btn-primary-text: #ffffff;
@@ -182,7 +182,70 @@ body::before {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1px;
-  background: rgba(255,255,255,0.1);
+  background: var(--border);
+}
+
+/* ── FOCUS STATES ── */
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── HOVER STATES ── */
+.nav-link {
+  transition: color 0.15s;
+}
+.nav-link:hover { color: var(--accent) !important; }
+
+.btn-primary {
+  transition: opacity 0.15s, transform 0.15s;
+}
+.btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
+
+.btn-ghost {
+  transition: color 0.15s, border-color 0.15s, transform 0.15s;
+}
+.btn-ghost:hover { color: var(--accent) !important; border-color: var(--accent) !important; transform: translateY(-1px); }
+
+.mobile-menu a:hover { color: var(--accent); }
+
+.skill-card {
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.skill-card:hover {
+  background: var(--surface2) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.exp-item-inner {
+  transition: color 0.15s;
+}
+
+.contact-link {
+  transition: background 0.15s, border-color 0.15s, transform 0.15s;
+}
+.contact-link:hover {
+  background: var(--surface2) !important;
+  border-color: var(--accent) !important;
+  transform: translateX(4px);
+}
+
+.sugg-btn {
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.sugg-btn:hover {
+  background: var(--tag-bg) !important;
+  color: var(--accent) !important;
+  border-color: var(--tag-border) !important;
+}
+
+.cert-card {
+  transition: background 0.2s;
+}
+.cert-card:hover {
+  background: var(--surface) !important;
 }
 
 /* ────────────────────────────

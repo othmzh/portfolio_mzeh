@@ -1,3 +1,5 @@
+import styles from '../styles/Experience.module.css'
+
 const EXPERIENCES = [
   {
     period: "Sept. 2021 — Aujourd'hui", company: 'Witik', loc: 'Tunisie',
@@ -51,26 +53,26 @@ const EXPERIENCES = [
 
 export default function Experience() {
   return (
-    <section id="experience" style={s.section}>
-      <div style={s.container}>
-        <div style={s.label}>// parcours professionnel</div>
-        <h2 style={s.h2}>Expérience</h2>
+    <section id="experience" className={styles.section}>
+      <div className={styles.container}>
+        <div className={styles.label}>// parcours professionnel</div>
+        <h2 className={styles.h2}>Expérience</h2>
         <div>
           {EXPERIENCES.map((exp, i) => (
             <div key={i} className="exp-item">
               <div>
-                <div style={s.period}>{exp.period}</div>
-                <div style={s.company}>{exp.company}</div>
-                <div style={s.loc}>{exp.loc}</div>
+                <div className={styles.period}>{exp.period}</div>
+                <div className={styles.company}>{exp.company}</div>
+                <div className={styles.loc}>{exp.loc}</div>
               </div>
               <div>
-                <div style={s.title}>{exp.title}</div>
-                <ul style={s.bullets}>
+                <div className={styles.title}>{exp.title}</div>
+                <ul className={styles.bullets}>
                   {exp.bullets.map((b, j) => (
-                    <li key={j} style={s.bullet}><span style={s.bulletMark}>//</span>{b}</li>
+                    <li key={j} className={styles.bullet}><span className={styles.bulletMark}>//</span>{b}</li>
                   ))}
                 </ul>
-                {exp.ai && <span style={s.badge}>✦ AI-Augmented Engineering Practices</span>}
+                {exp.ai && <span className={styles.badge}>✦ AI-Augmented Engineering Practices</span>}
               </div>
             </div>
           ))}
@@ -78,25 +80,4 @@ export default function Experience() {
       </div>
     </section>
   )
-}
-
-const s = {
-  section: { padding: '100px 5vw', position: 'relative', zIndex: 1, background: 'var(--bg)' },
-  container: { maxWidth: 1100, margin: '0 auto' },
-  label: { fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: '0.75rem' },
-  h2: { fontSize: 'clamp(22px,3.5vw,40px)', fontWeight: 700, letterSpacing: '-0.025em', marginBottom: '3rem', color: 'var(--text)' },
-  period: { fontFamily: 'var(--mono)', fontSize: 12, color: 'var(--text3)', marginBottom: '0.35rem' },
-  company: { fontFamily: 'var(--mono)', fontSize: 13, fontWeight: 700, color: 'var(--accent2)' },
-  loc: { fontSize: 12, color: 'var(--text3)', marginTop: 4 },
-  title: { fontSize: 'clamp(16px,2.5vw,19px)', fontWeight: 700, color: 'var(--text)', marginBottom: '1rem', letterSpacing: '-0.01em' },
-  bullets: { listStyle: 'none' },
-  bullet: { fontSize: 13, color: 'var(--text2)', lineHeight: 1.7, padding: '0.25rem 0', paddingLeft: '1.4rem', position: 'relative' },
-  bulletMark: { position: 'absolute', left: 0, color: 'var(--accent)', fontFamily: 'var(--mono)', fontSize: 10, top: 6 },
-  badge: {
-    display: 'inline-flex', alignItems: 'center', gap: 6,
-    fontFamily: 'var(--mono)', fontSize: 11,
-    background: 'var(--ai-badge-bg)', color: 'var(--ai-badge-color)',
-    border: '1px solid var(--ai-badge-border)',
-    padding: '4px 10px', borderRadius: 4, marginTop: 10,
-  },
 }
