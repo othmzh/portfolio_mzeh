@@ -1,5 +1,5 @@
 const c = {
-  comment: '#4a5568', key: '#0097ff', str: '#00d4aa',
+  comment: '#8496a6', key: '#0097ff', str: '#00d4aa',
   num: '#f97316', bool: '#a78bfa', bracket: '#8896a6',
 }
 
