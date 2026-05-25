@@ -11,10 +11,53 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Othmen Mzeh — Engineering Manager</title>
-        <meta name="description" content="Engineering Manager & AI-Driven Leader. 15+ ans d'expérience en pilotage d'équipes techniques et intégration de l'IA générative." />
+        <title>Othmen Mzeh — Engineering Manager & AI-Driven Leader</title>
+        <meta name="description" content="Engineering Manager avec 15+ ans d'expérience en pilotage d'équipes techniques, delivery agile et intégration de l'IA générative. Basé en Tunisie, disponible à distance." />
+        <meta name="keywords" content="Engineering Manager, Technical Delivery Manager, AI, Claude Code, Agile, Scrum, Tunisie, Remote, Symfony, Angular, Azure DevOps" />
+        <meta name="author" content="Othmen Mzeh" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://omzeh.tn" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://omzeh.tn" />
+        <meta property="og:title" content="Othmen Mzeh — Engineering Manager & AI-Driven Leader" />
+        <meta property="og:description" content="Engineering Manager avec 15+ ans d'expérience en pilotage d'équipes techniques, delivery agile et intégration de l'IA générative. Basé en Tunisie, disponible à distance." />
+        <meta property="og:image" content="https://omzeh.tn/othmen.png" />
+        <meta property="og:locale" content="fr_FR" />
+        <meta property="og:site_name" content="Othmen Mzeh" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Othmen Mzeh — Engineering Manager & AI-Driven Leader" />
+        <meta name="twitter:description" content="Engineering Manager avec 15+ ans d'expérience en pilotage d'équipes techniques, delivery agile et intégration de l'IA générative." />
+        <meta name="twitter:image" content="https://omzeh.tn/othmen.png" />
+
+        {/* JSON-LD Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Othmen Mzeh",
+            "url": "https://omzeh.tn",
+            "image": "https://omzeh.tn/othmen.png",
+            "jobTitle": "Engineering Manager",
+            "description": "Engineering Manager avec 15+ ans d'expérience en pilotage d'équipes techniques, delivery agile et intégration de l'IA générative.",
+            "email": "oth.mzh@gmail.com",
+            "telephone": "+21653795988",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "TN"
+            },
+            "sameAs": [
+              "https://linkedin.com/in/othmen-mzeh-64740961"
+            ],
+            "knowsAbout": ["Engineering Management", "Agile", "Scrum", "Azure DevOps", "Claude Code", "AI", "Symfony", "Angular", "PHP", "JavaScript"]
+          })}}
+        />
       </Head>
 
       <Nav />
