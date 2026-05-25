@@ -96,7 +96,7 @@ export default function Hero() {
             </h1>
 
             <p style={s.desc}>
-              Pilotage d'équipes techniques, delivery logiciel de qualité et intégration de l'IA générative dans les pratiques engineering.
+              Je pilote des équipes d'ingénieurs, structure le delivery et intègre concrètement l'IA générative dans les pratiques engineering — pour livrer plus vite, avec moins de friction et plus de qualité.
             </p>
 
             <div style={s.cta}>
@@ -121,7 +121,7 @@ export default function Hero() {
 
         {/* STATS */}
         <div className="stats-bar">
-          {[['15+', "Années d'expérience"], ['6', 'Ingénieurs managés'], ['5', 'Certifications']].map(([num, lbl]) => (
+          {[['15+', "Années d'expérience"], ['6', 'Ingénieurs managés'], ['7', 'Certifications']].map(([num, lbl]) => (
             <div key={lbl} style={s.statCell}>
               <div style={s.statNum}>{num}</div>
               <div style={s.statLbl}>{lbl}</div>

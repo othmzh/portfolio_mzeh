@@ -34,10 +34,11 @@ Plus de 15 ans d'expérience dans le pilotage de projets logiciels complexes, la
 EXPÉRIENCES PROFESSIONNELLES :
 
 1. Engineering Manager & Technical Delivery Lead — Witik (Sept 2021 – Aujourd'hui)
-   - Pilotage d'une équipe de 6 ingénieurs full-stack en méthodologie Agile/Scrum
-   - Gestion des releases, roadmap technique, coordination entre équipes métier et technique
-   - Introduction et déploiement de l'IA générative dans les pratiques quotidiennes : revue de code avec Claude Code, checklists qualité automatisées, prompts engineering
-   - Réduction des cycles de review et amélioration de la qualité des livrables grâce à l'IA
+   - Management d'une équipe de 6 ingénieurs full-stack en Agile/Scrum — vélocité, qualité et cohésion d'équipe
+   - Ownership du delivery end-to-end : releases, roadmap technique, gestion des risques, coordination métier/tech
+   - Introduction et adoption de l'IA générative dans les workflows d'équipe : revues de code avec Claude Code, prompts structurés, checklists qualité automatisées — réduction des cycles de review et amélioration mesurable de la qualité des livrables
+   - Recrutements techniques, onboarding et montée en compétences des ingénieurs
+   - Mise en place de pratiques d'amélioration continue : retrospectives actionnables, standards de code, documentation vivante
 
 2. Team Leader Web — Sofia Holding (Jan 2019 – Août 2021)
    - Leadership d'une équipe de développeurs web
@@ -77,6 +78,8 @@ CERTIFICATIONS :
 - Agile Project Management
 - Claude Code in Action
 - Agent Skills
+- Formation PMP — Project Management Professional (en cours)
+- Formation Lean Six Sigma (en cours)
 
 FORMATION :
 - Maîtrise en Informatique Appliquée`;

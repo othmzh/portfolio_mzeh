@@ -4,6 +4,8 @@ const CERTS = [
   'Fondamentaux de la gestion de projet Agile',
   'Claude Code in Action',
   'Introduction to Agent Skills',
+  'Formation PMP — Project Management Professional (en cours)',
+  'Formation Lean Six Sigma (en cours)',
 ]
 
 export default function Certifications() {
