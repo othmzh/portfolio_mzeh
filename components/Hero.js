@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { QRCodeSVG } from 'qrcode.react'
 import styles from '../styles/Hero.module.css'
-import { LINES, Line } from './TerminalCard'
+import { LINES, Line, TerminalSEOText } from './TerminalCard'
 import { motion } from 'framer-motion'
 import heroData from '../data/hero.json'
 
@@ -24,7 +24,7 @@ export default function Hero() {
             animate="visible"
           >
             <motion.div variants={fadeIn} transition={{ duration: 0.5, ease: 'easeOut' }} className={styles.photoWrap}>
-              <Image src="/othmen.png" alt={heroData.name} width={68} height={68} className={styles.photo} />
+              <Image src="/othmen.png" alt={heroData.name} width={68} height={68} className={styles.photo} priority />
               <div style={{ flex: 1 }}>
                 <div className={styles.photoName}>{heroData.name}</div>
                 <div className={styles.photoRole}>{heroData.role} · {heroData.location} {heroData.flag}</div>
@@ -66,7 +66,8 @@ export default function Hero() {
           </motion.div>
 
           {/* RIGHT — terminal (hidden on mobile via CSS) */}
-          <div className={`terminal-card ${styles.terminal}`}>
+          <div className={`terminal-card ${styles.terminal}`} style={{ position: 'relative' }}>
+            <TerminalSEOText />
             <div className={styles.termBar}>
               {['#ff5f57', '#febc2e', '#28c840'].map(bg => (
                 <span key={bg} className={styles.dot} style={{ background: bg }} />

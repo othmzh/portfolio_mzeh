@@ -1,5 +1,18 @@
 import heroData from '../data/hero.json'
 
+// Texte extrait du terminal, lisible par les crawlers (visuellement masqué)
+export function TerminalSEOText() {
+  const t = heroData.terminal
+  return (
+    <div aria-hidden="false" style={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0,0,0,0)', whiteSpace: 'nowrap' }}>
+      <p>{t.name} — {t.role}. {t.experience} ans d'expérience. Équipe de {t.team_size} ingénieurs. Localisation : {t.location}. Statut : {t.status}.</p>
+      <p>Management : {t.management.join(', ')}.</p>
+      <p>Compétences IA : {t.ai_skills.join(', ')}.</p>
+      <p>Stack technique : {t.tech.join(', ')}.</p>
+    </div>
+  )
+}
+
 const c = {
   comment: '#8496a6', key: '#0097ff', str: '#00d4aa',
   num: '#f97316', bool: '#a78bfa', bracket: '#8896a6',

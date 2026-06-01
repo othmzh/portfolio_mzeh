@@ -28,6 +28,13 @@ function makeMdComponents(s) {
   }
 }
 
+const FAQ = [
+  { q: "Quelles sont les compétences en management d'Othmen Mzeh ?", a: "Agile/Scrum, Azure DevOps, Release Management, Leadership d'équipes techniques, mentoring et gestion du delivery end-to-end." },
+  { q: "Comment Othmen Mzeh intègre-t-il l'IA dans son travail ?", a: "Il utilise Claude Code pour les revues de code assistées, crée des prompts structurés et des checklists qualité automatisées, réduisant les cycles de review et améliorant la qualité des livrables." },
+  { q: "Quelle est la stack technique d'Othmen Mzeh ?", a: "Backend : Symfony, PHP. Frontend : Angular, JavaScript. Plateformes : Moodle. Outils : Git, Azure DevOps." },
+  { q: "Othmen Mzeh est-il disponible pour des missions à distance ?", a: "Oui, il est ouvert à de nouvelles opportunités en Tunisie ou à distance." },
+]
+
 export default function AIChat() {
   const { messages, input, setInput, loading, showSugg, messagesRef, send } = useChat()
   const mdComponents = makeMdComponents(styles)
@@ -38,6 +45,18 @@ export default function AIChat() {
         <div className={styles.label}>// intelligence artificielle</div>
         <h2 className={styles.h2}>Poser une question sur mon profil</h2>
         <p className={styles.sub}>Un assistant IA entraîné sur mon parcours répond en temps réel.</p>
+
+        {/* FAQ statique indexable par Google — visuellement masquée */}
+        <div style={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0,0,0,0)', whiteSpace: 'nowrap' }} aria-hidden="false">
+          {FAQ.map((item, i) => (
+            <div key={i} itemScope itemType="https://schema.org/Question">
+              <h3 itemProp="name">{item.q}</h3>
+              <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
+                <p itemProp="text">{item.a}</p>
+              </div>
+            </div>
+          ))}
+        </div>
 
         <motion.div
           className={styles.wrapper}

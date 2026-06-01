@@ -37,7 +37,11 @@ export default function Home() {
         <meta name="twitter:description" content="Engineering Manager avec 15+ ans d'expérience en pilotage d'équipes techniques, delivery agile et intégration de l'IA générative." />
         <meta name="twitter:image" content="https://omzeh.tn/og-image.svg" />
 
-        {/* JSON-LD Structured Data */}
+        {/* Preconnect for performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* JSON-LD — Person */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -47,17 +51,86 @@ export default function Home() {
             "url": "https://omzeh.tn",
             "image": "https://omzeh.tn/othmen.png",
             "jobTitle": "Engineering Manager",
-            "description": "Engineering Manager avec 15+ ans d'expérience en pilotage d'équipes techniques, delivery agile et intégration de l'IA générative.",
+            "description": "Engineering Manager avec 15+ ans d'expérience en pilotage d'équipes techniques, delivery agile et intégration de l'IA générative. Spécialiste Claude Code et IA appliquée au Software Engineering.",
             "email": "oth.mzh@gmail.com",
             "telephone": "+21653795988",
+            "nationality": { "@type": "Country", "name": "Tunisie" },
             "address": {
               "@type": "PostalAddress",
-              "addressCountry": "TN"
+              "addressCountry": "TN",
+              "addressLocality": "Tunisie"
             },
+            "alumniOf": {
+              "@type": "EducationalOrganization",
+              "name": "Maîtrise en Informatique Appliquée"
+            },
+            "hasOccupation": {
+              "@type": "Occupation",
+              "name": "Engineering Manager",
+              "occupationLocation": { "@type": "Country", "name": "Tunisie" },
+              "description": "Pilotage d'équipes techniques, delivery agile, intégration de l'IA générative dans les workflows engineering.",
+              "skills": "Agile, Scrum, Azure DevOps, Claude Code, Symfony, Angular, PHP, JavaScript"
+            },
+            "knowsLanguage": [
+              { "@type": "Language", "name": "Français" },
+              { "@type": "Language", "name": "Anglais" },
+              { "@type": "Language", "name": "Arabe" }
+            ],
+            "knowsAbout": [
+              "Engineering Management", "Technical Delivery", "Agile", "Scrum",
+              "Azure DevOps", "Release Management", "Claude Code", "AI-Driven Development",
+              "Prompt Engineering", "Symfony", "Angular", "PHP", "JavaScript", "Moodle"
+            ],
             "sameAs": [
               "https://linkedin.com/in/othmen-mzeh-64740961"
-            ],
-            "knowsAbout": ["Engineering Management", "Agile", "Scrum", "Azure DevOps", "Claude Code", "AI", "Symfony", "Angular", "PHP", "JavaScript"]
+            ]
+          })}}
+        />
+        {/* JSON-LD — ProfilePage */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ProfilePage",
+            "dateCreated": "2024-01-01",
+            "dateModified": new Date().toISOString().split('T')[0],
+            "mainEntity": {
+              "@type": "Person",
+              "name": "Othmen Mzeh",
+              "identifier": "othmen-mzeh",
+              "jobTitle": "Engineering Manager",
+              "description": "Engineering Manager Tunisie — 15 ans d'expérience, expert IA générative et delivery agile, disponible à distance."
+            }
+          })}}
+        />
+        {/* JSON-LD — FAQ */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Qui est Othmen Mzeh ?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Othmen Mzeh est un Engineering Manager basé en Tunisie avec plus de 15 ans d'expérience dans le pilotage d'équipes techniques, le delivery agile et l'intégration de l'IA générative dans les workflows engineering." }
+              },
+              {
+                "@type": "Question",
+                "name": "Quelles sont les compétences d'Othmen Mzeh ?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Ses compétences clés incluent : Management & Delivery (Agile/Scrum, Azure DevOps, Release Management, Leadership), IA Générative (Claude Code, Prompt Engineering, AI-Driven Development, QA IA) et Stack Technique (Symfony, Angular, PHP, JavaScript, Moodle)." }
+              },
+              {
+                "@type": "Question",
+                "name": "Est-ce qu'Othmen Mzeh est disponible pour des missions à distance ?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Oui, Othmen Mzeh est ouvert à de nouvelles opportunités en Tunisie ou à distance. Vous pouvez le contacter via LinkedIn ou par email à oth.mzh@gmail.com." }
+              },
+              {
+                "@type": "Question",
+                "name": "Comment Othmen Mzeh utilise-t-il l'IA dans son travail ?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Othmen Mzeh intègre concrètement l'IA générative dans les pratiques engineering : revues de code assistées avec Claude Code, prompts structurés, checklists qualité automatisées, réduisant les cycles de review et améliorant la qualité des livrables." }
+              }
+            ]
           })}}
         />
       </Head>
