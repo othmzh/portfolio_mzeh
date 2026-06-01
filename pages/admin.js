@@ -99,11 +99,15 @@ function PhotoUploader() {
         />
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
           <input
+            id="photo-upload"
             type="file"
             accept="image/png,image/jpeg,image/webp,image/avif"
             onChange={handleFile}
-            style={{ color: '#8b949e', fontSize: 12 }}
+            style={{ display: 'none' }}
           />
+          <label htmlFor="photo-upload" style={{ ...s.addBtn, cursor: 'pointer', marginBottom: 0, textAlign: 'center' }}>
+            Choisir une image
+          </label>
           <button
             onClick={handleUpload}
             disabled={!preview.startsWith('data:') || uploading}
