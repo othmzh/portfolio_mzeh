@@ -9,6 +9,10 @@ function isAuthed(req) {
 }
 
 export default function handler(req, res) {
+  if (process.env.NODE_ENV === 'production') {
+    return res.status(403).json({ error: 'Admin non disponible en production' })
+  }
+
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })
   }
