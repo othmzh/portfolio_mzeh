@@ -1,16 +1,7 @@
 import styles from '../styles/Certifications.module.css'
 import { motion } from 'framer-motion'
 import { fadeInUp } from '../hooks/useFadeInUp'
-
-const CERTS = [
-  'Scrum Foundation Professional Certificate (SFPC)',
-  'Cloud Concepts 101 – Deployments Essentials',
-  'Fondamentaux de la gestion de projet Agile',
-  'Claude Code in Action',
-  'Introduction to Agent Skills',
-  'Formation PMP — Project Management Professional (en cours)',
-  'Formation Lean Six Sigma (en cours)',
-]
+import CERTS from '../data/certifications.json'
 
 export default function Certifications() {
   return (

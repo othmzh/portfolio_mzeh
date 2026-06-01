@@ -1,24 +1,7 @@
 import styles from '../styles/Skills.module.css'
 import { motion } from 'framer-motion'
 import { fadeInUp } from '../hooks/useFadeInUp'
-
-const SKILLS = [
-  {
-    icon: '⚡', title: 'Management & Delivery',
-    desc: "Pilotage d'équipes agiles, coordination métier/technique, release management et gestion des priorités avec Azure DevOps.",
-    tags: ['Agile/Scrum', 'Azure DevOps', 'Release Mgmt', 'Leadership'],
-  },
-  {
-    icon: '🤖', title: 'IA Générative & Engineering',
-    desc: "Intégration de Claude / Claude Code dans les workflows : revue de code assistée, prompts structurés, documentation augmentée.",
-    tags: ['Claude Code', 'AI-Driven Dev', 'Prompt Eng.', 'QA IA'],
-  },
-  {
-    icon: '🛠', title: 'Stack Technique',
-    desc: "Développement full-stack orienté backend, architectures métier complexes, plateformes LMS/GED/SRM et intégrations webservices.",
-    tags: ['Symfony', 'Angular', 'PHP', 'JavaScript', 'Moodle'],
-  },
-]
+import SKILLS from '../data/skills.json'
 
 export default function Skills() {
   return (

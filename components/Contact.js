@@ -1,11 +1,8 @@
 import styles from '../styles/Contact.module.css'
 import { motion } from 'framer-motion'
+import contactData from '../data/contact.json'
 
-const LINKS = [
-  { icon: '✉️', label: 'Email',     sub: 'oth.mzh@gmail.com',          href: 'mailto:oth.mzh@gmail.com' },
-  { icon: '📞', label: 'Téléphone', sub: '+216 53 795 988',             href: 'tel:+21653795988' },
-  { icon: '💼', label: 'LinkedIn',  sub: 'linkedin.com/in/othmen-mzeh', href: 'https://linkedin.com/in/othmen-mzeh-64740961' },
-]
+const { intro, introSecond, links: LINKS } = contactData
 
 export default function Contact() {
   return (
@@ -19,12 +16,8 @@ export default function Contact() {
         >
           <div className={styles.label}>// entrer en contact</div>
           <h2 className={styles.h2}>Travaillons<br />ensemble</h2>
-          <p className={styles.intro}>
-            Engineering Manager avec une approche hybride : management humain, expertise technique et intégration de l'IA dans les pratiques engineering.
-          </p>
-          <p className={styles.introSecond}>
-            Ouvert à de nouvelles opportunités en Tunisie ou à distance.
-          </p>
+          <p className={styles.intro}>{intro}</p>
+          <p className={styles.introSecond}>{introSecond}</p>
         </motion.div>
         <motion.div
           className={styles.links}

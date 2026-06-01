@@ -3,6 +3,7 @@ import { QRCodeSVG } from 'qrcode.react'
 import styles from '../styles/Hero.module.css'
 import { LINES, Line } from './TerminalCard'
 import { motion } from 'framer-motion'
+import heroData from '../data/hero.json'
 
 const fadeIn = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }
 
@@ -23,14 +24,14 @@ export default function Hero() {
             animate="visible"
           >
             <motion.div variants={fadeIn} transition={{ duration: 0.5, ease: 'easeOut' }} className={styles.photoWrap}>
-              <Image src="/othmen.png" alt="Othmen Mzeh" width={68} height={68} className={styles.photo} />
+              <Image src="/othmen.png" alt={heroData.name} width={68} height={68} className={styles.photo} />
               <div style={{ flex: 1 }}>
-                <div className={styles.photoName}>Othmen Mzeh</div>
-                <div className={styles.photoRole}>Engineering Manager · Tunisie 🇹🇳</div>
+                <div className={styles.photoName}>{heroData.name}</div>
+                <div className={styles.photoRole}>{heroData.role} · {heroData.location} {heroData.flag}</div>
               </div>
               <div className={styles.qrWrap}>
                 <QRCodeSVG
-                  value="https://linkedin.com/in/othmen-mzeh-64740961"
+                  value={heroData.linkedinUrl}
                   size={48}
                   bgColor="transparent"
                   fgColor="var(--accent)"
@@ -41,17 +42,17 @@ export default function Hero() {
             </motion.div>
 
             <motion.div variants={fadeIn} transition={{ duration: 0.5, ease: 'easeOut' }} className={styles.eyebrow}>
-              // Engineering Manager × AI-Driven Leader
+              {heroData.eyebrow}
             </motion.div>
 
             <motion.h1 variants={fadeIn} transition={{ duration: 0.5, ease: 'easeOut' }} className={styles.h1}>
-              <span className={styles.dim}>Othmen</span>
-              <span className={styles.accent}>Mzeh</span>
-              <span className={styles.h1Suffix}>15+ ans d'impact</span>
+              <span className={styles.dim}>{heroData.name.split(' ')[0]}</span>
+              <span className={styles.accent}>{heroData.name.split(' ')[1]}</span>
+              <span className={styles.h1Suffix}>{heroData.stats[0].num} ans d'impact</span>
             </motion.h1>
 
             <motion.p variants={fadeIn} transition={{ duration: 0.5, ease: 'easeOut' }} className={styles.desc}>
-              Je pilote des équipes d'ingénieurs, structure le delivery et intègre concrètement l'IA générative dans les pratiques engineering — pour livrer plus vite, avec moins de friction et plus de qualité.
+              {heroData.description}
             </motion.p>
 
             <motion.div variants={fadeIn} transition={{ duration: 0.5, ease: 'easeOut' }} className={styles.cta}>
@@ -85,10 +86,10 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: 'easeOut', delay: 0.7 }}
         >
-          {[['15+', "Années d'exp."], ['6', 'Ingénieurs managés'], ['7', 'Certifications']].map(([num, lbl]) => (
-            <div key={lbl} className={styles.statCell}>
+          {heroData.stats.map(({ num, label }) => (
+            <div key={label} className={styles.statCell}>
               <div className={styles.statNum}>{num}</div>
-              <div className={styles.statLbl}>{lbl}</div>
+              <div className={styles.statLbl}>{label}</div>
             </div>
           ))}
         </motion.div>

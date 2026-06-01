@@ -1,35 +1,42 @@
+import heroData from '../data/hero.json'
+
 const c = {
   comment: '#8496a6', key: '#0097ff', str: '#00d4aa',
   num: '#f97316', bool: '#a78bfa', bracket: '#8896a6',
 }
 
+const t = heroData.terminal
+
+function chunk(arr, size) {
+  const out = []
+  for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size))
+  return out
+}
+
 export const LINES = [
-  { t: 'comment', text: '// Othmen Mzeh — profile' },
+  { t: 'comment', text: `// ${t.name} — profile` },
   { t: 'bracket', text: '{' },
-  { t: 'kv', key: '"name"',       val: '"Othmen Mzeh"',        vt: 'str' },
-  { t: 'kv', key: '"role"',       val: '"Engineering Manager"', vt: 'str' },
-  { t: 'kv', key: '"experience"', val: '15',                    vt: 'num' },
-  { t: 'kv', key: '"team_size"',  val: '6',                     vt: 'num' },
-  { t: 'kv', key: '"ai_powered"', val: 'true',                  vt: 'bool' },
-  { t: 'kv', key: '"location"',   val: '"Tunisie 🇹🇳"',        vt: 'str' },
-  { t: 'kv', key: '"status"',     val: '"available"',           vt: 'str', comma: false },
+  { t: 'kv', key: '"name"',       val: `"${t.name}"`,   vt: 'str' },
+  { t: 'kv', key: '"role"',       val: `"${t.role}"`,   vt: 'str' },
+  { t: 'kv', key: '"experience"', val: String(t.experience), vt: 'num' },
+  { t: 'kv', key: '"team_size"',  val: String(t.team_size),  vt: 'num' },
+  { t: 'kv', key: '"ai_powered"', val: String(t.ai_powered), vt: 'bool' },
+  { t: 'kv', key: '"location"',   val: `"${t.location}"`,    vt: 'str' },
+  { t: 'kv', key: '"status"',     val: `"${t.status}"`,      vt: 'str', comma: false },
   { t: 'blank' },
   { t: 'comment', text: '// Management & Delivery' },
   { t: 'arrOpen', key: '"management"' },
-  { t: 'items', items: ['"Agile/Scrum"', '"Azure DevOps"'] },
-  { t: 'items', items: ['"Release Mgmt"', '"Leadership"'] },
+  ...chunk(t.management, 2).map(items => ({ t: 'items', items: items.map(s => `"${s}"`) })),
   { t: 'arrClose', last: false },
   { t: 'blank' },
   { t: 'comment', text: '// IA Générative' },
   { t: 'arrOpen', key: '"ai_skills"' },
-  { t: 'items', items: ['"Claude Code"', '"Prompt Eng."'] },
-  { t: 'items', items: ['"AI Code Review"', '"QA IA"'] },
+  ...chunk(t.ai_skills, 2).map(items => ({ t: 'items', items: items.map(s => `"${s}"`) })),
   { t: 'arrClose', last: false },
   { t: 'blank' },
   { t: 'comment', text: '// Stack Technique' },
   { t: 'arrOpen', key: '"tech"' },
-  { t: 'items', items: ['"Symfony"', '"Angular"', '"PHP"'] },
-  { t: 'items', items: ['"JavaScript"', '"Moodle"'] },
+  ...chunk(t.tech, 3).map(items => ({ t: 'items', items: items.map(s => `"${s}"`) })),
   { t: 'arrClose', last: true },
   { t: 'end' },
 ]
