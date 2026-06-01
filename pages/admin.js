@@ -54,6 +54,70 @@ function SectionWrap({ title, children }) {
 
 // ─── HERO ─────────────────────────────────────────────────────────────────────
 
+function PhotoUploader() {
+  const [preview, setPreview] = useState('/othmen.png')
+  const [uploading, setUploading] = useState(false)
+  const [msg, setMsg] = useState(null)
+
+  const handleFile = e => {
+    const file = e.target.files?.[0]
+    if (!file) return
+    const reader = new FileReader()
+    reader.onload = ev => setPreview(ev.target.result)
+    reader.readAsDataURL(file)
+  }
+
+  const handleUpload = async () => {
+    if (!preview.startsWith('data:')) return
+    setUploading(true); setMsg(null)
+    try {
+      const filename = 'othmen.png'
+      const res = await fetch('/api/admin-upload', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filename, base64: preview }),
+      })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.error)
+      setMsg({ ok: true, text: 'Photo mise à jour ✓' })
+      setTimeout(() => setMsg(null), 3000)
+    } catch (e) {
+      setMsg({ ok: false, text: `Erreur : ${e.message}` })
+    } finally {
+      setUploading(false)
+    }
+  }
+
+  return (
+    <div style={{ marginBottom: 24 }}>
+      <h3 style={s.sub}>Photo de profil</h3>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap' }}>
+        <img
+          src={preview}
+          alt="Aperçu"
+          style={{ width: 80, height: 80, borderRadius: '50%', objectFit: 'cover', border: '2px solid #30363d' }}
+        />
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <input
+            type="file"
+            accept="image/png,image/jpeg,image/webp,image/avif"
+            onChange={handleFile}
+            style={{ color: '#8b949e', fontSize: 12 }}
+          />
+          <button
+            onClick={handleUpload}
+            disabled={!preview.startsWith('data:') || uploading}
+            style={{ ...s.saveBtn, opacity: (!preview.startsWith('data:') || uploading) ? 0.4 : 1 }}
+          >
+            {uploading ? 'Upload...' : 'Enregistrer la photo'}
+          </button>
+          {msg && <span style={{ fontSize: 12, color: msg.ok ? '#00d4aa' : '#f85149' }}>{msg.text}</span>}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function HeroEditor() {
   const { draft, setDraft, saved, setSaved, error, setError } = useDraft(heroData)
 
@@ -78,6 +142,7 @@ function HeroEditor() {
   return (
     <SectionWrap title="// Hero">
       <Toast saved={saved} error={error} />
+      <PhotoUploader />
       <div style={s.grid2}>
         <label style={s.label}>Nom
           <input style={s.input} value={draft.name} onChange={e => setField('name', e.target.value)} />
