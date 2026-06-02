@@ -11,6 +11,8 @@ export default function QRCard({ url }) {
           bgColor="transparent"
           fgColor="var(--accent)"
           level="M"
+          aria-label="QR code vers le profil LinkedIn d'Othmen Mzeh"
+          role="img"
         />
       </div>
       <div className={styles.label}>// Scanner pour accéder</div>

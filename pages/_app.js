@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Space_Grotesk, Space_Mono } from 'next/font/google'
+import ErrorBoundary from '../components/ErrorBoundary'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -26,7 +27,7 @@ export default function App({ Component, pageProps }) {
           --font-mono: ${spaceMono.style.fontFamily};
         }
       `}</style>
-      <Component {...pageProps} />
+      <ErrorBoundary><Component {...pageProps} /></ErrorBoundary>
       <Analytics />
       <SpeedInsights />
     </>

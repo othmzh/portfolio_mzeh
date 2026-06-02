@@ -22,17 +22,25 @@ export function useChat() {
     setShowSugg(false)
     setLoading(true)
     setMessages(prev => [...prev, { role: 'user', text: msg }])
+    const controller = new AbortController()
+    const timeoutId = setTimeout(() => controller.abort(), 15000)
     try {
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: msg }),
+        signal: controller.signal,
       })
       const data = await res.json()
       const reply = data.reply || data.error || "Désolé, je n'ai pas pu répondre."
       setMessages(prev => [...prev, { role: 'ai', text: reply }])
-    } catch {
-      setMessages(prev => [...prev, { role: 'ai', text: "Une erreur s'est produite. Veuillez réessayer." }])
+    } catch (err) {
+      const text = err.name === 'AbortError'
+        ? "La réponse a pris trop de temps. Veuillez réessayer."
+        : "Une erreur s'est produite. Veuillez réessayer."
+      setMessages(prev => [...prev, { role: 'ai', text }])
+    } finally {
+      clearTimeout(timeoutId)
     }
     setLoading(false)
   }

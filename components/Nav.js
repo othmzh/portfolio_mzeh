@@ -28,7 +28,12 @@ export default function Nav() {
           </div>
 
           {/* Theme toggle — always visible */}
-          <button onClick={toggleTheme} className={styles.toggle} title="Changer le thème">
+          <button
+            onClick={toggleTheme}
+            className={styles.toggle}
+            title={theme === 'dark' ? 'Passer en mode clair' : 'Passer en mode sombre'}
+            aria-label={theme === 'dark' ? 'Passer en mode clair' : 'Passer en mode sombre'}
+          >
             <span className={`${styles.opt}${theme === 'dark' ? ` ${styles.optActive}` : ''}`}>🌙</span>
             <span className={`${styles.opt}${theme === 'light' ? ` ${styles.optActive}` : ''}`}>☀️</span>
           </button>
@@ -37,7 +42,8 @@ export default function Nav() {
           <button
             className={`hamburger${menuOpen ? ' open' : ''}`}
             onClick={() => setMenuOpen(o => !o)}
-            aria-label="Menu"
+            aria-label={menuOpen ? 'Fermer le menu de navigation' : 'Ouvrir le menu de navigation'}
+            aria-expanded={menuOpen}
           >
             <span /><span /><span />
           </button>

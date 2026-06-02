@@ -1,11 +1,13 @@
 import fs from 'fs'
 import path from 'path'
+import { isAuthedToken } from './admin-auth'
 
 const ALLOWED_FILES = ['skills', 'experience', 'certifications', 'contact', 'hero']
 
 function isAuthed(req) {
   const cookie = req.headers.cookie || ''
-  return cookie.split(';').some(c => c.trim() === 'admin_session=ok')
+  const token = cookie.split(';').map(c => c.trim()).find(c => c.startsWith('admin_session='))?.split('=')[1]
+  return isAuthedToken(token)
 }
 
 export default function handler(req, res) {
