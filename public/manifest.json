@@ -1,0 +1,23 @@
+{
+  "name": "Othmen Mzeh — Engineering Manager",
+  "short_name": "Othmen Mzeh",
+  "description": "Portfolio d'Othmen Mzeh, Engineering Manager & AI-Driven Leader basé en Tunisie.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d1117",
+  "theme_color": "#0d1117",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "48x48"
+    }
+  ]
+}

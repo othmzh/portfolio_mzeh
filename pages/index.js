@@ -27,19 +27,27 @@ export default function Home() {
         <meta property="og:url" content="https://omzeh.tn" />
         <meta property="og:title" content="Othmen Mzeh — Engineering Manager & AI-Driven Leader" />
         <meta property="og:description" content="Engineering Manager avec 15+ ans d'expérience en pilotage d'équipes techniques, delivery agile et intégration de l'IA générative. Basé en Tunisie, disponible à distance." />
-        <meta property="og:image" content="https://omzeh.tn/og-image.svg" />
+        <meta property="og:image" content="https://omzeh.tn/api/og" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/png" />
         <meta property="og:locale" content="fr_FR" />
         <meta property="og:site_name" content="Othmen Mzeh" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@othmen_mzeh" />
+        <meta name="twitter:creator" content="@othmen_mzeh" />
         <meta name="twitter:title" content="Othmen Mzeh — Engineering Manager & AI-Driven Leader" />
         <meta name="twitter:description" content="Engineering Manager avec 15+ ans d'expérience en pilotage d'équipes techniques, delivery agile et intégration de l'IA générative." />
-        <meta name="twitter:image" content="https://omzeh.tn/og-image.svg" />
+        <meta name="twitter:image" content="https://omzeh.tn/api/og" />
 
-        {/* Preconnect for performance */}
+        {/* Author & performance hints */}
+        <link rel="author" href="https://omzeh.tn" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://api.groq.com" />
+        <link rel="dns-prefetch" href="https://vercel-insights.com" />
 
         {/* JSON-LD — Person */}
         <script
@@ -100,6 +108,30 @@ export default function Home() {
               "identifier": "othmen-mzeh",
               "jobTitle": "Engineering Manager",
               "description": "Engineering Manager Tunisie — 15 ans d'expérience, expert IA générative et delivery agile, disponible à distance."
+            }
+          })}}
+        />
+        {/* JSON-LD — WebSite */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Othmen Mzeh",
+            "url": "https://omzeh.tn",
+            "description": "Portfolio d'Othmen Mzeh, Engineering Manager & AI-Driven Leader basé en Tunisie.",
+            "inLanguage": "fr-FR",
+            "author": {
+              "@type": "Person",
+              "name": "Othmen Mzeh"
+            },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://omzeh.tn/?q={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
             }
           })}}
         />
