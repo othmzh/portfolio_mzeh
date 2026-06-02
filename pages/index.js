@@ -44,8 +44,6 @@ export default function Home() {
 
         {/* Author & performance hints */}
         <link rel="author" href="https://omzeh.tn" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://api.groq.com" />
         <link rel="dns-prefetch" href="https://vercel-insights.com" />
 
