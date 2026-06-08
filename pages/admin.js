@@ -1,18 +1,31 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
-import skillsData from '../data/skills.json'
-import experienceData from '../data/experience.json'
-import certificationsData from '../data/certifications.json'
-import contactData from '../data/contact.json'
-import heroData from '../data/hero.json'
+import skillsFr from '../data/fr/skills.fr.json'
+import skillsEn from '../data/en/skills.en.json'
+import experienceFr from '../data/fr/experience.fr.json'
+import experienceEn from '../data/en/experience.en.json'
+import certificationsFr from '../data/fr/certifications.fr.json'
+import certificationsEn from '../data/en/certifications.en.json'
+import contactFr from '../data/fr/contact.fr.json'
+import contactEn from '../data/en/contact.en.json'
+import heroFr from '../data/fr/hero.fr.json'
+import heroEn from '../data/en/hero.en.json'
+
+const DATA = {
+  skills:         { fr: skillsFr,         en: skillsEn },
+  experience:     { fr: experienceFr,     en: experienceEn },
+  certifications: { fr: certificationsFr, en: certificationsEn },
+  contact:        { fr: contactFr,        en: contactEn },
+  hero:           { fr: heroFr,           en: heroEn },
+}
 
 // ─── helpers ──────────────────────────────────────────────────────────────────
 
-async function save(file, data) {
+async function save(file, locale, data) {
   const res = await fetch('/api/admin-save', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ file, data }),
+    body: JSON.stringify({ file, locale, data }),
   })
   if (!res.ok) throw new Error((await res.json()).error)
 }
@@ -122,8 +135,12 @@ function PhotoUploader() {
   )
 }
 
-function HeroEditor() {
-  const { draft, setDraft, saved, setSaved, error, setError } = useDraft(heroData)
+function HeroEditor({ locale }) {
+  const { draft, setDraft, saved, setSaved, error, setError } = useDraft(DATA.hero[locale])
+
+  useEffect(() => {
+    setDraft(JSON.parse(JSON.stringify(DATA.hero[locale])))
+  }, [locale])
 
   const setField = (key, val) => setDraft(d => ({ ...d, [key]: val }))
   const setStat = (i, key, val) => setDraft(d => {
@@ -137,7 +154,7 @@ function HeroEditor() {
 
   const handleSave = async () => {
     try {
-      await save('hero', draft)
+      await save('hero', locale, draft)
       setSaved(true); setError(null)
       setTimeout(() => setSaved(false), 2500)
     } catch (e) { setError(e.message) }
@@ -146,7 +163,7 @@ function HeroEditor() {
   return (
     <SectionWrap title="// Hero">
       <Toast saved={saved} error={error} />
-      <PhotoUploader />
+      {locale === 'fr' && <PhotoUploader />}
       <div style={s.grid2}>
         <label style={s.label}>Nom
           <input style={s.input} value={draft.name} onChange={e => setField('name', e.target.value)} />
@@ -203,8 +220,12 @@ function HeroEditor() {
 
 // ─── SKILLS ───────────────────────────────────────────────────────────────────
 
-function SkillsEditor() {
-  const { draft, setDraft, saved, setSaved, error, setError } = useDraft(skillsData)
+function SkillsEditor({ locale }) {
+  const { draft, setDraft, saved, setSaved, error, setError } = useDraft(DATA.skills[locale])
+
+  useEffect(() => {
+    setDraft(JSON.parse(JSON.stringify(DATA.skills[locale])))
+  }, [locale])
 
   const setField = (i, key, val) => setDraft(d => d.map((sk, j) => j === i ? { ...sk, [key]: val } : sk))
   const setTags = (i, val) => setDraft(d => d.map((sk, j) => j === i
@@ -214,7 +235,7 @@ function SkillsEditor() {
 
   const handleSave = async () => {
     try {
-      await save('skills', draft)
+      await save('skills', locale, draft)
       setSaved(true); setError(null)
       setTimeout(() => setSaved(false), 2500)
     } catch (e) { setError(e.message) }
@@ -253,8 +274,12 @@ function SkillsEditor() {
 
 // ─── EXPERIENCE ───────────────────────────────────────────────────────────────
 
-function ExperienceEditor() {
-  const { draft, setDraft, saved, setSaved, error, setError } = useDraft(experienceData)
+function ExperienceEditor({ locale }) {
+  const { draft, setDraft, saved, setSaved, error, setError } = useDraft(DATA.experience[locale])
+
+  useEffect(() => {
+    setDraft(JSON.parse(JSON.stringify(DATA.experience[locale])))
+  }, [locale])
 
   const setField = (i, key, val) => setDraft(d => d.map((e, j) => j === i ? { ...e, [key]: val } : e))
   const setBullet = (i, bi, val) => setDraft(d => d.map((e, j) => {
@@ -270,7 +295,7 @@ function ExperienceEditor() {
 
   const handleSave = async () => {
     try {
-      await save('experience', draft)
+      await save('experience', locale, draft)
       setSaved(true); setError(null)
       setTimeout(() => setSaved(false), 2500)
     } catch (e) { setError(e.message) }
@@ -323,8 +348,12 @@ function ExperienceEditor() {
 
 // ─── CERTIFICATIONS ───────────────────────────────────────────────────────────
 
-function CertificationsEditor() {
-  const { draft, setDraft, saved, setSaved, error, setError } = useDraft(certificationsData)
+function CertificationsEditor({ locale }) {
+  const { draft, setDraft, saved, setSaved, error, setError } = useDraft(DATA.certifications[locale])
+
+  useEffect(() => {
+    setDraft(JSON.parse(JSON.stringify(DATA.certifications[locale])))
+  }, [locale])
 
   const setCert = (i, val) => setDraft(d => d.map((c, j) => j === i ? val : c))
   const addCert = () => setDraft(d => [...d, ''])
@@ -332,7 +361,7 @@ function CertificationsEditor() {
 
   const handleSave = async () => {
     try {
-      await save('certifications', draft)
+      await save('certifications', locale, draft)
       setSaved(true); setError(null)
       setTimeout(() => setSaved(false), 2500)
     } catch (e) { setError(e.message) }
@@ -356,8 +385,12 @@ function CertificationsEditor() {
 
 // ─── CONTACT ──────────────────────────────────────────────────────────────────
 
-function ContactEditor() {
-  const { draft, setDraft, saved, setSaved, error, setError } = useDraft(contactData)
+function ContactEditor({ locale }) {
+  const { draft, setDraft, saved, setSaved, error, setError } = useDraft(DATA.contact[locale])
+
+  useEffect(() => {
+    setDraft(JSON.parse(JSON.stringify(DATA.contact[locale])))
+  }, [locale])
 
   const setField = (i, key, val) => setDraft(d => ({
     ...d, links: d.links.map((l, j) => j === i ? { ...l, [key]: val } : l)
@@ -367,7 +400,7 @@ function ContactEditor() {
 
   const handleSave = async () => {
     try {
-      await save('contact', draft)
+      await save('contact', locale, draft)
       setSaved(true); setError(null)
       setTimeout(() => setSaved(false), 2500)
     } catch (e) { setError(e.message) }
@@ -460,6 +493,28 @@ const s = {
     color: active ? '#0097ff' : '#8b949e',
     borderBottom: active ? '2px solid #0097ff' : '2px solid transparent',
   }),
+  localeBtnActive: {
+    padding: '4px 12px',
+    borderRadius: 4,
+    border: '1px solid #0097ff',
+    cursor: 'pointer',
+    fontFamily: "'Space Mono', monospace",
+    fontSize: 12,
+    fontWeight: 700,
+    background: '#0097ff22',
+    color: '#0097ff',
+  },
+  localeBtnInactive: {
+    padding: '4px 12px',
+    borderRadius: 4,
+    border: '1px solid #30363d',
+    cursor: 'pointer',
+    fontFamily: "'Space Mono', monospace",
+    fontSize: 12,
+    fontWeight: 400,
+    background: 'transparent',
+    color: '#8b949e',
+  },
   content: {
     maxWidth: 800,
     margin: '0 auto',
@@ -653,6 +708,7 @@ function LoginGate({ onAuth }) {
 
 export default function Admin() {
   const [tab, setTab] = useState('hero')
+  const [locale, setLocale] = useState('fr')
   const [authed, setAuthed] = useState(false)
 
   useEffect(() => {
@@ -681,6 +737,21 @@ export default function Admin() {
             <p style={s.headerSub}>Gestion du contenu — local uniquement</p>
           </div>
           <div style={{ marginLeft: 'auto', display: 'flex', gap: 16, alignItems: 'center' }}>
+            {/* Langue selector */}
+            <div style={{ display: 'flex', gap: 4 }}>
+              <button
+                onClick={() => setLocale('fr')}
+                style={locale === 'fr' ? s.localeBtnActive : s.localeBtnInactive}
+              >
+                FR
+              </button>
+              <button
+                onClick={() => setLocale('en')}
+                style={locale === 'en' ? s.localeBtnActive : s.localeBtnInactive}
+              >
+                EN
+              </button>
+            </div>
             <a href="/" target="_blank" rel="noreferrer" style={{ color: '#58a6ff', fontSize: 12 }}>
               Voir le portfolio →
             </a>
@@ -697,11 +768,11 @@ export default function Admin() {
           ))}
         </div>
         <div style={s.content}>
-          {tab === 'hero' && <HeroEditor />}
-          {tab === 'skills' && <SkillsEditor />}
-          {tab === 'experience' && <ExperienceEditor />}
-          {tab === 'certifications' && <CertificationsEditor />}
-          {tab === 'contact' && <ContactEditor />}
+          {tab === 'hero'           && <HeroEditor           locale={locale} key={`hero-${locale}`} />}
+          {tab === 'skills'         && <SkillsEditor         locale={locale} key={`skills-${locale}`} />}
+          {tab === 'experience'     && <ExperienceEditor     locale={locale} key={`exp-${locale}`} />}
+          {tab === 'certifications' && <CertificationsEditor locale={locale} key={`certs-${locale}`} />}
+          {tab === 'contact'        && <ContactEditor        locale={locale} key={`contact-${locale}`} />}
         </div>
       </div>
     </>

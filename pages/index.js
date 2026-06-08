@@ -7,39 +7,48 @@ import Certifications from '../components/Certifications'
 import AIChat from '../components/AIChat'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
+import { useTranslation } from '../hooks/useTranslation'
 
 export default function Home() {
+  const { t, locale } = useTranslation()
+
+  const canonicalBase = 'https://omzeh.tn'
+  const canonicalUrl = locale === 'fr' ? canonicalBase : `${canonicalBase}/${locale}`
+
   return (
     <>
       <Head>
-        <title>Othmen Mzeh — Engineering Manager & AI-Driven Leader</title>
-        <meta name="description" content="Engineering Manager avec 15+ ans d'expérience en pilotage d'équipes techniques, delivery agile et intégration de l'IA générative. Basé en Tunisie, disponible à distance." />
-        <meta name="keywords" content="Engineering Manager, Technical Delivery Manager, AI, Claude Code, Agile, Scrum, Tunisie, Remote, Symfony, Angular, Azure DevOps" />
+        <title>{t('meta.title')}</title>
+        <meta name="description" content={t('meta.description')} />
+        <meta name="keywords" content="Engineering Manager, Technical Delivery Manager, AI, Claude Code, Agile, Scrum, Tunisia, Remote, Symfony, Angular, Azure DevOps" />
         <meta name="author" content="Othmen Mzeh" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://omzeh.tn" />
+        <link rel="canonical" href={canonicalUrl} />
+        <link rel="alternate" hrefLang="fr" href={canonicalBase} />
+        <link rel="alternate" hrefLang="en" href={`${canonicalBase}/en`} />
+        <link rel="alternate" hrefLang="x-default" href={canonicalBase} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="alternate icon" href="/favicon.ico" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://omzeh.tn" />
-        <meta property="og:title" content="Othmen Mzeh — Engineering Manager & AI-Driven Leader" />
-        <meta property="og:description" content="Engineering Manager avec 15+ ans d'expérience en pilotage d'équipes techniques, delivery agile et intégration de l'IA générative. Basé en Tunisie, disponible à distance." />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:title" content={t('meta.title')} />
+        <meta property="og:description" content={t('meta.description')} />
         <meta property="og:image" content="https://omzeh.tn/api/og" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:type" content="image/png" />
-        <meta property="og:locale" content="fr_FR" />
+        <meta property="og:locale" content={t('meta.ogLocale')} />
         <meta property="og:site_name" content="Othmen Mzeh" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@othmen_mzeh" />
         <meta name="twitter:creator" content="@othmen_mzeh" />
-        <meta name="twitter:title" content="Othmen Mzeh — Engineering Manager & AI-Driven Leader" />
-        <meta name="twitter:description" content="Engineering Manager avec 15+ ans d'expérience en pilotage d'équipes techniques, delivery agile et intégration de l'IA générative." />
+        <meta name="twitter:title" content={t('meta.title')} />
+        <meta name="twitter:description" content={t('meta.twitterDescription')} />
         <meta name="twitter:image" content="https://omzeh.tn/api/og" />
 
         {/* Author & performance hints */}
@@ -57,24 +66,24 @@ export default function Home() {
             "url": "https://omzeh.tn",
             "image": "https://omzeh.tn/othmen.png",
             "jobTitle": "Engineering Manager",
-            "description": "Engineering Manager avec 15+ ans d'expérience en pilotage d'équipes techniques, delivery agile et intégration de l'IA générative. Spécialiste Claude Code et IA appliquée au Software Engineering.",
+            "description": t('meta.description'),
             "email": "oth.mzh@gmail.com",
             "telephone": "+21653795988",
-            "nationality": { "@type": "Country", "name": "Tunisie" },
+            "nationality": { "@type": "Country", "name": locale === 'en' ? "Tunisia" : "Tunisie" },
             "address": {
               "@type": "PostalAddress",
               "addressCountry": "TN",
-              "addressLocality": "Tunisie"
+              "addressLocality": locale === 'en' ? "Tunisia" : "Tunisie"
             },
             "alumniOf": {
               "@type": "EducationalOrganization",
-              "name": "Maîtrise en Informatique Appliquée"
+              "name": locale === 'en' ? "Master's in Applied Computer Science" : "Maîtrise en Informatique Appliquée"
             },
             "hasOccupation": {
               "@type": "Occupation",
               "name": "Engineering Manager",
-              "occupationLocation": { "@type": "Country", "name": "Tunisie" },
-              "description": "Pilotage d'équipes techniques, delivery agile, intégration de l'IA générative dans les workflows engineering.",
+              "occupationLocation": { "@type": "Country", "name": locale === 'en' ? "Tunisia" : "Tunisie" },
+              "description": t('meta.description'),
               "skills": "Agile, Scrum, Azure DevOps, Claude Code, Symfony, Angular, PHP, JavaScript"
             },
             "knowsLanguage": [
@@ -105,7 +114,7 @@ export default function Home() {
               "name": "Othmen Mzeh",
               "identifier": "othmen-mzeh",
               "jobTitle": "Engineering Manager",
-              "description": "Engineering Manager Tunisie — 15 ans d'expérience, expert IA générative et delivery agile, disponible à distance."
+              "description": t('meta.description')
             }
           })}}
         />
@@ -117,8 +126,8 @@ export default function Home() {
             "@type": "WebSite",
             "name": "Othmen Mzeh",
             "url": "https://omzeh.tn",
-            "description": "Portfolio d'Othmen Mzeh, Engineering Manager & AI-Driven Leader basé en Tunisie.",
-            "inLanguage": "fr-FR",
+            "description": t('meta.description'),
+            "inLanguage": locale === 'en' ? "en-US" : "fr-FR",
             "author": {
               "@type": "Person",
               "name": "Othmen Mzeh"
@@ -131,36 +140,6 @@ export default function Home() {
               },
               "query-input": "required name=search_term_string"
             }
-          })}}
-        />
-        {/* JSON-LD — FAQ */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "Qui est Othmen Mzeh ?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Othmen Mzeh est un Engineering Manager basé en Tunisie avec plus de 15 ans d'expérience dans le pilotage d'équipes techniques, le delivery agile et l'intégration de l'IA générative dans les workflows engineering." }
-              },
-              {
-                "@type": "Question",
-                "name": "Quelles sont les compétences d'Othmen Mzeh ?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Ses compétences clés incluent : Management & Delivery (Agile/Scrum, Azure DevOps, Release Management, Leadership), IA Générative (Claude Code, Prompt Engineering, AI-Driven Development, QA IA) et Stack Technique (Symfony, Angular, PHP, JavaScript, Moodle)." }
-              },
-              {
-                "@type": "Question",
-                "name": "Est-ce qu'Othmen Mzeh est disponible pour des missions à distance ?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Oui, Othmen Mzeh est ouvert à de nouvelles opportunités en Tunisie ou à distance. Vous pouvez le contacter via LinkedIn ou par email à oth.mzh@gmail.com." }
-              },
-              {
-                "@type": "Question",
-                "name": "Comment Othmen Mzeh utilise-t-il l'IA dans son travail ?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Othmen Mzeh intègre concrètement l'IA générative dans les pratiques engineering : revues de code assistées avec Claude Code, prompts structurés, checklists qualité automatisées, réduisant les cycles de review et améliorant la qualité des livrables." }
-              }
-            ]
           })}}
         />
       </Head>
@@ -179,4 +158,3 @@ export default function Home() {
     </>
   )
 }
-

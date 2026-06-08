@@ -1,11 +1,14 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { useTranslation } from '../hooks/useTranslation'
 
 export default function NotFound() {
+  const { t } = useTranslation()
+
   return (
     <>
       <Head>
-        <title>404 — Page introuvable · Othmen Mzeh</title>
+        <title>{t('404.title')}</title>
       </Head>
       <div style={s.page}>
         <div style={s.terminal}>
@@ -16,20 +19,20 @@ export default function NotFound() {
             <span style={s.termTitle}>error.log</span>
           </div>
           <div style={s.termBody}>
-            <div style={s.comment}>// 404 — Page introuvable</div>
+            <div style={s.comment}>{t('404.comment')}</div>
             <br />
             <div><span style={s.key}>"status"</span><span style={s.bracket}>: </span><span style={s.num}>404</span></div>
-            <div><span style={s.key}>"message"</span><span style={s.bracket}>: </span><span style={s.str}>"Cette page n'existe pas"</span></div>
-            <div><span style={s.key}>"suggestion"</span><span style={s.bracket}>: </span><span style={s.str}>"Retournez à l'accueil"</span></div>
+            <div><span style={s.key}>"message"</span><span style={s.bracket}>: </span><span style={s.str}>"{t('404.message')}"</span></div>
+            <div><span style={s.key}>"suggestion"</span><span style={s.bracket}>: </span><span style={s.str}>"{t('404.suggestion')}"</span></div>
             <br />
             <div style={s.comment}>// Redirecting...</div>
           </div>
         </div>
 
         <h1 style={s.code}>404</h1>
-        <p style={s.msg}>Cette page n'existe pas ou a été déplacée.</p>
+        <p style={s.msg}>{t('404.body')}</p>
 
-        <Link href="/" style={s.btn}>← Retour à l'accueil</Link>
+        <Link href="/" style={s.btn}>{t('404.back')}</Link>
       </div>
     </>
   )

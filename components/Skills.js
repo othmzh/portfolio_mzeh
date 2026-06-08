@@ -1,14 +1,21 @@
 import styles from '../styles/Skills.module.css'
 import { motion } from 'framer-motion'
 import { fadeInUp } from '../hooks/useFadeInUp'
-import SKILLS from '../data/skills.json'
+import { useTranslation } from '../hooks/useTranslation'
+import skillsFr from '../data/fr/skills.fr.json'
+import skillsEn from '../data/en/skills.en.json'
+
+const skillsByLocale = { fr: skillsFr, en: skillsEn }
 
 export default function Skills() {
+  const { t, locale } = useTranslation()
+  const SKILLS = skillsByLocale[locale] ?? skillsByLocale.fr
+
   return (
     <section id="competences" className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.label}>// domaines d'expertise</div>
-        <h2 className={styles.h2}>Compétences clés</h2>
+        <div className={styles.label}>{t('skills.label')}</div>
+        <h2 className={styles.h2}>{t('skills.heading')}</h2>
         <div className="skills-grid">
           {SKILLS.map((sk, i) => (
             <motion.div

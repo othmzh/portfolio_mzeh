@@ -39,8 +39,30 @@ function recordAttempt(ip) {
   loginAttempts.set(ip, attempts)
 }
 
-// In-memory session store (resets on server restart — acceptable for local admin only)
-const sessions = new Set()
+import fs from 'fs'
+import path from 'path'
+
+const SESSION_FILE = path.join(process.cwd(), '.sessions.json')
+
+function loadSessions() {
+  try {
+    const raw = fs.readFileSync(SESSION_FILE, 'utf8')
+    const { tokens, expiresAt } = JSON.parse(raw)
+    if (Date.now() > expiresAt) return new Set()
+    return new Set(tokens)
+  } catch {
+    return new Set()
+  }
+}
+
+function saveSessions(sessions) {
+  fs.writeFileSync(SESSION_FILE, JSON.stringify({
+    tokens: [...sessions],
+    expiresAt: Date.now() + 8 * 60 * 60 * 1000,
+  }), 'utf8')
+}
+
+const sessions = loadSessions()
 
 export function isAuthedToken(token) {
   return isValidToken(token) && sessions.has(token)
@@ -62,6 +84,7 @@ export default function handler(req, res) {
 
     const token = generateToken()
     sessions.add(token)
+    saveSessions(sessions)
     setCookie(res, token, 60 * 60 * 8) // 8h
     return res.status(200).json({ ok: true })
   }
@@ -69,7 +92,7 @@ export default function handler(req, res) {
   if (req.method === 'DELETE') {
     const cookie = req.headers.cookie || ''
     const token = cookie.split(';').map(c => c.trim()).find(c => c.startsWith(`${COOKIE}=`))?.split('=')[1]
-    if (token) sessions.delete(token)
+    if (token) { sessions.delete(token); saveSessions(sessions) }
     setCookie(res, '', 0)
     return res.status(200).json({ ok: true })
   }

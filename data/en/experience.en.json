@@ -1,0 +1,64 @@
+[
+  {
+    "period": "Sept. 2021 — Present",
+    "company": "Witik",
+    "loc": "Tunisia",
+    "title": "Engineering Manager & Technical Delivery Lead",
+    "bullets": [
+      "Managing a team of 6 full-stack engineers in Agile/Scrum — velocity, quality and team cohesion",
+      "End-to-end delivery ownership: releases, technical roadmap, risk management and business/tech coordination",
+      "Introduction and adoption of generative AI in team workflows: code reviews with Claude Code, structured prompts, automated quality checklists — reduced review cycles and measurable improvement in deliverable quality",
+      "Technical recruiting, onboarding and upskilling engineers",
+      "Establishing continuous improvement practices: actionable retrospectives, code standards, living documentation"
+    ],
+    "ai": true
+  },
+  {
+    "period": "Jan. 2019 — Aug. 2021",
+    "company": "Sofia Holding",
+    "loc": "Tunisia",
+    "title": "Web Team Leader",
+    "bullets": [
+      "Leading a team of web developers on critical multi-client projects",
+      "Technical architecture, task breakdown, effort estimation and schedule management",
+      "Participation in tenders, impact analysis and technical scoping",
+      "Supervising test cycles (integration, regression) and delivery validation"
+    ],
+    "ai": false
+  },
+  {
+    "period": "May 2017 — Dec. 2018",
+    "company": "Sofia Holding",
+    "loc": "Tunisia",
+    "title": "Senior Web Developer",
+    "bullets": [
+      "Design and development of complex business applications with Symfony and Angular",
+      "Development of e-procurement, SRM and supplier management platforms",
+      "Creation of collaborative platforms integrating DMS and validation workflows"
+    ],
+    "ai": false
+  },
+  {
+    "period": "Feb. 2013 — Apr. 2017",
+    "company": "DTCad Engineering",
+    "loc": "Tunisia",
+    "title": "Web Developer & E-learning Specialist",
+    "bullets": [
+      "Development of business applications with Symfony (CRM, mini-ERP)",
+      "Administration and evolution of Moodle and Claroline platforms",
+      "Development of LMS modules and customizations"
+    ],
+    "ai": false
+  },
+  {
+    "period": "Apr. 2011 — Jan. 2013",
+    "company": "SIT Elearning",
+    "loc": "Tunisia",
+    "title": "Web Developer",
+    "bullets": [
+      "Development of e-learning solutions based on Moodle",
+      "Design of a skills management application"
+    ],
+    "ai": false
+  }
+]

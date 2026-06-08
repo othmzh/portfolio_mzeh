@@ -1,0 +1,24 @@
+{
+  "intro": "Engineering Manager with a hybrid approach: human management, technical expertise and AI integration into engineering practices.",
+  "introSecond": "Open to new opportunities in Tunisia or remotely.",
+  "links": [
+    {
+      "icon": "✉️",
+      "label": "Email",
+      "sub": "oth.mzh@gmail.com",
+      "href": "mailto:oth.mzh@gmail.com"
+    },
+    {
+      "icon": "📞",
+      "label": "Phone",
+      "sub": "+216 53 795 988",
+      "href": "tel:+21653795988"
+    },
+    {
+      "icon": "💼",
+      "label": "LinkedIn",
+      "sub": "linkedin.com/in/othmen-mzeh",
+      "href": "https://linkedin.com/in/othmen-mzeh-64740961"
+    }
+  ]
+}

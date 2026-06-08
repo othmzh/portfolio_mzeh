@@ -1,0 +1,20 @@
+[
+  {
+    "icon": "⚡",
+    "title": "Management & Delivery",
+    "desc": "Agile team leadership, business/tech coordination, release management and priority management with Azure DevOps.",
+    "tags": ["Agile/Scrum", "Azure DevOps", "Release Mgmt", "Leadership"]
+  },
+  {
+    "icon": "🤖",
+    "title": "Generative AI & Engineering",
+    "desc": "Integration of Claude / Claude Code into workflows: assisted code review, structured prompts, augmented documentation.",
+    "tags": ["Claude Code", "AI-Driven Dev", "Prompt Eng.", "AI QA"]
+  },
+  {
+    "icon": "🛠",
+    "title": "Tech Stack",
+    "desc": "Backend-focused full-stack development, complex business architectures, LMS/DMS/SRM platforms and webservice integrations.",
+    "tags": ["Symfony", "Angular", "PHP", "JavaScript", "Moodle"]
+  }
+]

@@ -1,0 +1,51 @@
+{
+  "name": "Othmen Mzeh",
+  "role": "Engineering Manager",
+  "location": "Tunisie",
+  "flag": "🇹🇳",
+  "eyebrow": "// Engineering Manager × AI-Driven Leader",
+  "description": "Je pilote des équipes d'ingénieurs, structure le delivery et intègre concrètement l'IA générative dans les pratiques engineering — pour livrer plus vite, avec moins de friction et plus de qualité.",
+  "linkedinUrl": "https://linkedin.com/in/othmen-mzeh-64740961",
+  "stats": [
+    {
+      "num": "16+",
+      "label": "Années d'exp."
+    },
+    {
+      "num": "6",
+      "label": "Ingénieurs managés"
+    },
+    {
+      "num": "7",
+      "label": "Certifications"
+    }
+  ],
+  "terminal": {
+    "name": "Othmen Mzeh",
+    "role": "Engineering Manager",
+    "experience": 16,
+    "team_size": 8,
+    "ai_powered": true,
+    "location": "Tunisie 🇹🇳",
+    "status": "available",
+    "management": [
+      "Agile/Scrum",
+      "Azure DevOps",
+      "Release Mgmt",
+      "Leadership"
+    ],
+    "ai_skills": [
+      "Claude Code",
+      "Prompt Eng.",
+      "AI Code Review",
+      "QA IA"
+    ],
+    "tech": [
+      "Symfony",
+      "Angular",
+      "PHP",
+      "JavaScript",
+      "Moodle"
+    ]
+  }
+}

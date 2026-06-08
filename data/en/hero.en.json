@@ -1,19 +1,19 @@
 {
   "name": "Othmen Mzeh",
   "role": "Engineering Manager",
-  "location": "Tunisie",
+  "location": "Tunisia",
   "flag": "🇹🇳",
   "eyebrow": "// Engineering Manager × AI-Driven Leader",
-  "description": "Je pilote des équipes d'ingénieurs, structure le delivery et intègre concrètement l'IA générative dans les pratiques engineering — pour livrer plus vite, avec moins de friction et plus de qualité.",
+  "description": "I lead engineering teams, structure delivery and concretely integrate generative AI into engineering practices — to ship faster, with less friction and more quality.",
   "linkedinUrl": "https://linkedin.com/in/othmen-mzeh-64740961",
   "stats": [
     {
-      "num": "15+",
-      "label": "Années d'exp."
+      "num": "16+",
+      "label": "Years of exp."
     },
     {
       "num": "6",
-      "label": "Ingénieurs managés"
+      "label": "Engineers managed"
     },
     {
       "num": "7",
@@ -23,10 +23,10 @@
   "terminal": {
     "name": "Othmen Mzeh",
     "role": "Engineering Manager",
-    "experience": 15,
-    "team_size": 6,
+    "experience": 16,
+    "team_size": 8,
     "ai_powered": true,
-    "location": "Tunisie 🇹🇳",
+    "location": "Tunisia 🇹🇳",
     "status": "available",
     "management": [
       "Agile/Scrum",

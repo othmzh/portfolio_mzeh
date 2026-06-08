@@ -3,13 +3,7 @@ import styles from '../styles/AIChat.module.css'
 import { useChat } from '../hooks/useChat'
 import { motion } from 'framer-motion'
 import { fadeInUp } from '../hooks/useFadeInUp'
-
-const SUGGESTIONS = [
-  "Quelles sont ses compétences IA ?",
-  "Quel est son rôle actuel ?",
-  "Comment utilise-t-il Claude Code ?",
-  "Ses certifications ?",
-]
+import { useTranslation } from '../hooks/useTranslation'
 
 function makeMdComponents(s) {
   return {
@@ -28,23 +22,31 @@ function makeMdComponents(s) {
   }
 }
 
-const FAQ = [
-  { q: "Quelles sont les compétences en management d'Othmen Mzeh ?", a: "Agile/Scrum, Azure DevOps, Release Management, Leadership d'équipes techniques, mentoring et gestion du delivery end-to-end." },
-  { q: "Comment Othmen Mzeh intègre-t-il l'IA dans son travail ?", a: "Il utilise Claude Code pour les revues de code assistées, crée des prompts structurés et des checklists qualité automatisées, réduisant les cycles de review et améliorant la qualité des livrables." },
-  { q: "Quelle est la stack technique d'Othmen Mzeh ?", a: "Backend : Symfony, PHP. Frontend : Angular, JavaScript. Plateformes : Moodle. Outils : Git, Azure DevOps." },
-  { q: "Othmen Mzeh est-il disponible pour des missions à distance ?", a: "Oui, il est ouvert à de nouvelles opportunités en Tunisie ou à distance." },
-]
-
 export default function AIChat() {
+  const { t } = useTranslation()
   const { messages, input, setInput, loading, showSugg, messagesRef, send } = useChat()
   const mdComponents = makeMdComponents(styles)
+
+  const SUGGESTIONS = [
+    t('chat.suggestion.0'),
+    t('chat.suggestion.1'),
+    t('chat.suggestion.2'),
+    t('chat.suggestion.3'),
+  ]
+
+  const FAQ = [
+    { q: t('chat.faq.0.q'), a: t('chat.faq.0.a') },
+    { q: t('chat.faq.1.q'), a: t('chat.faq.1.a') },
+    { q: t('chat.faq.2.q'), a: t('chat.faq.2.a') },
+    { q: t('chat.faq.3.q'), a: t('chat.faq.3.a') },
+  ]
 
   return (
     <section id="ai-chat" className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.label}>// intelligence artificielle</div>
-        <h2 className={styles.h2}>Poser une question sur mon profil</h2>
-        <p className={styles.sub}>Un assistant IA entraîné sur mon parcours répond en temps réel.</p>
+        <div className={styles.label}>{t('chat.label')}</div>
+        <h2 className={styles.h2}>{t('chat.heading')}</h2>
+        <p className={styles.sub}>{t('chat.sub')}</p>
 
         {/* FAQ statique indexable par Google — visuellement masquée */}
         <div style={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0,0,0,0)', whiteSpace: 'nowrap' }} aria-hidden="false">
@@ -70,8 +72,8 @@ export default function AIChat() {
           <div className={styles.header}>
             <div className={styles.avatar}>AI</div>
             <div>
-              <div className={styles.aiName}>Assistant Othmen</div>
-              <div className={styles.aiSub}>● En ligne — Powered by Claude</div>
+              <div className={styles.aiName}>{t('chat.aiName')}</div>
+              <div className={styles.aiSub}>{t('chat.aiStatus')}</div>
             </div>
           </div>
 
@@ -80,7 +82,7 @@ export default function AIChat() {
             {messages.map((m, i) => (
               <div key={i} className={styles.msgRow}>
                 <div className={`${styles.ava} ${m.role === 'ai' ? styles.avaAI : styles.avaUser}`}>
-                  {m.role === 'ai' ? 'AI' : 'Vous'}
+                  {m.role === 'ai' ? 'AI' : t('chat.you')}
                 </div>
                 <div className={`${styles.bubble}${m.role === 'user' ? ` ${styles.bubbleUser}` : ''}`}>
                   {m.role === 'ai' ? (
@@ -118,7 +120,7 @@ export default function AIChat() {
               value={input}
               onChange={e => setInput(e.target.value)}
               onKeyDown={e => e.key === 'Enter' && send()}
-              placeholder="Posez votre question..."
+              placeholder={t('chat.placeholder')}
               className={styles.input}
             />
             <button
@@ -126,7 +128,7 @@ export default function AIChat() {
               disabled={loading}
               className={`${styles.sendBtn}${loading ? ` ${styles.sendDisabled}` : ''}`}
             >
-              Envoyer ↗
+              {t('chat.send')}
             </button>
           </div>
         </motion.div>

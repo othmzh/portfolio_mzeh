@@ -3,15 +3,21 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { message } = req.body;
+  const { message, locale } = req.body;
   if (!message) {
     return res.status(400).json({ error: 'Message required' });
   }
 
+  const lang = locale === 'en' ? 'en' : 'fr';
+
+  const langInstruction = lang === 'en'
+    ? 'Always respond in English, unless the visitor writes in French (in that case respond in French).'
+    : 'Réponds toujours en français, sauf si le visiteur écrit en anglais (dans ce cas réponds en anglais).';
+
   const PROFILE = `Tu es l'assistant IA personnel d'Othmen Mzeh, intégré à son portfolio professionnel. Ton rôle est de répondre aux questions des visiteurs sur son profil, ses compétences et son expérience.
 
 INSTRUCTIONS DE COMPORTEMENT :
-- Réponds toujours en français, sauf si le visiteur écrit en anglais (dans ce cas réponds en anglais)
+- ${langInstruction}
 - Sois chaleureux, direct et confiant — tu représentes Othmen
 - Mets en valeur ses points forts sans exagérer
 - Si une question sort du cadre du profil d'Othmen, redirige poliment vers ce qui te concerne
@@ -104,12 +110,17 @@ FORMATION :
     const data = await response.json();
 
     if (!response.ok) {
-      return res.status(500).json({ reply: `Erreur : ${data?.error?.message || 'Vérifiez votre clé GROQ_API_KEY sur Vercel.'}` });
+      const errMsg = lang === 'en'
+        ? `Error: ${data?.error?.message || 'Check your GROQ_API_KEY on Vercel.'}`
+        : `Erreur : ${data?.error?.message || 'Vérifiez votre clé GROQ_API_KEY sur Vercel.'}`;
+      return res.status(500).json({ reply: errMsg });
     }
 
-    const reply = data.choices?.[0]?.message?.content || "Désolé, je n'ai pas pu répondre.";
+    const fallback = lang === 'en' ? "Sorry, I couldn't respond." : "Désolé, je n'ai pas pu répondre.";
+    const reply = data.choices?.[0]?.message?.content || fallback;
     res.status(200).json({ reply });
   } catch (error) {
-    res.status(500).json({ reply: 'Erreur serveur. Veuillez réessayer.' });
+    const errMsg = lang === 'en' ? 'Server error. Please try again.' : 'Erreur serveur. Veuillez réessayer.';
+    res.status(500).json({ reply: errMsg });
   }
 }

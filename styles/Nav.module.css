@@ -98,3 +98,23 @@
 .optActive {
   background: var(--accent);
 }
+
+.langBtn {
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text2);
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.langBtn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}

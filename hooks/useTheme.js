@@ -1,13 +1,5 @@
 import { useState, useEffect } from 'react'
 
-export const NAV_LINKS = [
-  { href: '#competences', label: 'Skills' },
-  { href: '#experience',  label: 'Expérience' },
-  { href: '#certifications', label: 'Certs' },
-  { href: '#ai-chat',    label: 'AI Assistant' },
-  { href: '#contact',    label: 'Contact' },
-]
-
 export function useTheme() {
   const [theme, setTheme] = useState('dark')
 

@@ -25,10 +25,15 @@ const securityHeaders = [
 
 const nextConfig = {
   reactStrictMode: true,
+  i18n: {
+    locales: ['fr', 'en'],
+    defaultLocale: 'fr',
+  },
   experimental: {
     optimizePackageImports: ['framer-motion'],
   },
   async headers() {
+    if (process.env.NODE_ENV === 'development') return []
     return [
       {
         source: '/(.*)',

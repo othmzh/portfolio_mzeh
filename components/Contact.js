@@ -1,10 +1,16 @@
 import styles from '../styles/Contact.module.css'
 import { motion } from 'framer-motion'
-import contactData from '../data/contact.json'
+import { useTranslation } from '../hooks/useTranslation'
+import contactFr from '../data/fr/contact.fr.json'
+import contactEn from '../data/en/contact.en.json'
 
-const { intro, introSecond, links: LINKS } = contactData
+const contactByLocale = { fr: contactFr, en: contactEn }
 
 export default function Contact() {
+  const { t, locale } = useTranslation()
+  const contactData = contactByLocale[locale] ?? contactByLocale.fr
+  const { intro, introSecond, links: LINKS } = contactData
+
   return (
     <section id="contact" className={styles.section}>
       <div className="contact-grid">
@@ -14,8 +20,10 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
-          <div className={styles.label}>// entrer en contact</div>
-          <h2 className={styles.h2}>Travaillons<br />ensemble</h2>
+          <div className={styles.label}>{t('contact.label')}</div>
+          <h2 className={styles.h2}>{t('contact.heading').split('\n').map((line, i, arr) => (
+            <span key={i}>{line}{i < arr.length - 1 && <br />}</span>
+          ))}</h2>
           <p className={styles.intro}>{intro}</p>
           <p className={styles.introSecond}>{introSecond}</p>
         </motion.div>

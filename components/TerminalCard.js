@@ -1,14 +1,20 @@
-import heroData from '../data/hero.json'
+import heroFr from '../data/fr/hero.fr.json'
+import heroEn from '../data/en/hero.en.json'
+
+const heroData = { fr: heroFr, en: heroEn }
 
 // Texte extrait du terminal, lisible par les crawlers (visuellement masqué)
-export function TerminalSEOText() {
-  const t = heroData.terminal
+export function TerminalSEOText({ locale = 'fr', translations = {} }) {
+  const d = heroData[locale] ?? heroData.fr
+  const term = d.terminal
+  const t = (key) => translations[key] ?? key
+
   return (
     <div aria-hidden="false" style={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0,0,0,0)', whiteSpace: 'nowrap' }}>
-      <p>{t.name} — {t.role}. {t.experience} ans d'expérience. Équipe de {t.team_size} ingénieurs. Localisation : {t.location}. Statut : {t.status}.</p>
-      <p>Management : {t.management.join(', ')}.</p>
-      <p>Compétences IA : {t.ai_skills.join(', ')}.</p>
-      <p>Stack technique : {t.tech.join(', ')}.</p>
+      <p>{term.name} — {term.role}. {term.experience} {t('terminal.seo.intro')}. {t('terminal.seo.team')} {term.team_size} {t('terminal.seo.engineers')}. {t('terminal.seo.location')} : {term.location}. {t('terminal.seo.status')} : {term.status}.</p>
+      <p>{t('terminal.seo.management')} : {term.management.join(', ')}.</p>
+      <p>{t('terminal.seo.aiSkills')} : {term.ai_skills.join(', ')}.</p>
+      <p>{t('terminal.seo.tech')} : {term.tech.join(', ')}.</p>
     </div>
   )
 }
@@ -18,41 +24,47 @@ const c = {
   num: '#f97316', bool: '#a78bfa', bracket: '#8896a6',
 }
 
-const t = heroData.terminal
-
 function chunk(arr, size) {
   const out = []
   for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size))
   return out
 }
 
-export const LINES = [
-  { t: 'comment', text: `// ${t.name} — profile` },
-  { t: 'bracket', text: '{' },
-  { t: 'kv', key: '"name"',       val: `"${t.name}"`,   vt: 'str' },
-  { t: 'kv', key: '"role"',       val: `"${t.role}"`,   vt: 'str' },
-  { t: 'kv', key: '"experience"', val: String(t.experience), vt: 'num' },
-  { t: 'kv', key: '"team_size"',  val: String(t.team_size),  vt: 'num' },
-  { t: 'kv', key: '"ai_powered"', val: String(t.ai_powered), vt: 'bool' },
-  { t: 'kv', key: '"location"',   val: `"${t.location}"`,    vt: 'str' },
-  { t: 'kv', key: '"status"',     val: `"${t.status}"`,      vt: 'str', comma: false },
-  { t: 'blank' },
-  { t: 'comment', text: '// Management & Delivery' },
-  { t: 'arrOpen', key: '"management"' },
-  ...chunk(t.management, 2).map(items => ({ t: 'items', items: items.map(s => `"${s}"`) })),
-  { t: 'arrClose', last: false },
-  { t: 'blank' },
-  { t: 'comment', text: '// IA Générative' },
-  { t: 'arrOpen', key: '"ai_skills"' },
-  ...chunk(t.ai_skills, 2).map(items => ({ t: 'items', items: items.map(s => `"${s}"`) })),
-  { t: 'arrClose', last: false },
-  { t: 'blank' },
-  { t: 'comment', text: '// Stack Technique' },
-  { t: 'arrOpen', key: '"tech"' },
-  ...chunk(t.tech, 3).map(items => ({ t: 'items', items: items.map(s => `"${s}"`) })),
-  { t: 'arrClose', last: true },
-  { t: 'end' },
-]
+export function makeLines(terminalData, translations = {}) {
+  const term = terminalData
+  const t = (key) => translations[key] ?? key
+
+  return [
+    { t: 'comment', text: `// ${term.name} — profile` },
+    { t: 'bracket', text: '{' },
+    { t: 'kv', key: '"name"',       val: `"${term.name}"`,   vt: 'str' },
+    { t: 'kv', key: '"role"',       val: `"${term.role}"`,   vt: 'str' },
+    { t: 'kv', key: '"experience"', val: String(term.experience), vt: 'num' },
+    { t: 'kv', key: '"team_size"',  val: String(term.team_size),  vt: 'num' },
+    { t: 'kv', key: '"ai_powered"', val: String(term.ai_powered), vt: 'bool' },
+    { t: 'kv', key: '"location"',   val: `"${term.location}"`,    vt: 'str' },
+    { t: 'kv', key: '"status"',     val: `"${term.status}"`,      vt: 'str', comma: false },
+    { t: 'blank' },
+    { t: 'comment', text: t('terminal.comment.management') },
+    { t: 'arrOpen', key: '"management"' },
+    ...chunk(term.management, 2).map(items => ({ t: 'items', items: items.map(s => `"${s}"`) })),
+    { t: 'arrClose', last: false },
+    { t: 'blank' },
+    { t: 'comment', text: t('terminal.comment.ai') },
+    { t: 'arrOpen', key: '"ai_skills"' },
+    ...chunk(term.ai_skills, 2).map(items => ({ t: 'items', items: items.map(s => `"${s}"`) })),
+    { t: 'arrClose', last: false },
+    { t: 'blank' },
+    { t: 'comment', text: t('terminal.comment.tech') },
+    { t: 'arrOpen', key: '"tech"' },
+    ...chunk(term.tech, 3).map(items => ({ t: 'items', items: items.map(s => `"${s}"`) })),
+    { t: 'arrClose', last: true },
+    { t: 'end' },
+  ]
+}
+
+// Keep LINES export for backward compatibility — will use FR by default
+export const LINES = makeLines(heroFr.terminal)
 
 export function Line({ l }) {
   if (l.t === 'blank') return <br />
