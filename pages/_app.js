@@ -3,6 +3,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Space_Grotesk, Space_Mono } from 'next/font/google'
 import ErrorBoundary from '../components/ErrorBoundary'
+import WhatsAppButton from '../components/WhatsAppButton'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -28,6 +29,7 @@ export default function App({ Component, pageProps }) {
         }
       `}</style>
       <ErrorBoundary><Component {...pageProps} /></ErrorBoundary>
+      <WhatsAppButton />
       <Analytics />
       <SpeedInsights />
     </>
