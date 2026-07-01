@@ -98,7 +98,7 @@ FORMATION :
         'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
       },
       body: JSON.stringify({
-        model: 'llama-3.3-70b-versatile',
+        model: 'qwen/qwen3-32b',
         max_tokens: 1000,
         messages: [
           { role: 'system', content: PROFILE },
