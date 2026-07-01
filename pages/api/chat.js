@@ -100,6 +100,7 @@ FORMATION :
       body: JSON.stringify({
         model: 'qwen/qwen3-32b',
         max_tokens: 1000,
+        reasoning_effort: 'none',
         messages: [
           { role: 'system', content: PROFILE },
           { role: 'user', content: message },
