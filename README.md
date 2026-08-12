@@ -13,7 +13,7 @@
 | **@vercel/analytics** | ^2.0.1 | Suivi des pages vues |
 | **@vercel/speed-insights** | ^2.0.0 | Mesure des Core Web Vitals |
 
-**Groq API** — modèle `llama-3.3-70b-versatile` (gratuit, clé sécurisée côté serveur)
+**Groq API** — modèle `openai/gpt-oss-120b` (gratuit, clé sécurisée côté serveur)
 
 ## Fonctionnalités
 
