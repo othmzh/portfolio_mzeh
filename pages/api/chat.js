@@ -85,7 +85,6 @@ CERTIFICATIONS :
 - Claude Code in Action
 - Agent Skills
 - Formation PMP — Project Management Professional (en cours)
-- Formation Lean Six Sigma (en cours)
 
 FORMATION :
 - Maîtrise en Informatique Appliquée`;
