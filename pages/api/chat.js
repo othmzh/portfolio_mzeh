@@ -100,7 +100,7 @@ FORMATION :
       body: JSON.stringify({
         model: 'openai/gpt-oss-120b',
         max_tokens: 1000,
-        reasoning_effort: 'none',
+        reasoning_effort: 'low',
         messages: [
           { role: 'system', content: PROFILE },
           { role: 'user', content: message },
