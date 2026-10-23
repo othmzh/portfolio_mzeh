@@ -7,8 +7,8 @@ import casesEn from '../data/en/case-studies.en.json'
 
 const casesByLocale = { fr: casesFr, en: casesEn }
 const labels = {
-  fr: { section: 'Études de cas', context: 'Contexte', action: 'Action', result: 'Résultat' },
-  en: { section: 'Case studies', context: 'Context', action: 'Action', result: 'Result' },
+  fr: { section: 'Études de cas', context: 'Contexte', action: 'Action', result: 'Résultat', link: 'Voir le projet ↗' },
+  en: { section: 'Case studies', context: 'Context', action: 'Action', result: 'Result', link: 'View project ↗' },
 }
 
 export default function CaseStudies() {
@@ -44,6 +44,11 @@ export default function CaseStudies() {
                 <span className={styles.itemLabel}>{copy.result}</span>
                 <p>{item.result}</p>
               </div>
+              {item.url && (
+                <a href={item.url} target="_blank" rel="noreferrer" className={styles.projectLink}>
+                  {copy.link}
+                </a>
+              )}
             </motion.article>
           ))}
         </div>

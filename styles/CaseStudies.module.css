@@ -59,6 +59,19 @@
   line-height: 1.7;
 }
 
+.projectLink {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.projectLink:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 600px) {
   .section {
     padding: 16px 5vw 72px;

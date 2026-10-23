@@ -87,7 +87,7 @@ CERTIFICATIONS :
 - Formation PMP — Project Management Professional (en cours)
 
 FORMATION :
-- Maîtrise en Informatique Appliquée — FSJEGJ, Université de Jendouba (2004–2008)`;
+- Maîtrise en Informatique Appliquée — FSJEGJ (2004–2008)`;
 
   try {
     const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {

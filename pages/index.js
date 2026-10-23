@@ -77,7 +77,7 @@ export default function Home() {
             },
             "alumniOf": {
               "@type": "EducationalOrganization",
-              "name": "University of Jendouba"
+              "name": "Faculty of Legal, Economic and Management Sciences of Jendouba"
             },
             "hasOccupation": {
               "@type": "Occupation",

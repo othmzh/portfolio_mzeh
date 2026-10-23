@@ -1,18 +1,21 @@
 [
   {
     "title": "Adoption de l’IA dans les revues de code",
+    "url": "https://www.witik.io/",
     "context": "Chez Witik, l’équipe delivery de 10 personnes (6 développeurs, 2 QA, 1 PO et moi comme Tech Lead Delivery) contribue à une plateforme SaaS B2B utilisée par plus de 20 000 utilisateurs et 100 clients.",
     "action": "J’ai intégré Claude Code aux revues assistées, structuré les prompts et mis en place des checklists qualité automatisées.",
     "result": "Les workflows IA ont réduit d’environ 50 % la charge de certaines tâches récurrentes de revue de code, d’analyse d’impact et de documentation technique. Ce chiffre concerne la charge de ces activités, pas la durée de chaque review."
   },
   {
     "title": "Pilotage du delivery chez Witik",
+    "url": "https://www.witik.io/",
     "context": "L’équipe delivery de 10 personnes devait coordonner roadmap technique, releases et priorités métier sur une plateforme comptant 100+ clients.",
     "action": "J’ai piloté le backlog et les releases via Azure DevOps, coordonné métier/produit/QA/développement et suivi les risques ainsi que plus de 2 000 tickets.",
     "result": "Le delivery soutenait un rythme moyen d’environ 2 mises en production par mois sur une plateforme utilisée par plus de 20 000 personnes et 100+ clients. Aucune mesure antérieure comparable n’est disponible."
   },
   {
     "title": "Projets multi-clients et SRM chez Sofia Holding",
+    "url": "https://sourcing.sofia-network.com/session/signin",
     "context": "Les projets critiques multi-clients comprenaient une plateforme Supplier Management (SRM) pour faciliter la communication et l’intégration des fournisseurs de OneTech.",
     "action": "J’ai piloté l’architecture, le découpage et l’estimation des tâches, les plannings, les cycles d’intégration et de non-régression, puis la validation des livraisons.",
     "result": "Le livrable documenté est une plateforme Supplier Management / SRM destinée à faciliter les échanges entre OneTech et ses fournisseurs et à améliorer leur intégration."
