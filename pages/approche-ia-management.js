@@ -5,6 +5,8 @@ import styles from '../styles/Approach.module.css'
 const COPY = {
   fr: {
     title: "IA et management d'ingénierie : une approche ancrée dans le travail d'équipe",
+    seoTitle: "IA et management d’ingénierie | Othmen Mzeh",
+    seoDescription: "Mon approche de l’IA en ingénierie : pratiques d’équipe, revues de code, qualité logicielle et accompagnement des développeurs.",
     intro: "L'IA générative a de la valeur lorsqu'elle aide une équipe à mieux livrer. Mon approche part des pratiques d'ingénierie et garde le jugement, la qualité et la progression des personnes au centre.",
     sections: [
       ["Partir du workflow réel", "Je commence par les étapes où l'équipe perd du temps ou rencontre des frictions : revue de code, documentation, tâches répétitives de contrôle qualité. L'outil vient ensuite; le besoin et le contexte de l'équipe guident son usage."],
@@ -17,6 +19,8 @@ const COPY = {
   },
   en: {
     title: "AI and engineering management: grounded in how teams work",
+    seoTitle: "AI & Engineering Management | Othmen Mzeh",
+    seoDescription: "My approach to AI in engineering: team practices, code reviews, software quality and developer growth.",
     intro: "Generative AI is valuable when it helps a team deliver better. My approach starts with engineering practices and keeps human judgment, quality and people development at the center.",
     sections: [
       ["Start with the real workflow", "I begin with the steps where the team loses time or faces friction: code review, documentation and repetitive quality checks. The tool comes second; the team's needs and context guide how it is used."],
@@ -33,12 +37,33 @@ export default function AIManagementApproach() {
   const { locale } = useTranslation()
   const copy = COPY[locale] ?? COPY.fr
   const home = locale === 'en' ? '/en' : '/'
+  const canonicalUrl = `https://omzeh.tn${locale === 'en' ? '/en' : ''}/approche-ia-management`
+  const alternateFr = 'https://omzeh.tn/approche-ia-management'
+  const alternateEn = 'https://omzeh.tn/en/approche-ia-management'
 
   return (
     <>
       <Head>
-        <title>{copy.title} | Othmen Mzeh</title>
-        <meta name="description" content={copy.intro} />
+        <title>{copy.seoTitle}</title>
+        <meta name="description" content={copy.seoDescription} />
+        <link rel="canonical" href={canonicalUrl} />
+        <link rel="alternate" hrefLang="fr" href={alternateFr} />
+        <link rel="alternate" hrefLang="en" href={alternateEn} />
+        <link rel="alternate" hrefLang="x-default" href={alternateFr} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:title" content={copy.seoTitle} />
+        <meta property="og:description" content={copy.seoDescription} />
+        <meta property="og:image" content="https://omzeh.tn/api/og" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:locale" content={locale === 'en' ? 'en_US' : 'fr_FR'} />
+        <meta property="og:site_name" content="Othmen Mzeh" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={copy.seoTitle} />
+        <meta name="twitter:description" content={copy.seoDescription} />
+        <meta name="twitter:image" content="https://omzeh.tn/api/og" />
       </Head>
       <main className={styles.page}>
         <article className={styles.article}>

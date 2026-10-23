@@ -50,15 +50,15 @@ export default function AIChat() {
         <h2 className={styles.h2}>{t('chat.heading')}</h2>
         <p className={styles.sub}>{t('chat.sub')}</p>
 
-        {/* FAQ statique indexable par Google — visuellement masquée */}
-        <div style={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0,0,0,0)', whiteSpace: 'nowrap' }} aria-hidden="false">
+        <div className={styles.faqList} itemScope itemType="https://schema.org/FAQPage">
+          <h3 className={styles.faqHeading}>{t('chat.faq.heading')}</h3>
           {FAQ.map((item, i) => (
-            <div key={i} itemScope itemType="https://schema.org/Question">
-              <h3 itemProp="name">{item.q}</h3>
-              <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
+            <details key={i} className={styles.faqItem} itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+              <summary itemProp="name">{item.q}</summary>
+              <div className={styles.faqAnswer} itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
                 <p itemProp="text">{item.a}</p>
               </div>
-            </div>
+            </details>
           ))}
         </div>
 

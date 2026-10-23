@@ -23,7 +23,6 @@ export default function Home() {
       <Head>
         <title>{t('meta.title')}</title>
         <meta name="description" content={t('meta.description')} />
-        <meta name="keywords" content="Engineering Manager, Technical Delivery Manager, AI, Claude Code, Agile, Scrum, Tunisia, Remote, Symfony, Angular, Azure DevOps" />
         <meta name="author" content="Othmen Mzeh" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonicalUrl} />

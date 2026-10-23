@@ -30,20 +30,20 @@ export default function Footer() {
         </div>
 
         {/* Nav */}
-        <div className={styles.col}>
-          <div className={styles.colTitle}>{t('footer.nav.label')}</div>
-          <ul className={styles.list}>
+        <nav className={`${styles.col} ${styles.navCol}`} aria-label={t('footer.nav.label')}>
+          <h2 className={styles.colTitle}>{t('footer.nav.label')}</h2>
+          <ul className={`${styles.list} ${styles.navList}`}>
             {NAV.map(l => (
               <li key={l.href}>
                 <a href={l.href} className={styles.link}>{l.label}</a>
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
 
         {/* Contact */}
-        <div className={styles.col}>
-          <div className={styles.colTitle}>{t('footer.contact.label')}</div>
+        <div className={`${styles.col} ${styles.contactCol}`}>
+          <h2 className={styles.colTitle}>{t('footer.contact.label')}</h2>
           <ul className={styles.list}>
             {SOCIAL.map(l => (
               <li key={l.label}>

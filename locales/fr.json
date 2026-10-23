@@ -51,6 +51,7 @@
   "chat.suggestion.2": "Comment utilise-t-il Claude Code ?",
   "chat.suggestion.3": "Ses certifications ?",
   "chat.faq.0.q": "Quelles sont les compétences en management d'Othmen Mzeh ?",
+  "chat.faq.heading": "Questions fréquentes",
   "chat.faq.0.a": "Agile/Scrum, Azure DevOps, Release Management, Leadership d'équipes techniques, mentoring et gestion du delivery end-to-end.",
   "chat.faq.1.q": "Comment Othmen Mzeh intègre-t-il l'IA dans son travail ?",
   "chat.faq.1.a": "Il utilise Claude Code pour les revues de code assistées, crée des prompts structurés et des checklists qualité automatisées. Ces workflows ont réduit d'environ 50 % la charge de certaines activités récurrentes.",
