@@ -17,6 +17,7 @@ export default function Home() {
 
   const canonicalBase = 'https://omzeh.tn'
   const canonicalUrl = locale === 'fr' ? canonicalBase : `${canonicalBase}/${locale}`
+  const socialImageUrl = locale === 'en' ? `${canonicalBase}/api/og?locale=en` : `${canonicalBase}/api/og`
 
   return (
     <>
@@ -38,7 +39,7 @@ export default function Home() {
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:title" content={t('meta.title')} />
         <meta property="og:description" content={t('meta.description')} />
-        <meta property="og:image" content="https://omzeh.tn/api/og" />
+        <meta property="og:image" content={socialImageUrl} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:type" content="image/png" />
@@ -51,7 +52,7 @@ export default function Home() {
         <meta name="twitter:creator" content="@othmen_mzeh" />
         <meta name="twitter:title" content={t('meta.title')} />
         <meta name="twitter:description" content={t('meta.twitterDescription')} />
-        <meta name="twitter:image" content="https://omzeh.tn/api/og" />
+        <meta name="twitter:image" content={socialImageUrl} />
 
         {/* Author & performance hints */}
         <link rel="author" href="https://omzeh.tn" />
@@ -74,10 +75,6 @@ export default function Home() {
               "@type": "PostalAddress",
               "addressCountry": "TN",
               "addressLocality": locale === 'en' ? "Tunisia" : "Tunisie"
-            },
-            "alumniOf": {
-              "@type": "EducationalOrganization",
-              "name": "Faculty of Legal, Economic and Management Sciences of Jendouba"
             },
             "hasOccupation": {
               "@type": "Occupation",
@@ -132,14 +129,6 @@ export default function Home() {
               "@type": "Person",
               "name": "Othmen Mzeh"
             },
-            "potentialAction": {
-              "@type": "SearchAction",
-              "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": "https://omzeh.tn/?q={search_term_string}"
-              },
-              "query-input": "required name=search_term_string"
-            }
           })}}
         />
       </Head>

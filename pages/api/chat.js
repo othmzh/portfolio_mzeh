@@ -35,7 +35,7 @@ IDENTITÉ :
 - LinkedIn : linkedin.com/in/othmen-mzeh
 
 RÉSUMÉ :
-Plus de 16 ans d'expérience dans le pilotage de projets logiciels complexes, la gestion d'équipes techniques et le delivery agile. Profil hybride rare : management humain + expertise technique + intégration concrète de l'IA générative dans les workflows engineering. Capable de parler aussi bien à un CTO qu'à un développeur junior.
+Plus de 16 ans d'expérience professionnelle en informatique, du développement logiciel au pilotage d'équipes techniques et au delivery agile. Profil hybride rare : management humain + expertise technique + intégration concrète de l'IA générative dans les workflows engineering. Capable de parler aussi bien à un CTO qu'à un développeur junior.
 
 EXPÉRIENCES PROFESSIONNELLES :
 

@@ -11,11 +11,12 @@
     "url": "https://www.witik.io/en/",
     "context": "The 10-person delivery team had to coordinate the technical roadmap, releases and business priorities for a platform with 100+ clients.",
     "action": "I managed the backlog and releases through Azure DevOps, coordinated business/product/QA/development, and tracked risks and 2,000+ tickets.",
-    "result": "Delivery sustained roughly 2 production deployments per month on a platform serving 20,000+ users and 100+ clients. No comparable prior baseline is available."
+    "result": "Delivery sustained roughly 2 production deployments per month on a platform serving 20,000+ users and 100+ clients."
   },
   {
     "title": "Multi-client projects and SRM at Sofia Holding",
-    "url": "https://sourcing.sofia-network.com/session/signin",
+    "url": "https://sofia-technologies.com/wp-content/uploads/2022/11/PFE-Book-2023-v2-sofiatech_compressed-Final.pdf",
+    "linkLabel": "View SRM project reference ↗",
     "context": "Critical multi-client projects included a Supplier Management (SRM) platform to improve communication and supplier integration for OneTech.",
     "action": "I led architecture, task breakdown and estimation, scheduling, integration and regression test cycles, and delivery validation.",
     "result": "The documented deliverable is a Supplier Management / SRM platform designed to facilitate communication between OneTech and its suppliers and improve supplier integration."

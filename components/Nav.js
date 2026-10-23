@@ -24,7 +24,7 @@ export default function Nav() {
   return (
     <>
       <nav className={styles.nav}>
-        <a href="#" className={styles.brand}>othmen.mzeh</a>
+        <a href="#hero" className={styles.brand}>othmen.mzeh</a>
 
         {/* Desktop links */}
         <ul className={`${styles.links} desktop-only`}>

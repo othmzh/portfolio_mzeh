@@ -61,5 +61,13 @@
       "Design of a skills management application"
     ],
     "ai": false
+  },
+  {
+    "period": "Oct. 2009 — Mar. 2011",
+    "company": "Centre Z",
+    "loc": "Tunisia",
+    "title": "Computer Science Trainer",
+    "bullets": ["Delivered computer science training"],
+    "ai": false
   }
 ]

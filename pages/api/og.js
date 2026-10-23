@@ -4,7 +4,12 @@ export const config = {
   runtime: 'edge',
 }
 
-export default function handler() {
+export default function handler(request) {
+  const locale = new URL(request.url).searchParams.get('locale') === 'en' ? 'en' : 'fr'
+  const tags = locale === 'en'
+    ? ["16+ years' experience", 'Tunisia · Remote', 'Generative AI']
+    : ["16+ ans d'expérience", 'Tunisie · Remote', 'IA Générative']
+
   return new ImageResponse(
     (
       <div
@@ -70,7 +75,7 @@ export default function handler() {
 
         {/* Tags */}
         <div style={{ display: 'flex', gap: '16px' }}>
-          {['16+ ans d\'expérience', 'Tunisie · Remote', 'IA Générative'].map((tag) => (
+          {tags.map((tag) => (
             <div
               key={tag}
               style={{

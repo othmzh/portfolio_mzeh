@@ -11,11 +11,12 @@
     "url": "https://www.witik.io/",
     "context": "L’équipe delivery de 10 personnes devait coordonner roadmap technique, releases et priorités métier sur une plateforme comptant 100+ clients.",
     "action": "J’ai piloté le backlog et les releases via Azure DevOps, coordonné métier/produit/QA/développement et suivi les risques ainsi que plus de 2 000 tickets.",
-    "result": "Le delivery soutenait un rythme moyen d’environ 2 mises en production par mois sur une plateforme utilisée par plus de 20 000 personnes et 100+ clients. Aucune mesure antérieure comparable n’est disponible."
+    "result": "Le delivery soutenait un rythme moyen d’environ 2 mises en production par mois sur une plateforme utilisée par plus de 20 000 personnes et 100+ clients."
   },
   {
     "title": "Projets multi-clients et SRM chez Sofia Holding",
-    "url": "https://sourcing.sofia-network.com/session/signin",
+    "url": "https://sofia-technologies.com/wp-content/uploads/2022/11/PFE-Book-2023-v2-sofiatech_compressed-Final.pdf",
+    "linkLabel": "Voir la référence SRM ↗",
     "context": "Les projets critiques multi-clients comprenaient une plateforme Supplier Management (SRM) pour faciliter la communication et l’intégration des fournisseurs de OneTech.",
     "action": "J’ai piloté l’architecture, le découpage et l’estimation des tâches, les plannings, les cycles d’intégration et de non-régression, puis la validation des livraisons.",
     "result": "Le livrable documenté est une plateforme Supplier Management / SRM destinée à faciliter les échanges entre OneTech et ses fournisseurs et à améliorer leur intégration."

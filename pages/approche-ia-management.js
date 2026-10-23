@@ -38,6 +38,7 @@ export default function AIManagementApproach() {
   const copy = COPY[locale] ?? COPY.fr
   const home = locale === 'en' ? '/en' : '/'
   const canonicalUrl = `https://omzeh.tn${locale === 'en' ? '/en' : ''}/approche-ia-management`
+  const socialImageUrl = `https://omzeh.tn/api/og${locale === 'en' ? '?locale=en' : ''}`
   const alternateFr = 'https://omzeh.tn/approche-ia-management'
   const alternateEn = 'https://omzeh.tn/en/approche-ia-management'
 
@@ -54,7 +55,7 @@ export default function AIManagementApproach() {
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:title" content={copy.seoTitle} />
         <meta property="og:description" content={copy.seoDescription} />
-        <meta property="og:image" content="https://omzeh.tn/api/og" />
+        <meta property="og:image" content={socialImageUrl} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:type" content="image/png" />
@@ -63,7 +64,7 @@ export default function AIManagementApproach() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={copy.seoTitle} />
         <meta name="twitter:description" content={copy.seoDescription} />
-        <meta name="twitter:image" content="https://omzeh.tn/api/og" />
+        <meta name="twitter:image" content={socialImageUrl} />
       </Head>
       <main className={styles.page}>
         <article className={styles.article}>

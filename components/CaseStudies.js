@@ -46,7 +46,7 @@ export default function CaseStudies() {
               </div>
               {item.url && (
                 <a href={item.url} target="_blank" rel="noreferrer" className={styles.projectLink}>
-                  {copy.link}
+                  {item.linkLabel || copy.link}
                 </a>
               )}
             </motion.article>

@@ -61,5 +61,13 @@
       "Conception d'une application de gestion des compétences"
     ],
     "ai": false
+  },
+  {
+    "period": "Oct. 2009 — Mars 2011",
+    "company": "Centre Z",
+    "loc": "Tunisie",
+    "title": "Formateur en informatique",
+    "bullets": ["Animation de formations en informatique"],
+    "ai": false
   }
 ]

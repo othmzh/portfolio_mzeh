@@ -10,7 +10,7 @@
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.4fr 1.4fr 0.7fr;
+  grid-template-columns: 1fr 0.8fr 1.35fr;
   gap: 2rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid var(--border);
@@ -45,6 +45,23 @@
   margin-top: 0.25rem;
 }
 
+.availability {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 0.2rem;
+  color: var(--text2);
+  font-size: 12px;
+}
+
+.availabilityDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--glow-a);
+}
+
 .col {
   display: flex;
   flex-direction: column;
@@ -69,9 +86,15 @@
 
 .navList {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 1.25rem;
+  grid-template-columns: 1fr;
+  column-gap: 0;
   row-gap: 0.55rem;
+}
+
+.contactList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem 1rem;
 }
 
 .link {
@@ -83,6 +106,14 @@
 
 .link:hover {
   color: var(--accent);
+}
+
+.copyLink {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .link:focus-visible,
@@ -109,6 +140,16 @@
   color: var(--text3);
 }
 
+.backToTop {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.backToTop:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 @media (max-width: 700px) {
   .inner {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -127,7 +168,8 @@
     grid-column: 1 / -1;
   }
 
-  .navList {
+  .navList,
+  .contactList {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 

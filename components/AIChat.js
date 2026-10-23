@@ -36,31 +36,12 @@ export default function AIChat() {
     t('chat.suggestion.3'),
   ]
 
-  const FAQ = [
-    { q: t('chat.faq.0.q'), a: t('chat.faq.0.a') },
-    { q: t('chat.faq.1.q'), a: t('chat.faq.1.a') },
-    { q: t('chat.faq.2.q'), a: t('chat.faq.2.a') },
-    { q: t('chat.faq.3.q'), a: t('chat.faq.3.a') },
-  ]
-
   return (
     <section id="ai-chat" className={styles.section}>
       <div className={styles.container}>
         <div className={styles.label}>{t('chat.label')}</div>
         <h2 className={styles.h2}>{t('chat.heading')}</h2>
         <p className={styles.sub}>{t('chat.sub')}</p>
-
-        <div className={styles.faqList} itemScope itemType="https://schema.org/FAQPage">
-          <h3 className={styles.faqHeading}>{t('chat.faq.heading')}</h3>
-          {FAQ.map((item, i) => (
-            <details key={i} className={styles.faqItem} itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-              <summary itemProp="name">{item.q}</summary>
-              <div className={styles.faqAnswer} itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-                <p itemProp="text">{item.a}</p>
-              </div>
-            </details>
-          ))}
-        </div>
 
         <motion.div
           className={styles.wrapper}

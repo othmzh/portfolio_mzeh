@@ -1,7 +1,6 @@
 User-agent: *
 Allow: /
 Allow: /api/og
-Disallow: /admin
 Disallow: /api/admin-auth
 Disallow: /api/admin-save
 Disallow: /api/admin-upload

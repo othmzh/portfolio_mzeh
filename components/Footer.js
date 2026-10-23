@@ -1,20 +1,31 @@
+import { useState } from 'react'
 import styles from '../styles/Footer.module.css'
 import { useTranslation } from '../hooks/useTranslation'
+import contactFr from '../data/fr/contact.fr.json'
+import contactEn from '../data/en/contact.en.json'
 
-const SOCIAL = [
-  { href: 'https://linkedin.com/in/othmen-mzeh', label: 'LinkedIn', external: true },
-]
+const contactByLocale = { fr: contactFr, en: contactEn }
 
 export default function Footer() {
-  const { t } = useTranslation()
+  const { t, locale } = useTranslation()
+  const [copied, setCopied] = useState(false)
+  const copyrightYear = new Date().getFullYear()
+  const contactLinks = (contactByLocale[locale] ?? contactByLocale.fr).links
+  const email = contactLinks.find(link => link.label === 'Email')
+  const resume = contactLinks.find(link => link.href?.endsWith('.pdf'))
+  const article = contactLinks.find(link => link.href?.includes('approche-ia-management'))
+  const linkedin = contactLinks.find(link => link.href?.includes('linkedin.com'))
+  const phone = contactLinks.find(link => link.copyValue?.startsWith('+'))
+  const whatsapp = phone && {
+    label: t('footer.whatsapp'),
+    href: `https://wa.me/${phone.copyValue.replace(/\D/g, '')}`,
+    external: true,
+  }
+  const footerContacts = [email, resume, article, whatsapp, linkedin].filter(Boolean)
 
   const NAV = [
-    { href: '#competences', label: t('nav.links.skills') },
-    { href: '#experience', label: t('nav.links.experience') },
+    { href: '#hero', label: t('nav.links.home') },
     { href: '#case-studies', label: t('nav.links.caseStudies') },
-    { href: '#certifications', label: t('nav.links.certifications') },
-    { href: '#testimonials', label: t('nav.links.testimonials') },
-    { href: '#ai-chat', label: t('nav.links.chat') },
     { href: '#contact', label: t('nav.links.contact') },
   ]
 
@@ -24,9 +35,10 @@ export default function Footer() {
 
         {/* Brand */}
         <div className={styles.brand}>
-          <a href="#" className={styles.brandName}>othmen.mzeh</a>
+          <a href="#hero" className={styles.brandName}>othmen.mzeh</a>
           <p className={styles.brandDesc}>Engineering Manager & AI-Driven Leader</p>
-          <p className={styles.brandLoc}>📍 Tunisia — {t('footer.available')}</p>
+          <p className={styles.brandLoc}>📍 {t('footer.location')}</p>
+          <p className={styles.availability}><span className={styles.availabilityDot} />{t('footer.available')}</p>
         </div>
 
         {/* Nav */}
@@ -44,17 +56,36 @@ export default function Footer() {
         {/* Contact */}
         <div className={`${styles.col} ${styles.contactCol}`}>
           <h2 className={styles.colTitle}>{t('footer.contact.label')}</h2>
-          <ul className={styles.list}>
-            {SOCIAL.map(l => (
-              <li key={l.label}>
-                <a
-                  href={l.href}
-                  className={styles.link}
-                  target={l.external ? '_blank' : undefined}
-                  rel={l.external ? 'noreferrer' : undefined}
-                >
-                  {l.label}
-                </a>
+          <ul className={`${styles.list} ${styles.contactList}`}>
+            {footerContacts.map(link => (
+              <li key={link.label}>
+                {link.copyValue ? (
+                  <button
+                    type="button"
+                    className={`${styles.link} ${styles.copyLink}`}
+                    onClick={async () => {
+                      try {
+                        await navigator.clipboard.writeText(link.copyValue)
+                        setCopied(true)
+                        window.setTimeout(() => setCopied(false), 1800)
+                      } catch {
+                        setCopied(false)
+                      }
+                    }}
+                  >
+                    {link.label} · {copied ? t('contact.copied') : t('contact.copy')}
+                  </button>
+                ) : (
+                  <a
+                    href={link.href === '/approche-ia-management' && locale === 'en' ? `/en${link.href}` : link.href}
+                    className={styles.link}
+                    target={link.external || link.href.startsWith('http') ? '_blank' : undefined}
+                    rel={link.external || link.href.startsWith('http') ? 'noreferrer' : undefined}
+                    download={link.href.endsWith('.pdf') ? true : undefined}
+                  >
+                    {link.label}
+                  </a>
+                )}
               </li>
             ))}
           </ul>
@@ -64,8 +95,9 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className={styles.bottom}>
-        <span>© {new Date().getFullYear()} Othmen Mzeh — {t('footer.copyright')}</span>
+        <span>© <time dateTime={String(copyrightYear)}>{copyrightYear}</time> Othmen Mzeh — {t('footer.copyright')}</span>
         <span className={styles.built}>{t('footer.built')}</span>
+        <a className={styles.backToTop} href="#hero">{t('footer.backToTop')}</a>
       </div>
     </footer>
   )
