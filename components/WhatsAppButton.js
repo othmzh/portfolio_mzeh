@@ -23,7 +23,7 @@ export default function WhatsAppButton() {
         target="_blank"
         rel="noreferrer"
         aria-label={locale === 'en' ? 'Chat on WhatsApp' : 'Contacter sur WhatsApp'}
-        className={`${styles.actionButton} ${styles.whatsapp}`}
+        className={styles.actionButton}
       >
         <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M16 2C8.268 2 2 8.268 2 16c0 2.492.676 4.826 1.854 6.83L2 30l7.374-1.832A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z" fill="white"/>
