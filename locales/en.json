@@ -41,7 +41,7 @@
   "chat.send": "Send ↗",
   "chat.you": "You",
   "chat.aiName": "Othmen's Assistant",
-  "chat.aiStatus": "● Online — Powered by Claude",
+  "chat.aiStatus": "● Online",
   "chat.welcome": "Hello! I'm Othmen Mzeh's AI assistant. I know his career, skills and experience in detail. What would you like to know?",
   "chat.errorTimeout": "The response took too long. Please try again.",
   "chat.errorGeneric": "An error occurred. Please try again.",
@@ -68,7 +68,7 @@
   "footer.nav.label": "// navigation",
   "footer.contact.label": "// contact",
   "footer.copyright": "All rights reserved",
-  "footer.built": "Built with Next.js & Claude Code ✦",
+  "footer.built": "Crafted with care · AI-assisted ✦",
 
   "404.title": "404 — Page not found · Othmen Mzeh",
   "404.comment": "// 404 — Page not found",

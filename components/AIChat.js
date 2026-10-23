@@ -17,6 +17,8 @@ function makeMdComponents(s) {
     h2: ({ children }) => <h2 className={s.mdH2}>{children}</h2>,
     h3: ({ children }) => <h3 className={s.mdH3}>{children}</h3>,
     code: ({ children }) => <code className={s.mdCode}>{children}</code>,
+    pre: ({ children }) => <pre className={s.mdPre}>{children}</pre>,
+    a: ({ children, href }) => <a className={s.mdLink} href={href} target="_blank" rel="noreferrer">{children}</a>,
     blockquote: ({ children }) => <blockquote className={s.mdBlockquote}>{children}</blockquote>,
     hr: () => <hr className={s.mdHr} />,
   }
