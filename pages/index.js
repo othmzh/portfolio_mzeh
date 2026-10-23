@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Nav from '../components/Nav'
+import SectionBubbles from '../components/SectionBubbles'
 import Hero from '../components/Hero'
 import Skills from '../components/Skills'
 import Experience from '../components/Experience'
@@ -145,6 +146,7 @@ export default function Home() {
       </Head>
 
       <Nav />
+      <SectionBubbles />
       <main>
         <Hero />
         <Skills />

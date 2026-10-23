@@ -11,6 +11,8 @@
   "nav.links.certifications": "Certs",
   "nav.links.chat": "AI Assistant",
   "nav.links.contact": "Contact",
+  "nav.links.home": "Accueil",
+  "nav.sectionNavigation": "Navigation entre les sections",
   "nav.lang.switch": "Switch to English",
 
   "hero.cta.journey": "Voir le parcours →",
