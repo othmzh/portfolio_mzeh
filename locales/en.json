@@ -7,6 +7,7 @@
   "nav.links.skills": "Skills",
   "nav.links.experience": "Experience",
   "nav.links.caseStudies": "Case studies",
+  "nav.links.testimonials": "Recommendations",
   "nav.links.certifications": "Certs",
   "nav.links.chat": "AI Assistant",
   "nav.links.contact": "Contact",
@@ -29,7 +30,7 @@
   "certifications.pmpStatus": "PMP — IN PROGRESS",
   "testimonials.label": "// LinkedIn recommendations",
   "testimonials.heading": "What colleagues say",
-  "certifications.footer": "// Education — Master's in Applied Computer Science",
+  "certifications.footer": "// Education — Master's in Applied Computer Science, Faculty of Legal, Economic and Management Sciences of Jendouba (FSJEGJ), University of Jendouba (2004–2008)",
 
   "chat.label": "// artificial intelligence",
   "chat.heading": "Ask a question about my profile",

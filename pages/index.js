@@ -77,7 +77,7 @@ export default function Home() {
             },
             "alumniOf": {
               "@type": "EducationalOrganization",
-              "name": locale === 'en' ? "Master's in Applied Computer Science" : "Maîtrise en Informatique Appliquée"
+              "name": "University of Jendouba"
             },
             "hasOccupation": {
               "@type": "Occupation",
@@ -159,4 +159,11 @@ export default function Home() {
       <Footer />
     </>
   )
+}
+
+export async function getStaticProps() {
+  return {
+    props: {},
+    revalidate: 60,
+  }
 }

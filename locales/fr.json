@@ -7,6 +7,7 @@
   "nav.links.skills": "Skills",
   "nav.links.experience": "Expérience",
   "nav.links.caseStudies": "Études de cas",
+  "nav.links.testimonials": "Recommandations",
   "nav.links.certifications": "Certs",
   "nav.links.chat": "AI Assistant",
   "nav.links.contact": "Contact",
@@ -29,7 +30,7 @@
   "certifications.pmpStatus": "PMP — EN COURS",
   "testimonials.label": "// recommandations LinkedIn",
   "testimonials.heading": "Ils ont travaillé avec moi",
-  "certifications.footer": "// Formation — Maîtrise en Informatique Appliquée",
+  "certifications.footer": "// Formation — Maîtrise en Informatique Appliquée, Faculté des Sciences Juridiques, Économiques et de Gestion de Jendouba (FSJEGJ), Université de Jendouba (2004–2008)",
 
   "chat.label": "// intelligence artificielle",
   "chat.heading": "Poser une question sur mon profil",

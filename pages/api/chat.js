@@ -42,7 +42,7 @@ EXPÉRIENCES PROFESSIONNELLES :
    - Pilotage d'une équipe delivery de 10 personnes : 6 développeurs, 2 QA, 1 PO et Othmen comme Tech Lead Delivery — Agile/Scrum, vélocité, qualité et cohésion
    - Delivery end-to-end d'une plateforme SaaS B2B utilisée par 20 000+ utilisateurs et 100+ clients, avec environ 2 mises en production par mois
    - Suivi via Azure DevOps et supervision de plus de 2 000 tickets
-   - Trois pratiques IA (revue Claude Code, prompts structurés, checklists qualité) ; environ 50 % de charge en moins sur certaines activités récurrentes et cycles de review raccourcis
+   - Trois pratiques IA (revues assistées par Claude Code, prompts structurés, checklists qualité) ; environ 50 % de charge en moins sur certaines tâches récurrentes de revue de code, d'analyse d'impact et de documentation technique. La durée exacte des reviews n'est pas publiée
    - Recrutements techniques, onboarding et montée en compétences des ingénieurs
    - Mise en place de pratiques d'amélioration continue : retrospectives actionnables, standards de code, documentation vivante
 
@@ -87,7 +87,7 @@ CERTIFICATIONS :
 - Formation PMP — Project Management Professional (en cours)
 
 FORMATION :
-- Maîtrise en Informatique Appliquée`;
+- Maîtrise en Informatique Appliquée — FSJEGJ, Université de Jendouba (2004–2008)`;
 
   try {
     const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
