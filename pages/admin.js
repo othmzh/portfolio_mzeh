@@ -355,8 +355,8 @@ function CertificationsEditor({ locale }) {
     setDraft(JSON.parse(JSON.stringify(DATA.certifications[locale])))
   }, [locale])
 
-  const setCert = (i, val) => setDraft(d => d.map((c, j) => j === i ? val : c))
-  const addCert = () => setDraft(d => [...d, ''])
+  const setCertField = (i, field, val) => setDraft(d => d.map((c, j) => j === i ? { ...c, [field]: val } : c))
+  const addCert = () => setDraft(d => [...d, { name: '', issuer: '', date: '' }])
   const removeCert = i => setDraft(d => d.filter((_, j) => j !== i))
 
   const handleSave = async () => {
@@ -373,7 +373,11 @@ function CertificationsEditor({ locale }) {
       {draft.map((cert, i) => (
         <div key={i} style={s.row}>
           <span style={{ ...s.cardIdx, minWidth: 32 }}>{String(i + 1).padStart(2, '0')}</span>
-          <input style={s.input} value={cert} onChange={e => setCert(i, e.target.value)} />
+          <div style={{ ...s.grid2, flex: 1 }}>
+            <input style={s.input} aria-label="Certification" value={cert.name} onChange={e => setCertField(i, 'name', e.target.value)} placeholder="Certification" />
+            <input style={s.input} aria-label="Organisme" value={cert.issuer} onChange={e => setCertField(i, 'issuer', e.target.value)} placeholder="Organisme" />
+            <input style={s.input} aria-label="Date" value={cert.date || ''} onChange={e => setCertField(i, 'date', e.target.value)} placeholder="Date" />
+          </div>
           <button onClick={() => removeCert(i)} style={s.removeBtn}>✕</button>
         </div>
       ))}
@@ -432,9 +436,15 @@ function ContactEditor({ locale }) {
             <label style={s.label}>Sous-titre
               <input style={s.input} value={l.sub} onChange={e => setField(i, 'sub', e.target.value)} />
             </label>
-            <label style={s.label}>URL / href
-              <input style={s.input} value={l.href} onChange={e => setField(i, 'href', e.target.value)} />
-            </label>
+            {l.copyValue ? (
+              <label style={s.label}>Valeur à copier
+                <input style={s.input} value={l.copyValue} onChange={e => setField(i, 'copyValue', e.target.value)} />
+              </label>
+            ) : (
+              <label style={s.label}>URL / href
+                <input style={s.input} value={l.href} onChange={e => setField(i, 'href', e.target.value)} />
+              </label>
+            )}
           </div>
         </div>
       ))}

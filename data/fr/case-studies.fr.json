@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Adoption de l’IA dans les revues de code",
+    "context": "Chez Witik, l’équipe delivery de 10 personnes (6 développeurs, 2 QA, 1 PO et moi comme Tech Lead Delivery) contribue à une plateforme SaaS B2B utilisée par plus de 20 000 utilisateurs et 100 clients.",
+    "action": "J’ai intégré Claude Code aux revues assistées, structuré les prompts et mis en place des checklists qualité automatisées.",
+    "result": "Les 3 pratiques ont raccourci les cycles de review ; certaines activités récurrentes ont demandé environ 50 % de charge en moins. La qualité des livrables s’est également améliorée."
+  },
+  {
+    "title": "Pilotage du delivery chez Witik",
+    "context": "L’équipe delivery de 10 personnes devait coordonner roadmap technique, releases et priorités métier sur une plateforme comptant 100+ clients.",
+    "action": "J’ai piloté le backlog et les releases via Azure DevOps, coordonné métier/produit/QA/développement et suivi les risques ainsi que plus de 2 000 tickets.",
+    "result": "Le rythme moyen était d’environ 2 mises en production par mois pour une plateforme utilisée par plus de 20 000 personnes."
+  },
+  {
+    "title": "Projets multi-clients et SRM chez Sofia Holding",
+    "context": "Les projets critiques multi-clients comprenaient une plateforme Supplier Management (SRM) pour faciliter la communication et l’intégration des fournisseurs de OneTech.",
+    "action": "J’ai piloté l’architecture, le découpage et l’estimation des tâches, les plannings, les cycles d’intégration et de non-régression, puis la validation des livraisons.",
+    "result": "Les livraisons ont suivi un parcours en 3 étapes : tests d’intégration, non-régression et validation finale."
+  }
+]

@@ -47,17 +47,17 @@ export function makeLines(terminalData, translations = {}) {
     { t: 'blank' },
     { t: 'comment', text: t('terminal.comment.management') },
     { t: 'arrOpen', key: '"management"' },
-    ...chunk(term.management, 2).map(items => ({ t: 'items', items: items.map(s => `"${s}"`) })),
+    ...chunk(term.management, 2).map((items, i, chunks) => ({ t: 'items', items: items.map(s => `"${s}"`), comma: i < chunks.length - 1 })),
     { t: 'arrClose', last: false },
     { t: 'blank' },
     { t: 'comment', text: t('terminal.comment.ai') },
     { t: 'arrOpen', key: '"ai_skills"' },
-    ...chunk(term.ai_skills, 2).map(items => ({ t: 'items', items: items.map(s => `"${s}"`) })),
+    ...chunk(term.ai_skills, 2).map((items, i, chunks) => ({ t: 'items', items: items.map(s => `"${s}"`), comma: i < chunks.length - 1 })),
     { t: 'arrClose', last: false },
     { t: 'blank' },
     { t: 'comment', text: t('terminal.comment.tech') },
     { t: 'arrOpen', key: '"tech"' },
-    ...chunk(term.tech, 3).map(items => ({ t: 'items', items: items.map(s => `"${s}"`) })),
+    ...chunk(term.tech, 3).map((items, i, chunks) => ({ t: 'items', items: items.map(s => `"${s}"`), comma: i < chunks.length - 1 })),
     { t: 'arrClose', last: true },
     { t: 'end' },
   ]
@@ -96,6 +96,7 @@ export function Line({ l }) {
           {i < l.items.length - 1 && <span style={{ color: c.bracket }}>, </span>}
         </span>
       ))}
+      {l.comma && <span style={{ color: c.bracket }}>,</span>}
     </div>
   )
   if (l.t === 'arrClose') return <div>&nbsp;&nbsp;<span style={{ color: c.bracket }}>{l.last ? ']' : '],'}</span></div>

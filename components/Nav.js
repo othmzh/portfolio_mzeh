@@ -14,6 +14,7 @@ export default function Nav() {
   const NAV_LINKS = [
     { href: '#competences', label: t('nav.links.skills') },
     { href: '#experience',  label: t('nav.links.experience') },
+    { href: '#case-studies', label: t('nav.links.caseStudies') },
     { href: '#certifications', label: t('nav.links.certifications') },
     { href: '#ai-chat',    label: t('nav.links.chat') },
     { href: '#contact',    label: t('nav.links.contact') },

@@ -70,7 +70,7 @@ export default function handler() {
 
         {/* Tags */}
         <div style={{ display: 'flex', gap: '16px' }}>
-          {['15+ ans d\'expérience', 'Tunisie · Remote', 'IA Générative'].map((tag) => (
+          {['16+ ans d\'expérience', 'Tunisie · Remote', 'IA Générative'].map((tag) => (
             <div
               key={tag}
               style={{

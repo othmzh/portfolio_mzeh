@@ -6,6 +6,7 @@
   "nav.menu.close": "Close navigation menu",
   "nav.links.skills": "Skills",
   "nav.links.experience": "Experience",
+  "nav.links.caseStudies": "Case studies",
   "nav.links.certifications": "Certs",
   "nav.links.chat": "AI Assistant",
   "nav.links.contact": "Contact",
@@ -25,6 +26,9 @@
 
   "certifications.label": "// training & accreditations",
   "certifications.heading": "Certifications",
+  "certifications.pmpStatus": "PMP — IN PROGRESS",
+  "testimonials.label": "// LinkedIn recommendations",
+  "testimonials.heading": "What colleagues say",
   "certifications.footer": "// Education — Master's in Applied Computer Science",
 
   "chat.label": "// artificial intelligence",
@@ -46,7 +50,7 @@
   "chat.faq.0.q": "What are Othmen Mzeh's management skills?",
   "chat.faq.0.a": "Agile/Scrum, Azure DevOps, Release Management, technical team leadership, mentoring and end-to-end delivery management.",
   "chat.faq.1.q": "How does Othmen Mzeh integrate AI into his work?",
-  "chat.faq.1.a": "He uses Claude Code for assisted code reviews, creates structured prompts and automated quality checklists, reducing review cycles and improving deliverable quality.",
+  "chat.faq.1.a": "He uses Claude Code for assisted code reviews, structured prompts and automated quality checklists. These workflows reduced the workload of certain recurring activities by roughly 50%.",
   "chat.faq.2.q": "What is Othmen Mzeh's tech stack?",
   "chat.faq.2.a": "Backend: Symfony, PHP. Frontend: Angular, JavaScript. Platforms: Moodle. Tools: Git, Azure DevOps.",
   "chat.faq.3.q": "Is Othmen Mzeh available for remote work?",
@@ -54,6 +58,8 @@
 
   "contact.label": "// get in touch",
   "contact.heading": "Let's work\ntogether",
+  "contact.copy": "Copy",
+  "contact.copied": "Copied!",
 
   "footer.available": "Available remotely",
   "footer.nav.label": "// navigation",
@@ -69,16 +75,16 @@
   "404.back": "← Back to home",
 
   "meta.title": "Othmen Mzeh — Engineering Manager & AI-Driven Leader",
-  "meta.description": "Engineering Manager with 15+ years of experience leading technical teams, agile delivery and integrating generative AI. Based in Tunisia, available remotely.",
+  "meta.description": "Engineering Manager with 16+ years of experience leading technical teams, agile delivery and integrating generative AI. Based in Tunisia, available remotely.",
   "meta.ogLocale": "en_US",
-  "meta.twitterDescription": "Engineering Manager with 15+ years of experience leading technical teams, agile delivery and integrating generative AI.",
+  "meta.twitterDescription": "Engineering Manager with 16+ years of experience leading technical teams, agile delivery and integrating generative AI.",
 
   "terminal.comment.management": "// Management & Delivery",
   "terminal.comment.ai": "// Generative AI",
   "terminal.comment.tech": "// Tech Stack",
   "terminal.seo.intro": "years of experience",
-  "terminal.seo.team": "Team of",
-  "terminal.seo.engineers": "engineers",
+  "terminal.seo.team": "Delivery team of",
+  "terminal.seo.engineers": "people",
   "terminal.seo.location": "Location",
   "terminal.seo.status": "Status",
   "terminal.seo.management": "Management",

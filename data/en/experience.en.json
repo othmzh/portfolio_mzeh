@@ -3,11 +3,12 @@
     "period": "Sept. 2021 — Present",
     "company": "Witik",
     "loc": "Tunisia",
-    "title": "Engineering Manager & Technical Delivery Lead",
+    "title": "Engineering Manager & Tech Lead Delivery",
     "bullets": [
-      "Managing a team of 6 full-stack engineers in Agile/Scrum — velocity, quality and team cohesion",
-      "End-to-end delivery ownership: releases, technical roadmap, risk management and business/tech coordination",
-      "Introduction and adoption of generative AI in team workflows: code reviews with Claude Code, structured prompts, automated quality checklists — reduced review cycles and measurable improvement in deliverable quality",
+      "Leading a 10-person delivery team: 6 developers, 2 QA engineers, 1 product owner and me as Tech Lead Delivery — Agile/Scrum, velocity, quality and team cohesion",
+      "End-to-end delivery of a B2B SaaS platform serving 20,000+ users and 100+ clients, with roughly 2 production deployments per month",
+      "Backlog tracking and coordination through Azure DevOps; oversight of 2,000+ tickets, releases, risks and business/tech priorities",
+      "Introduced 3 AI practices into team workflows: Claude Code-assisted reviews, structured prompts and automated quality checklists; roughly 50% less workload for certain recurring activities, with shorter review cycles",
       "Technical recruiting, onboarding and upskilling engineers",
       "Establishing continuous improvement practices: actionable retrospectives, code standards, living documentation"
     ],

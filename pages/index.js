@@ -3,7 +3,9 @@ import Nav from '../components/Nav'
 import Hero from '../components/Hero'
 import Skills from '../components/Skills'
 import Experience from '../components/Experience'
+import CaseStudies from '../components/CaseStudies'
 import Certifications from '../components/Certifications'
+import Testimonials from '../components/Testimonials'
 import AIChat from '../components/AIChat'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
@@ -67,8 +69,6 @@ export default function Home() {
             "image": "https://omzeh.tn/othmen.png",
             "jobTitle": "Engineering Manager",
             "description": t('meta.description'),
-            "email": "oth.mzh@gmail.com",
-            "telephone": "+21653795988",
             "nationality": { "@type": "Country", "name": locale === 'en' ? "Tunisia" : "Tunisie" },
             "address": {
               "@type": "PostalAddress",
@@ -97,7 +97,7 @@ export default function Home() {
               "Prompt Engineering", "Symfony", "Angular", "PHP", "JavaScript", "Moodle"
             ],
             "sameAs": [
-              "https://linkedin.com/in/othmen-mzeh-64740961"
+              "https://linkedin.com/in/othmen-mzeh"
             ]
           })}}
         />
@@ -149,7 +149,9 @@ export default function Home() {
         <Hero />
         <Skills />
         <Experience />
+        <CaseStudies />
         <Certifications />
+        <Testimonials />
         <AIChat />
         <Contact />
       </main>

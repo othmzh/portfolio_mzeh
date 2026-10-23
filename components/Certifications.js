@@ -10,6 +10,7 @@ const certsByLocale = { fr: certsFr, en: certsEn }
 export default function Certifications() {
   const { t, locale } = useTranslation()
   const CERTS = certsByLocale[locale] ?? certsByLocale.fr
+  const orderedCerts = [...CERTS].sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)))
 
   return (
     <section id="certifications" className={styles.section}>
@@ -17,18 +18,19 @@ export default function Certifications() {
         <div className={styles.label}>{t('certifications.label')}</div>
         <h2 className={styles.h2}>{t('certifications.heading')}</h2>
         <div className="cert-grid">
-          {CERTS.map((cert, i) => (
+          {orderedCerts.map((cert, i) => (
             <motion.div
-              key={i}
-              className={`cert-card ${styles.card}`}
+              key={cert.name}
+              className={`cert-card ${styles.card} ${cert.featured ? styles.featured : ''}`}
               variants={fadeInUp}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: 'easeOut', delay: i * 0.08 }}
             >
-              <div className={styles.idx}>{String(i + 1).padStart(2, '0')} —</div>
-              <div className={styles.name}>{cert}</div>
+              <div className={styles.idx}>{cert.featured ? t('certifications.pmpStatus') : `${String(i + 1).padStart(2, '0')} —`}</div>
+              <div className={styles.name}>{cert.name}</div>
+              <div className={styles.issuer}>{cert.issuer}</div>
             </motion.div>
           ))}
         </div>

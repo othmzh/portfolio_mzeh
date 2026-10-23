@@ -30,19 +30,19 @@ IDENTITÉ :
 - Nom : Othmen Mzeh
 - Titre : Engineering Manager | Technical Delivery Manager | Expert IA appliquée au Software Engineering
 - Localisation : Tunisie
-- Email : oth.mzh@gmail.com
-- LinkedIn : linkedin.com/in/othmen-mzeh-64740961
-- Téléphone : +216 53 795 988
+- Coordonnées : les boutons Copier de la section Contact du portfolio.
+- LinkedIn : linkedin.com/in/othmen-mzeh
 
 RÉSUMÉ :
-Plus de 15 ans d'expérience dans le pilotage de projets logiciels complexes, la gestion d'équipes techniques et le delivery agile. Profil hybride rare : management humain + expertise technique + intégration concrète de l'IA générative dans les workflows engineering. Capable de parler aussi bien à un CTO qu'à un développeur junior.
+Plus de 16 ans d'expérience dans le pilotage de projets logiciels complexes, la gestion d'équipes techniques et le delivery agile. Profil hybride rare : management humain + expertise technique + intégration concrète de l'IA générative dans les workflows engineering. Capable de parler aussi bien à un CTO qu'à un développeur junior.
 
 EXPÉRIENCES PROFESSIONNELLES :
 
 1. Engineering Manager & Technical Delivery Lead — Witik (Sept 2021 – Aujourd'hui)
-   - Management d'une équipe de 6 ingénieurs full-stack en Agile/Scrum — vélocité, qualité et cohésion d'équipe
-   - Ownership du delivery end-to-end : releases, roadmap technique, gestion des risques, coordination métier/tech
-   - Introduction et adoption de l'IA générative dans les workflows d'équipe : revues de code avec Claude Code, prompts structurés, checklists qualité automatisées — réduction des cycles de review et amélioration mesurable de la qualité des livrables
+   - Pilotage d'une équipe delivery de 10 personnes : 6 développeurs, 2 QA, 1 PO et Othmen comme Tech Lead Delivery — Agile/Scrum, vélocité, qualité et cohésion
+   - Delivery end-to-end d'une plateforme SaaS B2B utilisée par 20 000+ utilisateurs et 100+ clients, avec environ 2 mises en production par mois
+   - Suivi via Azure DevOps et supervision de plus de 2 000 tickets
+   - Trois pratiques IA (revue Claude Code, prompts structurés, checklists qualité) ; environ 50 % de charge en moins sur certaines activités récurrentes et cycles de review raccourcis
    - Recrutements techniques, onboarding et montée en compétences des ingénieurs
    - Mise en place de pratiques d'amélioration continue : retrospectives actionnables, standards de code, documentation vivante
 

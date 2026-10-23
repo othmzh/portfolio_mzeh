@@ -6,6 +6,7 @@
   "nav.menu.close": "Fermer le menu de navigation",
   "nav.links.skills": "Skills",
   "nav.links.experience": "Expérience",
+  "nav.links.caseStudies": "Études de cas",
   "nav.links.certifications": "Certs",
   "nav.links.chat": "AI Assistant",
   "nav.links.contact": "Contact",
@@ -25,6 +26,9 @@
 
   "certifications.label": "// formations & accréditations",
   "certifications.heading": "Certifications",
+  "certifications.pmpStatus": "PMP — EN COURS",
+  "testimonials.label": "// recommandations LinkedIn",
+  "testimonials.heading": "Ils ont travaillé avec moi",
   "certifications.footer": "// Formation — Maîtrise en Informatique Appliquée",
 
   "chat.label": "// intelligence artificielle",
@@ -46,7 +50,7 @@
   "chat.faq.0.q": "Quelles sont les compétences en management d'Othmen Mzeh ?",
   "chat.faq.0.a": "Agile/Scrum, Azure DevOps, Release Management, Leadership d'équipes techniques, mentoring et gestion du delivery end-to-end.",
   "chat.faq.1.q": "Comment Othmen Mzeh intègre-t-il l'IA dans son travail ?",
-  "chat.faq.1.a": "Il utilise Claude Code pour les revues de code assistées, crée des prompts structurés et des checklists qualité automatisées, réduisant les cycles de review et améliorant la qualité des livrables.",
+  "chat.faq.1.a": "Il utilise Claude Code pour les revues de code assistées, crée des prompts structurés et des checklists qualité automatisées. Ces workflows ont réduit d'environ 50 % la charge de certaines activités récurrentes.",
   "chat.faq.2.q": "Quelle est la stack technique d'Othmen Mzeh ?",
   "chat.faq.2.a": "Backend : Symfony, PHP. Frontend : Angular, JavaScript. Plateformes : Moodle. Outils : Git, Azure DevOps.",
   "chat.faq.3.q": "Othmen Mzeh est-il disponible pour des missions à distance ?",
@@ -54,6 +58,8 @@
 
   "contact.label": "// entrer en contact",
   "contact.heading": "Travaillons\nensemble",
+  "contact.copy": "Copier",
+  "contact.copied": "Copié !",
 
   "footer.available": "Disponible à distance",
   "footer.nav.label": "// navigation",
@@ -69,16 +75,16 @@
   "404.back": "← Retour à l'accueil",
 
   "meta.title": "Othmen Mzeh — Engineering Manager & AI-Driven Leader",
-  "meta.description": "Engineering Manager avec 15+ ans d'expérience en pilotage d'équipes techniques, delivery agile et intégration de l'IA générative. Basé en Tunisie, disponible à distance.",
+  "meta.description": "Engineering Manager avec 16+ ans d'expérience en pilotage d'équipes techniques, delivery agile et intégration de l'IA générative. Basé en Tunisie, disponible à distance.",
   "meta.ogLocale": "fr_FR",
-  "meta.twitterDescription": "Engineering Manager avec 15+ ans d'expérience en pilotage d'équipes techniques, delivery agile et intégration de l'IA générative.",
+  "meta.twitterDescription": "Engineering Manager avec 16+ ans d'expérience en pilotage d'équipes techniques, delivery agile et intégration de l'IA générative.",
 
   "terminal.comment.management": "// Management & Delivery",
   "terminal.comment.ai": "// IA Générative",
   "terminal.comment.tech": "// Stack Technique",
   "terminal.seo.intro": "ans d'expérience",
-  "terminal.seo.team": "Équipe de",
-  "terminal.seo.engineers": "ingénieurs",
+  "terminal.seo.team": "Équipe delivery de",
+  "terminal.seo.engineers": "personnes",
   "terminal.seo.location": "Localisation",
   "terminal.seo.status": "Statut",
   "terminal.seo.management": "Management",

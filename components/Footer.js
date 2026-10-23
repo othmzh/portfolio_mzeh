@@ -2,9 +2,7 @@ import styles from '../styles/Footer.module.css'
 import { useTranslation } from '../hooks/useTranslation'
 
 const SOCIAL = [
-  { href: 'mailto:oth.mzh@gmail.com', label: 'Email' },
-  { href: 'https://linkedin.com/in/othmen-mzeh-64740961', label: 'LinkedIn', external: true },
-  { href: 'tel:+21653795988', label: '+216 53 795 988' },
+  { href: 'https://linkedin.com/in/othmen-mzeh', label: 'LinkedIn', external: true },
 ]
 
 export default function Footer() {

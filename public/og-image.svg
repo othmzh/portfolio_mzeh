@@ -40,7 +40,7 @@
 
   <rect x="512" y="480" width="130" height="32" rx="4" fill="#00d4aa" opacity="0.1"/>
   <rect x="512" y="480" width="130" height="32" rx="4" fill="none" stroke="#00d4aa" stroke-width="1" opacity="0.3"/>
-  <text x="577" y="501" font-family="monospace" font-size="12" fill="#00d4aa" text-anchor="middle">15+ ans</text>
+  <text x="577" y="501" font-family="monospace" font-size="12" fill="#00d4aa" text-anchor="middle">16+ ans</text>
 
   <!-- URL -->
   <text x="1120" y="590" font-family="monospace" font-size="14" fill="#4a5568" text-anchor="end">omzeh.tn</text>

@@ -1,5 +1,6 @@
 import styles from '../styles/Contact.module.css'
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 import { useTranslation } from '../hooks/useTranslation'
 import contactFr from '../data/fr/contact.fr.json'
 import contactEn from '../data/en/contact.en.json'
@@ -8,6 +9,7 @@ const contactByLocale = { fr: contactFr, en: contactEn }
 
 export default function Contact() {
   const { t, locale } = useTranslation()
+  const [copied, setCopied] = useState('')
   const contactData = contactByLocale[locale] ?? contactByLocale.fr
   const { intro, introSecond, links: LINKS } = contactData
 
@@ -34,8 +36,25 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
         >
-          {LINKS.map(l => (
-            <a key={l.label} href={l.href} target={l.href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" className={`contact-link ${styles.link}`}>
+          {LINKS.map(l => l.copyValue ? (
+            <button key={l.label} type="button" className={`contact-link ${styles.link} ${styles.copyLink}`} onClick={async () => {
+              try {
+                await navigator.clipboard.writeText(l.copyValue)
+                setCopied(l.label)
+                window.setTimeout(() => setCopied(''), 1800)
+              } catch {
+                setCopied('')
+              }
+            }} aria-label={`${l.label}: ${copied === l.label ? t('contact.copied') : t('contact.copy')}`}>
+              <div className={styles.icon}>{l.icon}</div>
+              <div>
+                <div className={styles.linkLabel}>{l.label}</div>
+                <div className={styles.linkSub}>{copied === l.label ? t('contact.copied') : t('contact.copy')}</div>
+              </div>
+              <div className={styles.arr}>⧉</div>
+            </button>
+          ) : (
+            <a key={l.label} href={l.href === '/approche-ia-management' && locale === 'en' ? `/en${l.href}` : l.href} download={l.href.endsWith('.pdf') ? true : undefined} target={l.href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" className={`contact-link ${styles.link}`}>
               <div className={styles.icon}>{l.icon}</div>
               <div>
                 <div className={styles.linkLabel}>{l.label}</div>
