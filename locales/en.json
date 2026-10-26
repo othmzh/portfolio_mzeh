@@ -29,7 +29,11 @@
 
   "certifications.label": "// training & accreditations",
   "certifications.heading": "Certifications",
-  "certifications.pmpStatus": "PMP — IN PROGRESS",
+  "certifications.pmpStatus": "PMP PREPARATION",
+  "certifications.group.professional": "PMI & Scrum",
+  "certifications.group.preparation": "Certification in preparation",
+  "certifications.group.cloud": "Cloud",
+  "certifications.group.ai": "Artificial intelligence training",
   "testimonials.label": "// LinkedIn recommendations",
   "testimonials.heading": "What colleagues say",
   "testimonials.previous": "Previous recommendation",
@@ -72,10 +76,10 @@
   "404.body": "This page does not exist or has been moved.",
   "404.back": "← Back to home",
 
-  "meta.title": "Othmen Mzeh — Engineering Manager & AI-Driven Leader",
-  "meta.description": "Engineering Manager with 16+ years in IT, spanning technical training, software development, engineering leadership, agile delivery and generative AI. Based in Tunisia, available remotely.",
+  "meta.title": "Othmen Mzeh — Engineering Manager",
+  "meta.description": "Engineering Manager with 16+ years in engineering leadership and technical delivery. Node.js, Next.js and AI-assisted software engineering. Open to permanent roles and freelance assignments in Tunisia or remotely.",
   "meta.ogLocale": "en_US",
-  "meta.twitterDescription": "Engineering Manager with 16+ years in IT, from technical training and software development to engineering leadership and agile delivery.",
+  "meta.twitterDescription": "Engineering Manager with 16+ years in engineering leadership, technical delivery, Node.js, Next.js and pragmatic AI integration.",
 
   "terminal.comment.management": "// Management & Delivery",
   "terminal.comment.ai": "// Generative AI",

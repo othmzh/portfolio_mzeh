@@ -7,8 +7,8 @@
     "bullets": [
       "Leading a 10-person delivery team: 6 developers, 2 QA engineers, 1 product owner and me as Tech Lead Delivery — Agile/Scrum, velocity, quality and team cohesion",
       "End-to-end delivery of a B2B SaaS platform serving 20,000+ users and 100+ clients, with roughly 2 production deployments per month",
-      "Backlog tracking and coordination through Azure DevOps; oversight of 2,000+ tickets, releases, risks and business/tech priorities",
-      "Introduced 3 AI practices into team workflows: Claude Code-assisted reviews, structured prompts and automated quality checklists; roughly 50% less workload for certain recurring activities, with shorter review cycles",
+      "Backlog and Azure DevOps coordination, tracking releases, risks and business/technical priorities",
+      "Structured 3 AI practices in team workflows: Claude Code-assisted reviews, shared prompts and automated quality checklists",
       "Technical recruiting, onboarding and upskilling engineers",
       "Establishing continuous improvement practices: actionable retrospectives, code standards, living documentation"
     ],

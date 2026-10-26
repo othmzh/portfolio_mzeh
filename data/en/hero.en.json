@@ -3,8 +3,8 @@
   "role": "Engineering Manager",
   "location": "Tunisia",
   "flag": "🇹🇳",
-  "eyebrow": "// Engineering Manager | Delivery Manager | Technical Project Manager | AI-Assisted Software Engineering",
-  "description": "I lead engineering teams, structure delivery and concretely integrate generative AI into engineering practices — to ship faster, with less friction and more quality.",
+  "eyebrow": "// Engineering Manager · Tech Lead Delivery",
+  "description": "Engineering team leadership, delivery management, technical project leadership and pragmatic integration of generative AI into software development workflows.",
   "linkedinUrl": "https://linkedin.com/in/othmen-mzeh",
   "stats": [
     {
@@ -17,7 +17,7 @@
     },
     {
       "num": "6 + 1",
-      "label": "Certifications (PMP in progress)"
+      "label": "Certifications (PMP preparation)"
     }
   ],
   "terminal": {
@@ -41,11 +41,10 @@
       "QA IA"
     ],
     "tech": [
-      "Symfony",
-      "Angular",
-      "PHP",
       "JavaScript",
-      "Moodle"
+      "Node.js",
+      "Next.js",
+      "Code Review"
     ]
   }
 }

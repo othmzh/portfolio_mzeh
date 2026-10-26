@@ -1,9 +1,9 @@
 [
-  { "name": "Scrum Foundation Professional Certificate (SFPC)", "issuer": "CertiProf" },
-  { "name": "Cloud Concepts 101 — Deployments Essentials", "issuer": "Clever Cloud" },
-  { "name": "Agile Project Management Fundamentals", "issuer": "Project Management Institute (PMI)" },
-  { "name": "Claude Code in Action", "issuer": "Anthropic" },
-  { "name": "Introduction to Agent Skills", "issuer": "Anthropic" },
-  { "name": "Claude 101 — Certificate of Completion", "issuer": "Anthropic" },
-  { "name": "PMP Preparation Training — Project Management Professional", "issuer": "Project Management Institute (PMI)", "featured": true }
+  { "name": "Agile Project Management Fundamentals", "issuer": "Project Management Institute (PMI)", "group": "professional" },
+  { "name": "Scrum Foundation Professional Certificate (SFPC)", "issuer": "CertiProf", "group": "professional" },
+  { "name": "PMP Preparation Training — Project Management Professional", "issuer": "Project Management Institute (PMI)", "group": "preparation", "featured": true },
+  { "name": "Cloud Concepts 101 — Deployments Essentials", "issuer": "Clever Cloud", "group": "cloud" },
+  { "name": "Claude Code in Action", "issuer": "Anthropic", "group": "ai" },
+  { "name": "Introduction to Agent Skills", "issuer": "Anthropic", "group": "ai" },
+  { "name": "Claude 101 — Certificate of Completion", "issuer": "Anthropic", "group": "ai" }
 ]

@@ -81,7 +81,7 @@ export default function Home() {
               "name": "Engineering Manager",
               "occupationLocation": { "@type": "Country", "name": locale === 'en' ? "Tunisia" : "Tunisie" },
               "description": t('meta.description'),
-              "skills": "Agile, Scrum, Azure DevOps, Claude Code, Symfony, Angular, PHP, JavaScript"
+              "skills": "Engineering Management, Technical Delivery, Agile, Scrum, Azure DevOps, Claude Code, AI-assisted code review, JavaScript, Node.js, Next.js"
             },
             "knowsLanguage": [
               { "@type": "Language", "name": "Français" },
@@ -90,8 +90,8 @@ export default function Home() {
             ],
             "knowsAbout": [
               "Engineering Management", "Technical Delivery", "Agile", "Scrum",
-              "Azure DevOps", "Release Management", "Claude Code", "AI-Driven Development",
-              "Prompt Engineering", "Symfony", "Angular", "PHP", "JavaScript", "Moodle"
+              "Azure DevOps", "Release Management", "Claude Code", "AI-assisted Software Engineering",
+              "Prompt Engineering", "Code Review", "JavaScript", "Node.js", "Next.js"
             ],
             "sameAs": [
               "https://linkedin.com/in/othmen-mzeh"

@@ -17,13 +17,13 @@
   <text x="80" y="200" font-family="monospace" font-size="140" font-weight="700" fill="#00d4aa" letter-spacing="-4" opacity="0.12">OM</text>
 
   <!-- Label -->
-  <text x="80" y="280" font-family="monospace" font-size="13" fill="#00d4aa" letter-spacing="3" opacity="0.8">// ENGINEERING MANAGER × AI-DRIVEN LEADER</text>
+  <text x="80" y="280" font-family="monospace" font-size="13" fill="#00d4aa" letter-spacing="3" opacity="0.8">// ENGINEERING MANAGER</text>
 
   <!-- Name -->
   <text x="80" y="370" font-family="sans-serif" font-size="72" font-weight="700" fill="#e2e8f0" letter-spacing="-2">Othmen Mzeh</text>
 
   <!-- Title -->
-  <text x="80" y="430" font-family="sans-serif" font-size="24" font-weight="300" fill="#8896a6">Engineering Manager · Tunisie · disponible à distance</text>
+  <text x="80" y="430" font-family="sans-serif" font-size="24" font-weight="300" fill="#8896a6">Engineering Manager · Tech Lead Delivery · Tunisie</text>
 
   <!-- Tags -->
   <rect x="80" y="480" width="130" height="32" rx="4" fill="#00d4aa" opacity="0.1"/>

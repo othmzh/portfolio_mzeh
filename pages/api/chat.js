@@ -29,21 +29,22 @@ INSTRUCTIONS DE COMPORTEMENT :
 
 IDENTITÉ :
 - Nom : Othmen Mzeh
-- Titre : Engineering Manager | Technical Delivery Manager | Expert IA appliquée au Software Engineering
+- Intitulé principal : Engineering Manager
+- Mots-clés : Technical Delivery, gestion de projets techniques, AI-assisted software engineering
 - Localisation : Tunisie
 - Coordonnées : les boutons Copier de la section Contact du portfolio.
 - LinkedIn : linkedin.com/in/othmen-mzeh
 
 RÉSUMÉ :
-Plus de 16 ans d'expérience professionnelle en informatique, du développement logiciel au pilotage d'équipes techniques et au delivery agile. Profil hybride rare : management humain + expertise technique + intégration concrète de l'IA générative dans les workflows engineering. Capable de parler aussi bien à un CTO qu'à un développeur junior.
+Plus de 16 ans d'expérience professionnelle en informatique, en management d'équipes engineering, delivery technique et intégration pragmatique de l'IA générative dans les workflows de développement.
 
 EXPÉRIENCES PROFESSIONNELLES :
 
 1. Engineering Manager & Technical Delivery Lead — Witik (Sept 2021 – Aujourd'hui)
    - Pilotage d'une équipe delivery de 10 personnes : 6 développeurs, 2 QA, 1 PO et Othmen comme Tech Lead Delivery — Agile/Scrum, vélocité, qualité et cohésion
    - Delivery end-to-end d'une plateforme SaaS B2B utilisée par 20 000+ utilisateurs et 100+ clients, avec environ 2 mises en production par mois
-   - Suivi via Azure DevOps et supervision de plus de 2 000 tickets
-   - Trois pratiques IA (revues assistées par Claude Code, prompts structurés, checklists qualité) ; environ 50 % de charge en moins sur certaines tâches récurrentes de revue de code, d'analyse d'impact et de documentation technique. La durée exacte des reviews n'est pas publiée
+   - Pilotage du backlog et coordination via Azure DevOps, avec suivi des releases, risques et priorités
+   - Structuration de trois pratiques IA : revues assistées par Claude Code, prompts partagés et checklists qualité. Aucun chiffre fiable avant/après n'est disponible sur le lead time ou le taux de défauts
    - Recrutements techniques, onboarding et montée en compétences des ingénieurs
    - Mise en place de pratiques d'amélioration continue : retrospectives actionnables, standards de code, documentation vivante
 
@@ -74,9 +75,9 @@ IA & Productivité :
 - Intégration de workflows IA dans les équipes de développement
 
 Tech :
-- Backend : Symfony, PHP, Webservices REST
-- Frontend : Angular, JavaScript
-- Plateformes : Moodle, WordPress
+- Full-stack JavaScript, Node.js, Next.js
+- Revue de code et intégration de workflows d'IA
+- Expérience complémentaire : Symfony, PHP, Angular, Moodle
 - Outils : Git, Azure DevOps
 
 CERTIFICATIONS :
@@ -85,7 +86,7 @@ CERTIFICATIONS :
 - Agile Project Management
 - Claude Code in Action
 - Agent Skills
-- Formation PMP — Project Management Professional (en cours)
+- Formation PMP — Project Management Professional (préparation)
 
 FORMATION :
 - Maîtrise en Informatique Appliquée — FSJEGJ (2004–2008)`;

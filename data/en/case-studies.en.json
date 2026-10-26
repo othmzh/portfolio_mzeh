@@ -1,16 +1,14 @@
 [
   {
     "title": "AI adoption in code reviews",
-    "url": "https://www.witik.io/en/",
     "context": "At Witik, the 10-person delivery team (6 developers, 2 QA engineers, 1 product owner and me as Tech Lead Delivery) contributes to a B2B SaaS platform used by 20,000+ users and 100+ clients.",
     "action": "I introduced Claude Code for assisted reviews, structured prompts and automated quality checklists.",
-    "result": "The AI workflows reduced the workload of selected recurring code review, impact analysis and technical documentation tasks by roughly 50%. This refers to workload for those activities, not the duration of each review."
+    "result": "Three practices are now structured in the team workflow: assisted reviews, shared prompts and quality checklists. No reliable before/after figures are available to quantify their effect on lead time or defect rates."
   },
   {
     "title": "Delivery management at Witik",
-    "url": "https://www.witik.io/en/",
     "context": "The 10-person delivery team had to coordinate the technical roadmap, releases and business priorities for a platform with 100+ clients.",
-    "action": "I managed the backlog and releases through Azure DevOps, coordinated business/product/QA/development, and tracked risks and 2,000+ tickets.",
+    "action": "I managed the backlog and releases through Azure DevOps, coordinated business/product/QA/development, and tracked risks and priorities.",
     "result": "Delivery sustained roughly 2 production deployments per month on a platform serving 20,000+ users and 100+ clients."
   },
   {
@@ -19,6 +17,6 @@
     "linkLabel": "View SRM project reference ↗",
     "context": "Critical multi-client projects included a Supplier Management (SRM) platform to improve communication and supplier integration for OneTech.",
     "action": "I led architecture, task breakdown and estimation, scheduling, integration and regression test cycles, and delivery validation.",
-    "result": "The documented deliverable is a Supplier Management / SRM platform designed to facilitate communication between OneTech and its suppliers and improve supplier integration."
+    "result": "The available reference describes the SRM platform’s functional scope; no verifiable public figures are available for delivery time, supplier integrations or client satisfaction."
   }
 ]

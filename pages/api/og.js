@@ -60,7 +60,7 @@ export default function handler(request) {
             letterSpacing: '0.5px',
           }}
         >
-          Engineering Manager & AI-Driven Leader
+          Engineering Manager · Tech Lead Delivery
         </div>
 
         {/* Separator */}

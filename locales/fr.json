@@ -29,7 +29,11 @@
 
   "certifications.label": "// formations & accréditations",
   "certifications.heading": "Certifications",
-  "certifications.pmpStatus": "PMP — EN COURS",
+  "certifications.pmpStatus": "PRÉPARATION PMP",
+  "certifications.group.professional": "PMI & Scrum",
+  "certifications.group.preparation": "Certification en préparation",
+  "certifications.group.cloud": "Cloud",
+  "certifications.group.ai": "Formations en intelligence artificielle",
   "testimonials.label": "// recommandations LinkedIn",
   "testimonials.heading": "Ils ont travaillé avec moi",
   "testimonials.previous": "Recommandation précédente",
@@ -72,10 +76,10 @@
   "404.body": "Cette page n'existe pas ou a été déplacée.",
   "404.back": "← Retour à l'accueil",
 
-  "meta.title": "Othmen Mzeh — Engineering Manager & AI-Driven Leader",
-  "meta.description": "Engineering Manager avec 16+ ans d'expérience professionnelle en informatique, du développement logiciel au pilotage d'équipes, au delivery agile et à l'IA générative. Basé en Tunisie, disponible à distance.",
+  "meta.title": "Othmen Mzeh — Engineering Manager",
+  "meta.description": "Engineering Manager avec 16+ ans d'expérience en management engineering et delivery technique. Node.js, Next.js et IA appliquée au développement. CDI et missions freelance en Tunisie ou à distance.",
   "meta.ogLocale": "fr_FR",
-  "meta.twitterDescription": "Engineering Manager avec 16+ ans d'expérience en informatique, du développement logiciel au pilotage d'équipes et au delivery agile.",
+  "meta.twitterDescription": "Engineering Manager avec 16+ ans d'expérience en management engineering, delivery technique, Node.js, Next.js et intégration pragmatique de l'IA.",
 
   "terminal.comment.management": "// Management & Delivery",
   "terminal.comment.ai": "// IA Générative",
