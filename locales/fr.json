@@ -32,6 +32,10 @@
   "certifications.pmpStatus": "PMP — EN COURS",
   "testimonials.label": "// recommandations LinkedIn",
   "testimonials.heading": "Ils ont travaillé avec moi",
+  "testimonials.previous": "Recommandation précédente",
+  "testimonials.next": "Recommandation suivante",
+  "testimonials.navigation": "Choisir une recommandation",
+  "testimonials.goTo": "Afficher la recommandation",
   "certifications.footer": "// Formation — Maîtrise en Informatique Appliquée, Faculté des Sciences Juridiques, Économiques et de Gestion de Jendouba (FSJEGJ) (2004–2008)",
 
   "chat.label": "// intelligence artificielle",

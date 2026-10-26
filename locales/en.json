@@ -32,6 +32,10 @@
   "certifications.pmpStatus": "PMP — IN PROGRESS",
   "testimonials.label": "// LinkedIn recommendations",
   "testimonials.heading": "What colleagues say",
+  "testimonials.previous": "Previous recommendation",
+  "testimonials.next": "Next recommendation",
+  "testimonials.navigation": "Choose a recommendation",
+  "testimonials.goTo": "Show recommendation",
   "certifications.footer": "// Education — Master's in Applied Computer Science, Faculty of Legal, Economic and Management Sciences of Jendouba (FSJEGJ) (2004–2008)",
 
   "chat.label": "// artificial intelligence",
