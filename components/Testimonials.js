@@ -12,6 +12,12 @@ export default function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
   const activeTestimonial = testimonials[activeIndex % testimonials.length]
+  const initials = activeTestimonial.name
+    .split(/\s+/)
+    .slice(0, 2)
+    .map(part => part[0])
+    .join('')
+    .toUpperCase()
   const goTo = index => setActiveIndex((index + testimonials.length) % testimonials.length)
 
   useEffect(() => {
@@ -42,12 +48,17 @@ export default function Testimonials() {
           <figure className={styles.card} aria-live={isPaused ? 'polite' : 'off'} aria-atomic="true">
             <blockquote className={styles.quote} key={activeTestimonial.name}>{activeTestimonial.quote}</blockquote>
             <figcaption className={styles.person}>
-              {activeTestimonial.source ? (
-                <a href={activeTestimonial.source} target="_blank" rel="noreferrer" className={styles.name}>{activeTestimonial.name}</a>
-              ) : (
-                <span className={styles.name}>{activeTestimonial.name}</span>
-              )}
-              <span className={styles.role}>{activeTestimonial.role}</span>
+              <span className={styles.avatar} aria-hidden="true" style={{ '--avatar-hue': `${(activeIndex * 61 + 196) % 360}deg` }}>
+                {initials}
+              </span>
+              <span className={styles.personDetails}>
+                {activeTestimonial.source ? (
+                  <a href={activeTestimonial.source} target="_blank" rel="noreferrer" className={styles.name}>{activeTestimonial.name}</a>
+                ) : (
+                  <span className={styles.name}>{activeTestimonial.name}</span>
+                )}
+                <span className={styles.role}>{activeTestimonial.role}</span>
+              </span>
             </figcaption>
           </figure>
           <div className={styles.controls}>

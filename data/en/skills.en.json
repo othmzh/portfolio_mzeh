@@ -9,12 +9,12 @@
     "icon": "🤖",
     "title": "Generative AI & Engineering",
     "desc": "Integration of Claude / Claude Code into workflows: assisted code review, structured prompts, augmented documentation.",
-    "tags": ["Claude Code", "AI-Driven Dev", "Prompt Eng.", "AI QA"]
+    "tags": ["Claude Code", "Code Review", "AI-Driven Dev", "Prompt Eng.", "AI QA"]
   },
   {
     "icon": "🛠",
     "title": "Tech Stack",
-    "desc": "Backend-focused full-stack development, complex business architectures, LMS/DMS/SRM platforms and webservice integrations.",
-    "tags": ["Symfony", "Angular", "PHP", "JavaScript", "Moodle"]
+    "desc": "Full-stack JavaScript development with Node.js and Next.js, alongside PHP/Symfony and Angular. Business architecture, LMS/DMS/SRM platforms and web service integrations.",
+    "tags": ["JavaScript", "Node.js", "Next.js", "PHP", "Symfony", "Angular", "Moodle"]
   }
 ]

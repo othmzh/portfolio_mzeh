@@ -9,12 +9,12 @@
     "icon": "🤖",
     "title": "IA Générative & Engineering",
     "desc": "Intégration de Claude / Claude Code dans les workflows : revue de code assistée, prompts structurés, documentation augmentée.",
-    "tags": ["Claude Code", "AI-Driven Dev", "Prompt Eng.", "QA IA"]
+    "tags": ["Claude Code", "Revue de code", "AI-Driven Dev", "Prompt Eng.", "QA IA"]
   },
   {
     "icon": "🛠",
     "title": "Stack Technique",
-    "desc": "Développement full-stack orienté backend, architectures métier complexes, plateformes LMS/GED/SRM et intégrations webservices.",
-    "tags": ["Symfony", "Angular", "PHP", "JavaScript", "Moodle"]
+    "desc": "Développement full-stack JavaScript avec Node.js et Next.js, ainsi que PHP/Symfony et Angular. Conception d’architectures métier, plateformes LMS/GED/SRM et intégrations webservices.",
+    "tags": ["JavaScript", "Node.js", "Next.js", "PHP", "Symfony", "Angular", "Moodle"]
   }
 ]
