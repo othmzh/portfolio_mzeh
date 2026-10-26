@@ -2,6 +2,9 @@ import { useTranslation } from '../hooks/useTranslation'
 import styles from '../styles/WhatsAppButton.module.css'
 
 const WA_NUMBER = '21653795988'
+const FREELANCE_PROFILES = [
+  { name: 'Malt', href: 'https://www.malt.fr/profile/othmenmzeh', logo: '/malt-logo.png' },
+]
 
 const MESSAGE = {
   fr: "Bonjour Othmen, j'ai visité votre portfolio et je souhaite vous contacter.",
@@ -31,6 +34,23 @@ export default function WhatsAppButton() {
         </svg>
         <span>WhatsApp</span>
       </a>
+      {FREELANCE_PROFILES.map(profile => (
+        <a
+          key={profile.name}
+          className={styles.actionButton}
+          href={profile.href}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={profile.name}
+        >
+          <img
+            className={styles.platformLogo}
+            src={profile.logo}
+            alt=""
+            aria-hidden="true"
+          />
+        </a>
+      ))}
     </div>
   )
 }
