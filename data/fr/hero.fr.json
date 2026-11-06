@@ -4,7 +4,7 @@
   "location": "Tunisie",
   "flag": "🇹🇳",
   "eyebrow": "// Engineering Manager · Tech Lead Delivery",
-  "description": "Management d’équipes engineering, delivery management, pilotage de projets techniques et intégration pragmatique de l’IA générative dans les workflows de développement.",
+  "description": "Je pilote une équipe delivery de 10 personnes et coordonne les évolutions d’une plateforme SaaS B2B utilisée par plus de 20 000 personnes. J’intègre également l’IA dans les revues de code et les pratiques qualité.",
   "linkedinUrl": "https://linkedin.com/in/othmen-mzeh",
   "stats": [
     {
@@ -18,6 +18,18 @@
     {
       "num": "6 + 1",
       "label": "Certifications (PMP en préparation)"
+    },
+    {
+      "num": "20 000+",
+      "label": "Utilisateurs de la plateforme Witik"
+    },
+    {
+      "num": "100+",
+      "label": "Clients de la plateforme Witik"
+    },
+    {
+      "num": "≈ 2",
+      "label": "Mises en production / mois chez Witik"
     }
   ],
   "terminal": {

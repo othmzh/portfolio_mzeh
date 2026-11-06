@@ -8,6 +8,7 @@ import { useTranslation } from '../hooks/useTranslation'
 export default function Hero() {
   const { t, content } = useTranslation()
   const heroData = content['hero']
+  const cvLink = content.contact.links.find(link => link.href?.endsWith('.pdf'))
   const lines = makeLines(heroData.terminal, Object.fromEntries(
     ['terminal.comment.management', 'terminal.comment.ai', 'terminal.comment.tech'].map(k => [k, t(k)])
   ))
@@ -55,7 +56,9 @@ export default function Hero() {
             <div className={styles.cta}>
               <a href="#experience" className={`btn-primary ${styles.btnPrimary}`}>{t('hero.cta.journey')}</a>
               <a href="#ai-chat" className={`btn-ghost ${styles.btnGhost}`}>{t('hero.cta.chat')}</a>
+              {cvLink && <a href={cvLink.href} download className={`btn-ghost ${styles.btnGhost}`}>{t('hero.cta.cv')}</a>}
             </div>
+            <p className={styles.availability}>{content.contact.introSecond}</p>
 
           </div>
 
@@ -75,7 +78,7 @@ export default function Hero() {
         </div>
 
         {/* STATS */}
-        <div className="stats-bar">
+        <div className={`stats-bar ${styles.statsGrid}`}>
           {heroData.stats.map(({ num, label }) => (
             <div key={label} className={styles.statCell}>
               <div className={styles.statNum}>{num}</div>

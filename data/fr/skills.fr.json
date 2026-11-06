@@ -2,19 +2,19 @@
   {
     "icon": "⚡",
     "title": "Management & Delivery",
-    "desc": "Pilotage d'équipes agiles, coordination métier/technique, release management et gestion des priorités avec Azure DevOps.",
-    "tags": ["Agile/Scrum", "Azure DevOps", "Release Mgmt", "Leadership"]
+    "desc": "Management d’équipes techniques, delivery Agile et gestion de projets IT. Coordination des parties prenantes, planification des livraisons, analyse des risques et amélioration continue.",
+    "tags": ["Agile Delivery", "Software & Service Delivery", "Gestion de projets IT", "Leadership technique", "Parties prenantes", "Risques projet", "Azure DevOps", "Scrum"]
   },
   {
     "icon": "🤖",
     "title": "IA Générative & Engineering",
-    "desc": "Intégration de Claude / Claude Code dans les workflows : revue de code assistée, prompts structurés, documentation augmentée.",
-    "tags": ["Claude Code", "Revue de code IA", "AI-assisted Dev", "Prompt Eng.", "QA IA"]
+    "desc": "Utilisation de l’IA pour l’analyse d’impact, l’identification des risques, l’analyse de régression, la documentation et la revue de code. Intégration de Claude Code et de prompts structurés dans les workflows.",
+    "tags": ["Claude Code", "Revue de code IA", "Analyse d’impact", "Analyse de régression", "Documentation", "Prompt Engineering"]
   },
   {
     "icon": "🛠",
     "title": "Stack Technique",
-    "desc": "Développement full-stack JavaScript avec Node.js et Next.js, revue de code et conception d’architectures applicatives. Expérience complémentaire en PHP/Symfony, Angular et plateformes métier.",
-    "tags": ["JavaScript", "Node.js", "Next.js", "Full-stack", "Code Review"]
+    "desc": "Expérience de développement en PHP, Symfony, Angular et JavaScript, complétée par Node.js et Next.js pour les projets web. Revue de code et compréhension des enjeux techniques du delivery.",
+    "tags": ["PHP", "Symfony", "Angular", "JavaScript", "Node.js", "Next.js"]
   }
 ]

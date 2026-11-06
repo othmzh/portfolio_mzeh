@@ -25,22 +25,26 @@ export default function Contact() {
           className={styles.links}
         >
           {LINKS.map(l => l.copyValue ? (
-            <button key={l.label} type="button" className={`contact-link ${styles.link} ${styles.copyLink}`} onClick={async () => {
-              try {
-                await navigator.clipboard.writeText(l.copyValue)
-                setCopied(l.label)
-                window.setTimeout(() => setCopied(''), 1800)
-              } catch {
-                setCopied('')
-              }
-            }} aria-label={`${l.label}: ${copied === l.label ? t('contact.copied') : t('contact.copy')}`}>
+            <div key={l.label} className={`contact-link ${styles.link}`}>
               <div className={styles.icon}>{l.icon}</div>
-              <div>
+              <div className={styles.linkBody}>
                 <div className={styles.linkLabel}>{l.label}</div>
-                <div className={styles.linkSub}>{copied === l.label ? t('contact.copied') : t('contact.copy')}</div>
+                <a className={styles.directLink} href={l.copyValue.includes('@') ? `mailto:${l.copyValue}` : `tel:${l.copyValue.replace(/\s/g, '')}`}>
+                  {l.copyValue.includes('@') ? t('contact.emailAction') : t('contact.phoneAction')}
+                </a>
               </div>
-              <div className={styles.arr}>⧉</div>
-            </button>
+              <button type="button" className={styles.copyLink} onClick={async () => {
+                try {
+                  await navigator.clipboard.writeText(l.copyValue)
+                  setCopied(l.label)
+                  window.setTimeout(() => setCopied(''), 1800)
+                } catch {
+                  setCopied('')
+                }
+              }} aria-label={`${l.label}: ${copied === l.label ? t('contact.copied') : t('contact.copy')}`}>
+                <span aria-live="polite">{copied === l.label ? t('contact.copied') : t('contact.copy')}</span>
+              </button>
+            </div>
           ) : (
             <a key={l.label} href={l.href === '/approche-ia-management' && locale === 'en' ? `/en${l.href}` : l.href} download={l.href.endsWith('.pdf') ? true : undefined} target={l.href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" className={`contact-link ${styles.link}`}>
               <div className={styles.icon}>{l.icon}</div>

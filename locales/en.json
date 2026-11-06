@@ -17,6 +17,7 @@
 
   "hero.cta.journey": "See career →",
   "hero.cta.chat": "Talk to AI ✦",
+  "hero.cta.cv": "Download my resume ↓",
   "hero.yearsImpact": "years of impact",
   "hero.qr.label": "QR code to Othmen Mzeh's LinkedIn profile",
 
@@ -65,6 +66,8 @@
   "contact.heading": "Let's work\ntogether",
   "contact.copy": "Copy",
   "contact.copied": "Copied!",
+  "contact.emailAction": "Send an email →",
+  "contact.phoneAction": "Call →",
 
   "footer.available": "Available remotely",
   "footer.location": "Tunisia",

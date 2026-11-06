@@ -4,7 +4,7 @@
   "location": "Tunisia",
   "flag": "🇹🇳",
   "eyebrow": "// Engineering Manager · Tech Lead Delivery",
-  "description": "Engineering team leadership, delivery management, technical project leadership and pragmatic integration of generative AI into software development workflows.",
+  "description": "I lead a delivery team of 10 and coordinate the development of a B2B SaaS platform used by over 20,000 people. I also integrate AI into code reviews and quality practices.",
   "linkedinUrl": "https://linkedin.com/in/othmen-mzeh",
   "stats": [
     {
@@ -18,6 +18,18 @@
     {
       "num": "6 + 1",
       "label": "Certifications (PMP preparation)"
+    },
+    {
+      "num": "20,000+",
+      "label": "Users of the Witik platform"
+    },
+    {
+      "num": "100+",
+      "label": "Clients of the Witik platform"
+    },
+    {
+      "num": "≈ 2",
+      "label": "Production releases / month at Witik"
     }
   ],
   "terminal": {

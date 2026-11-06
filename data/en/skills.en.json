@@ -2,19 +2,19 @@
   {
     "icon": "⚡",
     "title": "Management & Delivery",
-    "desc": "Agile team leadership, business/tech coordination, release management and priority management with Azure DevOps.",
-    "tags": ["Agile/Scrum", "Azure DevOps", "Release Mgmt", "Leadership"]
+    "desc": "Engineering team management, Agile delivery and IT project management. Stakeholder coordination, delivery planning, risk assessment and continuous improvement.",
+    "tags": ["Agile Delivery", "Software & Service Delivery", "IT Project Management", "Technical Leadership", "Stakeholder Engagement", "Project Risk Management", "Azure DevOps", "Scrum"]
   },
   {
     "icon": "🤖",
     "title": "Generative AI & Engineering",
-    "desc": "Integration of Claude / Claude Code into workflows: assisted code review, structured prompts, augmented documentation.",
-    "tags": ["Claude Code", "AI Code Review", "AI-assisted Dev", "Prompt Eng.", "AI QA"]
+    "desc": "Using AI for impact analysis, risk identification, regression analysis, documentation and code review. Integrating Claude Code and structured prompts into development workflows.",
+    "tags": ["Claude Code", "AI Code Review", "Impact Analysis", "Regression Analysis", "Documentation", "Prompt Engineering"]
   },
   {
     "icon": "🛠",
     "title": "Tech Stack",
-    "desc": "Full-stack JavaScript development with Node.js and Next.js, code review and application architecture. Additional experience with PHP/Symfony, Angular and business platforms.",
-    "tags": ["JavaScript", "Node.js", "Next.js", "Full-stack", "Code Review"]
+    "desc": "Development experience with PHP, Symfony, Angular and JavaScript, complemented by Node.js and Next.js for web projects. Code review and an understanding of the technical challenges behind delivery.",
+    "tags": ["PHP", "Symfony", "Angular", "JavaScript", "Node.js", "Next.js"]
   }
 ]
