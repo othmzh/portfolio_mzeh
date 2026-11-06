@@ -42,9 +42,12 @@
   "testimonials.goTo": "Afficher la recommandation",
   "certifications.footer": "// Formation — Maîtrise en Informatique Appliquée, Faculté des Sciences Juridiques, Économiques et de Gestion de Jendouba (FSJEGJ) (2004–2008)",
 
+  "chat.open": "Ouvrir l’assistant",
+  "chat.retry": "Réessayer",
+  "chat.requiresJs": "Activez JavaScript pour discuter avec l’assistant. Vous pouvez aussi me contacter ci-dessous.",
   "chat.label": "// intelligence artificielle",
   "chat.heading": "Poser une question sur mon profil",
-  "chat.sub": "Un assistant IA entraîné sur mon parcours répond en temps réel.",
+  "chat.sub": "Un assistant IA alimenté par les informations de mon parcours répond à vos questions.",
   "chat.placeholder": "Posez votre question...",
   "chat.send": "Envoyer ↗",
   "chat.you": "Vous",

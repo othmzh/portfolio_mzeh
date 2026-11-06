@@ -1,6 +1,11 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { useTranslation } from '../hooks/useTranslation'
+import { loadPublicProps } from '../lib/public-content.mjs'
+
+export async function getStaticProps({ locale }) {
+  return { props: await loadPublicProps(locale) }
+}
 
 export default function NotFound() {
   const { t } = useTranslation()

@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { useTranslation } from '../hooks/useTranslation'
 import styles from '../styles/Approach.module.css'
+import { loadPublicProps } from '../lib/public-content.mjs'
 
 const COPY = {
   fr: {
@@ -12,7 +13,7 @@ const COPY = {
       ["Partir du workflow réel", "Je commence par les étapes où l'équipe perd du temps ou rencontre des frictions : revue de code, documentation, tâches répétitives de contrôle qualité. L'outil vient ensuite; le besoin et le contexte de l'équipe guident son usage."],
       ["Installer des pratiques partagées", "Chez Witik, j'ai introduit Claude Code pour assister les revues de code, des prompts structurés pour rendre les demandes plus cohérentes et des checklists qualité automatisées. L'objectif est de rendre ces pratiques utiles à l'équipe, pas de multiplier les outils individuels."],
       ["Garder la responsabilité côté équipe", "L'IA prépare et accélère certaines tâches; l'équipe reste responsable des décisions techniques et des livrables. Le rôle du manager est de cadrer les usages, d'accompagner la montée en compétence et de préserver la qualité pendant le delivery."],
-      ["Améliorer avec des retours concrets", "Nous observons l'effet sur les cycles de revue et la qualité des livrables, puis ajustons les pratiques. Dans mon expérience, l'adoption de ces workflows a réduit les cycles de review et amélioré la qualité des livrables."],
+      ["Améliorer avec des retours concrets", "Nous observons l'effet sur les cycles de revue et la qualité des livrables, puis ajustons les pratiques. Ces pratiques sont intégrées au workflow ; je ne dispose pas d’un avant/après chiffré fiable permettant de quantifier leur effet."],
     ],
     back: "Retour au portfolio",
     eyebrow: "PRATIQUES D'INGÉNIERIE",
@@ -26,16 +27,19 @@ const COPY = {
       ["Start with the real workflow", "I begin with the steps where the team loses time or faces friction: code review, documentation and repetitive quality checks. The tool comes second; the team's needs and context guide how it is used."],
       ["Establish shared practices", "At Witik, I introduced Claude Code to assist code reviews, structured prompts to make requests more consistent, and automated quality checklists. The goal is to make these practices useful to the team, not to multiply individual tools."],
       ["Keep responsibility with the team", "AI can prepare and accelerate parts of the work; the team remains responsible for technical decisions and deliverables. The manager frames usage, supports skill development and protects quality throughout delivery."],
-      ["Improve through concrete feedback", "We look at the effect on review cycles and deliverable quality, then adjust our practices. In my experience, adopting these workflows reduced review cycles and improved deliverable quality."],
+      ["Improve through concrete feedback", "We look at the effect on review cycles and deliverable quality, then adjust our practices. These practices are part of the team workflow; I do not have reliable before-and-after measurements to quantify their effect."],
     ],
     back: "Back to portfolio",
     eyebrow: "ENGINEERING PRACTICES",
   },
 }
 
-export default function AIManagementApproach() {
+export async function getStaticProps({ locale }) {
+  return { props: { ...await loadPublicProps(locale), copy: COPY[locale] ?? COPY.fr } }
+}
+
+export default function AIManagementApproach({ copy }) {
   const { locale } = useTranslation()
-  const copy = COPY[locale] ?? COPY.fr
   const home = locale === 'en' ? '/en' : '/'
   const canonicalUrl = `https://omzeh.tn${locale === 'en' ? '/en' : ''}/approche-ia-management`
   const socialImageUrl = `https://omzeh.tn/api/og${locale === 'en' ? '?locale=en' : ''}`

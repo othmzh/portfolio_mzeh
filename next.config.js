@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const securityHeaders = [
   { key: 'X-DNS-Prefetch-Control',    value: 'on' },
-  { key: 'X-Frame-Options',           value: 'SAMEORIGIN' },
+  { key: 'X-Frame-Options',           value: 'DENY' },
   { key: 'X-Content-Type-Options',    value: 'nosniff' },
   { key: 'Referrer-Policy',           value: 'strict-origin-when-cross-origin' },
   { key: 'Permissions-Policy',        value: 'camera=(), microphone=(), geolocation=()' },
@@ -13,11 +13,14 @@ const securityHeaders = [
     key: 'Content-Security-Policy',
     value: [
       "default-src 'self'",
+      "base-uri 'self'",
+      "object-src 'none'",
+      "form-action 'self'",
       "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://vercel.live",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
       "img-src 'self' data: blob: https:",
-      "connect-src 'self' https://api.groq.com https://vitals.vercel-insights.com https://va.vercel-scripts.com",
+      "connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com",
       "frame-ancestors 'none'",
     ].join('; '),
   },
@@ -25,6 +28,7 @@ const securityHeaders = [
 
 const nextConfig = {
   reactStrictMode: true,
+  poweredByHeader: false,
   i18n: {
     locales: ['fr', 'en'],
     defaultLocale: 'fr',
@@ -36,8 +40,14 @@ const nextConfig = {
     if (process.env.NODE_ENV === 'development') return []
     return [
       {
-        source: '/(.*)',
+        source: '/:path*',
+        locale: false,
         headers: securityHeaders,
+      },
+      {
+        source: '/:locale(fr|en)?/admin',
+        locale: false,
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
       },
     ]
   },

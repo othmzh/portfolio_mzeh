@@ -1,108 +1,53 @@
-import crypto from 'crypto'
+import { timingSafeEqual } from 'node:crypto'
+import { adminSessions, readSessionToken, SESSION_COOKIE, SESSION_SECONDS } from '../../lib/admin-sessions.mjs'
 
-const COOKIE = 'admin_session'
-
-function generateToken() {
-  return crypto.randomBytes(32).toString('hex')
-}
-
-function setCookie(res, value, maxAge) {
-  const secure = process.env.NODE_ENV === 'production' ? 'Secure; ' : ''
-  res.setHeader('Set-Cookie', `${COOKIE}=${value}; ${secure}HttpOnly; SameSite=Strict; Path=/; Max-Age=${maxAge}`)
-}
-
-function isValidToken(token) {
-  if (!token || token.length !== 64) return false
-  // Only hex chars
-  return /^[0-9a-f]{64}$/.test(token)
-}
-
-// Simple in-memory store for rate limiting
+export const config = { api: { bodyParser: { sizeLimit: '4kb' } } }
 const loginAttempts = new Map()
 
-function isRateLimited(ip) {
-  const now = Date.now()
-  const window = 15 * 60 * 1000 // 15 minutes
-  const maxAttempts = 5
-
-  const attempts = loginAttempts.get(ip) || []
-  const recent = attempts.filter(t => now - t < window)
-  loginAttempts.set(ip, recent)
-
-  if (recent.length >= maxAttempts) return true
-  return false
+function setCookie(res, value, maxAge) {
+  res.setHeader('Set-Cookie', `${SESSION_COOKIE}=${value}; HttpOnly; SameSite=Strict; Path=/; Max-Age=${maxAge}`)
 }
-
-function recordAttempt(ip) {
-  const attempts = loginAttempts.get(ip) || []
-  attempts.push(Date.now())
-  loginAttempts.set(ip, attempts)
-}
-
-import fs from 'fs'
-import path from 'path'
-
-const SESSION_FILE = path.join(process.cwd(), '.sessions.json')
-
-function loadSessions() {
-  try {
-    const raw = fs.readFileSync(SESSION_FILE, 'utf8')
-    const { tokens, expiresAt } = JSON.parse(raw)
-    if (Date.now() > expiresAt) return new Set()
-    return new Set(tokens)
-  } catch {
-    return new Set()
-  }
-}
-
-function saveSessions(sessions) {
-  fs.writeFileSync(SESSION_FILE, JSON.stringify({
-    tokens: [...sessions],
-    expiresAt: Date.now() + 8 * 60 * 60 * 1000,
-  }), 'utf8')
-}
-
-const sessions = loadSessions()
 
 export function isAuthedToken(token) {
-  return isValidToken(token) && sessions.has(token)
+  return process.env.NODE_ENV !== 'production' && adminSessions.has(token)
 }
 
 export default function handler(req, res) {
+  res.setHeader('Cache-Control', 'no-store')
+  res.setHeader('X-Robots-Tag', 'noindex, nofollow')
+  if (process.env.NODE_ENV === 'production') return res.status(403).json({ error: 'Admin non disponible en production' })
+
   if (req.method === 'POST') {
-    const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'unknown'
-
-    if (isRateLimited(ip)) {
-      return res.status(429).json({ error: 'Trop de tentatives. Réessayez dans 15 minutes.' })
-    }
-
-    const { password } = req.body
-    if (!password || password !== process.env.ADMIN_PASSWORD) {
-      recordAttempt(ip)
+    const now = Date.now()
+    for (const [key, entry] of loginAttempts) if (entry.expiresAt <= now) loginAttempts.delete(key)
+    const ip = req.socket?.remoteAddress || 'unknown'
+    const entry = loginAttempts.get(ip) || { count: 0, expiresAt: now + 15 * 60 * 1000 }
+    if (entry.count >= 5) return res.status(429).json({ error: 'Trop de tentatives. Réessayez dans 15 minutes.' })
+    const { password } = req.body || {}
+    const expected = process.env.ADMIN_PASSWORD
+    if (typeof password !== 'string' || !expected || Buffer.byteLength(password) !== Buffer.byteLength(expected) ||
+        !timingSafeEqual(Buffer.from(password), Buffer.from(expected))) {
+      entry.count += 1
+      loginAttempts.set(ip, entry)
       return res.status(401).json({ error: 'Mot de passe incorrect' })
     }
-
-    const token = generateToken()
-    sessions.add(token)
-    saveSessions(sessions)
-    setCookie(res, token, 60 * 60 * 8) // 8h
-    return res.status(200).json({ ok: true })
+    try {
+      const token = adminSessions.create()
+      setCookie(res, token, SESSION_SECONDS)
+      return res.status(200).json({ ok: true })
+    } catch { return res.status(503).json({ error: 'Connexion temporairement indisponible' }) }
   }
 
   if (req.method === 'DELETE') {
-    const cookie = req.headers.cookie || ''
-    const token = cookie.split(';').map(c => c.trim()).find(c => c.startsWith(`${COOKIE}=`))?.split('=')[1]
-    if (token) { sessions.delete(token); saveSessions(sessions) }
+    try { adminSessions.revoke(readSessionToken(req)) }
+    catch { return res.status(503).json({ error: 'Déconnexion temporairement indisponible' }) }
     setCookie(res, '', 0)
     return res.status(200).json({ ok: true })
   }
-
   if (req.method === 'GET') {
-    const cookie = req.headers.cookie || ''
-    const token = cookie.split(';').map(c => c.trim()).find(c => c.startsWith(`${COOKIE}=`))?.split('=')[1]
-    const authed = isAuthedToken(token)
+    const authed = isAuthedToken(readSessionToken(req))
     return res.status(authed ? 200 : 401).json({ authed })
   }
-
+  res.setHeader('Allow', 'GET, POST, DELETE')
   return res.status(405).json({ error: 'Method not allowed' })
 }

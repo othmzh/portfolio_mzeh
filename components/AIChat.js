@@ -1,8 +1,6 @@
 import ReactMarkdown from 'react-markdown'
 import styles from '../styles/AIChat.module.css'
 import { useChat } from '../hooks/useChat'
-import { motion } from 'framer-motion'
-import { fadeInUp } from '../hooks/useFadeInUp'
 import { useTranslation } from '../hooks/useTranslation'
 
 function makeMdComponents(s) {
@@ -13,8 +11,8 @@ function makeMdComponents(s) {
     ul: ({ children }) => <ul className={s.mdUl}>{children}</ul>,
     ol: ({ children }) => <ol className={s.mdOl}>{children}</ol>,
     li: ({ children }) => <li className={s.mdLi}>{children}</li>,
-    h1: ({ children }) => <h1 className={s.mdH1}>{children}</h1>,
-    h2: ({ children }) => <h2 className={s.mdH2}>{children}</h2>,
+    h1: ({ children }) => <h3 className={s.mdH1}>{children}</h3>,
+    h2: ({ children }) => <h3 className={s.mdH2}>{children}</h3>,
     h3: ({ children }) => <h3 className={s.mdH3}>{children}</h3>,
     code: ({ children }) => <code className={s.mdCode}>{children}</code>,
     pre: ({ children }) => <pre className={s.mdPre}>{children}</pre>,
@@ -37,20 +35,7 @@ export default function AIChat() {
   ]
 
   return (
-    <section id="ai-chat" className={styles.section}>
-      <div className={styles.container}>
-        <div className={styles.label}>{t('chat.label')}</div>
-        <h2 className={styles.h2}>{t('chat.heading')}</h2>
-        <p className={styles.sub}>{t('chat.sub')}</p>
-
-        <motion.div
-          className={styles.wrapper}
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-        >
+    <div className={styles.wrapper}>
           {/* Header */}
           <div className={styles.header}>
             <div className={styles.avatar}>AI</div>
@@ -100,6 +85,8 @@ export default function AIChat() {
           {/* Input */}
           <div className={styles.inputArea}>
             <input
+              aria-label={t('chat.placeholder')}
+              maxLength={2000}
               value={input}
               onChange={e => setInput(e.target.value)}
               onKeyDown={e => e.key === 'Enter' && send()}
@@ -114,8 +101,6 @@ export default function AIChat() {
               {t('chat.send')}
             </button>
           </div>
-        </motion.div>
-      </div>
-    </section>
+    </div>
   )
 }

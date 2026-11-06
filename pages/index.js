@@ -7,10 +7,11 @@ import Experience from '../components/Experience'
 import CaseStudies from '../components/CaseStudies'
 import Certifications from '../components/Certifications'
 import Testimonials from '../components/Testimonials'
-import AIChat from '../components/AIChat'
+import DeferredChat from '../components/DeferredChat'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import { useTranslation } from '../hooks/useTranslation'
+import { loadPublicProps } from '../lib/public-content.mjs'
 
 export default function Home() {
   const { t, locale } = useTranslation()
@@ -65,6 +66,7 @@ export default function Home() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Person",
+            "@id": "https://omzeh.tn/#person",
             "name": "Othmen Mzeh",
             "url": "https://omzeh.tn",
             "image": "https://omzeh.tn/othmen.png",
@@ -73,8 +75,7 @@ export default function Home() {
             "nationality": { "@type": "Country", "name": locale === 'en' ? "Tunisia" : "Tunisie" },
             "address": {
               "@type": "PostalAddress",
-              "addressCountry": "TN",
-              "addressLocality": locale === 'en' ? "Tunisia" : "Tunisie"
+              "addressCountry": "TN"
             },
             "hasOccupation": {
               "@type": "Occupation",
@@ -104,9 +105,9 @@ export default function Home() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ProfilePage",
-            "dateCreated": "2024-01-01",
-            "dateModified": new Date().toISOString().split('T')[0],
+            "dateModified": "2026-11-06",
             "mainEntity": {
+              "@id": "https://omzeh.tn/#person",
               "@type": "Person",
               "name": "Othmen Mzeh",
               "identifier": "othmen-mzeh",
@@ -126,6 +127,7 @@ export default function Home() {
             "description": t('meta.description'),
             "inLanguage": locale === 'en' ? "en-US" : "fr-FR",
             "author": {
+              "@id": "https://omzeh.tn/#person",
               "@type": "Person",
               "name": "Othmen Mzeh"
             },
@@ -142,7 +144,7 @@ export default function Home() {
         <CaseStudies />
         <Certifications />
         <Testimonials />
-        <AIChat />
+        <DeferredChat />
         <Contact />
       </main>
 
@@ -151,9 +153,8 @@ export default function Home() {
   )
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }) {
   return {
-    props: {},
-    revalidate: 60,
+    props: await loadPublicProps(locale, true),
   }
 }

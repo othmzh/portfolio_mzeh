@@ -1,26 +1,18 @@
 import styles from '../styles/Contact.module.css'
-import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { useTranslation } from '../hooks/useTranslation'
-import contactFr from '../data/fr/contact.fr.json'
-import contactEn from '../data/en/contact.en.json'
 
-const contactByLocale = { fr: contactFr, en: contactEn }
 
 export default function Contact() {
-  const { t, locale } = useTranslation()
+  const { t, locale, content } = useTranslation()
   const [copied, setCopied] = useState('')
-  const contactData = contactByLocale[locale] ?? contactByLocale.fr
+  const contactData = content['contact']
   const { intro, introSecond, links: LINKS } = contactData
 
   return (
     <section id="contact" className={styles.section}>
       <div className="contact-grid">
-        <motion.div
-          initial={{ opacity: 0, x: -32 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
+        <div
         >
           <div className={styles.label}>{t('contact.label')}</div>
           <h2 className={styles.h2}>{t('contact.heading').split('\n').map((line, i, arr) => (
@@ -28,13 +20,9 @@ export default function Contact() {
           ))}</h2>
           <p className={styles.intro}>{intro}</p>
           <p className={styles.introSecond}>{introSecond}</p>
-        </motion.div>
-        <motion.div
+        </div>
+        <div
           className={styles.links}
-          initial={{ opacity: 0, x: 32 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
         >
           {LINKS.map(l => l.copyValue ? (
             <button key={l.label} type="button" className={`contact-link ${styles.link} ${styles.copyLink}`} onClick={async () => {
@@ -63,7 +51,7 @@ export default function Contact() {
               <div className={styles.arr}>→</div>
             </a>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   )

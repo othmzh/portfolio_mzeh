@@ -1,16 +1,11 @@
 import styles from '../styles/Certifications.module.css'
-import { motion } from 'framer-motion'
-import { fadeInUp } from '../hooks/useFadeInUp'
 import { useTranslation } from '../hooks/useTranslation'
-import certsFr from '../data/fr/certifications.fr.json'
-import certsEn from '../data/en/certifications.en.json'
 
-const certsByLocale = { fr: certsFr, en: certsEn }
 const CERT_GROUPS = ['professional', 'preparation', 'cloud', 'ai']
 
 export default function Certifications() {
-  const { t, locale } = useTranslation()
-  const CERTS = certsByLocale[locale] ?? certsByLocale.fr
+  const { t, locale, content } = useTranslation()
+  const CERTS = content['certifications']
 
   return (
     <section id="certifications" className={styles.section}>
@@ -23,14 +18,9 @@ export default function Certifications() {
             if (!groupCerts.length) return null
 
             return (
-              <motion.div
+              <div
                 className={`${styles.group} ${group === 'preparation' ? styles.preparation : ''}`}
                 key={group}
-                variants={fadeInUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, ease: 'easeOut' }}
               >
                 <h3 className={styles.groupHeading}>
                   {t(`certifications.group.${group}`)}
@@ -44,7 +34,7 @@ export default function Certifications() {
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             )
           })}
         </div>

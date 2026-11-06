@@ -1,24 +1,3 @@
-import heroFr from '../data/fr/hero.fr.json'
-import heroEn from '../data/en/hero.en.json'
-
-const heroData = { fr: heroFr, en: heroEn }
-
-// Texte extrait du terminal, lisible par les crawlers (visuellement masqué)
-export function TerminalSEOText({ locale = 'fr', translations = {} }) {
-  const d = heroData[locale] ?? heroData.fr
-  const term = d.terminal
-  const t = (key) => translations[key] ?? key
-
-  return (
-    <div aria-hidden="false" style={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0,0,0,0)', whiteSpace: 'nowrap' }}>
-      <p>{term.name} — {term.role}. {term.experience} {t('terminal.seo.intro')}. {t('terminal.seo.team')} {term.team_size} {t('terminal.seo.engineers')}. {t('terminal.seo.location')} : {term.location}. {t('terminal.seo.status')} : {term.status}.</p>
-      <p>{t('terminal.seo.management')} : {term.management.join(', ')}.</p>
-      <p>{t('terminal.seo.aiSkills')} : {term.ai_skills.join(', ')}.</p>
-      <p>{t('terminal.seo.tech')} : {term.tech.join(', ')}.</p>
-    </div>
-  )
-}
-
 const c = {
   comment: '#8496a6', key: '#0097ff', str: '#00d4aa',
   num: '#f97316', bool: '#a78bfa', bracket: '#8896a6',
@@ -63,8 +42,6 @@ export function makeLines(terminalData, translations = {}) {
   ]
 }
 
-// Keep LINES export for backward compatibility — will use FR by default
-export const LINES = makeLines(heroFr.terminal)
 
 export function Line({ l }) {
   if (l.t === 'blank') return <br />

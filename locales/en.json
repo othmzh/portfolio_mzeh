@@ -42,9 +42,12 @@
   "testimonials.goTo": "Show recommendation",
   "certifications.footer": "// Education — Master's in Applied Computer Science, Faculty of Legal, Economic and Management Sciences of Jendouba (FSJEGJ) (2004–2008)",
 
+  "chat.open": "Open the assistant",
+  "chat.retry": "Try again",
+  "chat.requiresJs": "Enable JavaScript to use the assistant, or contact me below.",
   "chat.label": "// artificial intelligence",
   "chat.heading": "Ask a question about my profile",
-  "chat.sub": "An AI assistant trained on my background answers in real time.",
+  "chat.sub": "An AI assistant informed by my background answers your questions.",
   "chat.placeholder": "Ask your question...",
   "chat.send": "Send ↗",
   "chat.you": "You",

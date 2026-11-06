@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import { isAuthedToken } from './admin-auth'
+import { isAuthedToken } from './admin-auth.js'
 
 const ALLOWED_FILES = ['skills', 'experience', 'certifications', 'contact', 'hero']
 const ALLOWED_LOCALES = ['fr', 'en']

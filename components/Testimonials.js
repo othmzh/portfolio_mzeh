@@ -1,14 +1,11 @@
 import { useEffect, useState } from 'react'
 import styles from '../styles/Testimonials.module.css'
 import { useTranslation } from '../hooks/useTranslation'
-import testimonialsFr from '../data/fr/testimonials.fr.json'
-import testimonialsEn from '../data/en/testimonials.en.json'
 
-const testimonialsByLocale = { fr: testimonialsFr, en: testimonialsEn }
 
 export default function Testimonials() {
-  const { t, locale } = useTranslation()
-  const testimonials = testimonialsByLocale[locale] ?? testimonialsByLocale.fr
+  const { t, locale, content } = useTranslation()
+  const testimonials = content['testimonials']
   const [activeIndex, setActiveIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
   const activeTestimonial = testimonials[activeIndex % testimonials.length]

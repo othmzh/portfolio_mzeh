@@ -43,6 +43,10 @@
   overflow: hidden;
 }
 
+.deferred { min-height: 440px; }
+.placeholder { min-height: 440px; max-width: 760px; margin: 0 auto; padding: 24px; border: 1px solid var(--border2); border-radius: 12px; background: var(--surface); }
+.placeholder p { margin-bottom: 24px; }
+
 .header {
   background: var(--surface2);
   padding: 16px 20px;

@@ -1,14 +1,30 @@
+import { admitChat, MAX_MESSAGE_LENGTH, UPSTREAM_TIMEOUT_MS } from '../../lib/chat-admission.mjs'
+
+export const config = { api: { bodyParser: { sizeLimit: '16kb' } } }
+
 export default async function handler(req, res) {
+  res.setHeader('Cache-Control', 'no-store');
   if (req.method !== 'POST') {
+    res.setHeader('Allow', 'POST');
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { message, locale } = req.body;
-  if (!message) {
-    return res.status(400).json({ error: 'Message required' });
+  const { message, locale } = req.body || {};
+  if (typeof message !== 'string' || !message.trim() || message.length > MAX_MESSAGE_LENGTH) {
+    return res.status(400).json({ error: locale === 'en' ? 'Enter a message of 1–2000 characters.' : 'Saisissez un message de 1 à 2000 caractères.' });
   }
 
   const lang = locale === 'en' ? 'en' : 'fr';
+  if (!process.env.GROQ_API_KEY) return res.status(503).json({ error: lang === 'en' ? 'Assistant temporarily unavailable.' : 'Assistant temporairement indisponible.' });
+  try {
+    const admission = await admitChat(req);
+    if (!admission.allowed) {
+      res.setHeader('Retry-After', String(admission.retryAfter));
+      return res.status(429).json({ error: lang === 'en' ? 'The assistant is busy. Please try again later.' : 'L’assistant est très sollicité. Réessayez un peu plus tard.' });
+    }
+  } catch {
+    return res.status(503).json({ error: lang === 'en' ? 'Assistant temporarily unavailable.' : 'Assistant temporairement indisponible.' });
+  }
 
   const langInstruction = lang === 'en'
     ? 'Always respond in English, unless the visitor writes in French (in that case respond in French).'
@@ -91,9 +107,15 @@ CERTIFICATIONS :
 FORMATION :
 - Maîtrise en Informatique Appliquée — FSJEGJ (2004–2008)`;
 
+  const controller = new AbortController();
+  if (res.destroyed) return;
+  const timeout = setTimeout(() => controller.abort(), UPSTREAM_TIMEOUT_MS);
+  const onClose = () => { if (!res.writableEnded) controller.abort(); };
+  res.on('close', onClose);
   try {
     const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',
+      signal: controller.signal,
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
@@ -113,9 +135,9 @@ FORMATION :
 
     if (!response.ok) {
       const errMsg = lang === 'en'
-        ? `Error: ${data?.error?.message || 'Check your GROQ_API_KEY on Vercel.'}`
-        : `Erreur : ${data?.error?.message || 'Vérifiez votre clé GROQ_API_KEY sur Vercel.'}`;
-      return res.status(500).json({ reply: errMsg });
+        ? 'Assistant temporarily unavailable. Please try again later.'
+        : 'Assistant temporairement indisponible. Réessayez plus tard.';
+      return res.status(502).json({ reply: errMsg });
     }
 
     const fallback = lang === 'en' ? "Sorry, I couldn't respond." : "Désolé, je n'ai pas pu répondre.";
@@ -123,6 +145,9 @@ FORMATION :
     res.status(200).json({ reply });
   } catch (error) {
     const errMsg = lang === 'en' ? 'Server error. Please try again.' : 'Erreur serveur. Veuillez réessayer.';
-    res.status(500).json({ reply: errMsg });
+    if (!res.destroyed) res.status(controller.signal.aborted ? 504 : 502).json({ reply: errMsg });
+  } finally {
+    clearTimeout(timeout);
+    res.off('close', onClose);
   }
 }

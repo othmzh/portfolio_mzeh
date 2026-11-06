@@ -1,15 +1,10 @@
 import styles from '../styles/Skills.module.css'
-import { motion } from 'framer-motion'
-import { fadeInUp } from '../hooks/useFadeInUp'
 import { useTranslation } from '../hooks/useTranslation'
-import skillsFr from '../data/fr/skills.fr.json'
-import skillsEn from '../data/en/skills.en.json'
 
-const skillsByLocale = { fr: skillsFr, en: skillsEn }
 
 export default function Skills() {
-  const { t, locale } = useTranslation()
-  const SKILLS = skillsByLocale[locale] ?? skillsByLocale.fr
+  const { t, locale, content } = useTranslation()
+  const SKILLS = content['skills']
 
   return (
     <section id="competences" className={styles.section}>
@@ -18,14 +13,9 @@ export default function Skills() {
         <h2 className={styles.h2}>{t('skills.heading')}</h2>
         <div className="skills-grid">
           {SKILLS.map((sk, i) => (
-            <motion.div
+            <div
               key={sk.title}
               className={`skill-card ${styles.card}`}
-              variants={fadeInUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, ease: 'easeOut', delay: i * 0.1 }}
             >
               <div className={styles.header}>
                 <div className={styles.icon}>{sk.icon}</div>
@@ -35,7 +25,7 @@ export default function Skills() {
               <div className={styles.tags}>
                 {sk.tags.map(tag => <span key={tag} className={styles.tag}>{tag}</span>)}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

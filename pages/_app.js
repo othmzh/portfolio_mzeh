@@ -4,6 +4,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Space_Grotesk, Space_Mono } from 'next/font/google'
 import ErrorBoundary from '../components/ErrorBoundary'
 import WhatsAppButton from '../components/WhatsAppButton'
+import { TranslationContext } from '../hooks/useTranslation'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -21,7 +22,7 @@ const spaceMono = Space_Mono({
 
 export default function App({ Component, pageProps }) {
   return (
-    <>
+    <TranslationContext.Provider value={{ dictionary: pageProps.dictionary || {}, content: pageProps.content || {} }}>
       <style>{`
         :root {
           --font-sans: ${spaceGrotesk.style.fontFamily};
@@ -32,6 +33,6 @@ export default function App({ Component, pageProps }) {
       <WhatsAppButton />
       <Analytics />
       <SpeedInsights />
-    </>
+    </TranslationContext.Provider>
   )
 }

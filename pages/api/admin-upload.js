@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import { isAuthedToken } from './admin-auth'
+import { isAuthedToken } from './admin-auth.js'
 
 function isAuthed(req) {
   const cookie = req.headers.cookie || ''

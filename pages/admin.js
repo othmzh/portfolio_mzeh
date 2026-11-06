@@ -1,5 +1,13 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
+import { loadPublicProps } from '../lib/public-content.mjs'
+
+export async function getServerSideProps({ locale, res }) {
+  res.setHeader('Cache-Control', 'no-store')
+  res.setHeader('X-Robots-Tag', 'noindex, nofollow')
+  if (process.env.NODE_ENV === 'production') return { notFound: true }
+  return { props: await loadPublicProps(locale) }
+}
 import skillsFr from '../data/fr/skills.fr.json'
 import skillsEn from '../data/en/skills.en.json'
 import experienceFr from '../data/fr/experience.fr.json'
@@ -732,7 +740,10 @@ export default function Admin() {
     setAuthed(false)
   }
 
-  if (!authed) return <LoginGate onAuth={() => setAuthed(true)} />
+  if (!authed) return <>
+    <Head><title>Admin — Portfolio</title><meta name="robots" content="noindex,nofollow" /></Head>
+    <LoginGate onAuth={() => setAuthed(true)} />
+  </>
 
   return (
     <>

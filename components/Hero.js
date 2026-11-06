@@ -1,24 +1,13 @@
 import Image from 'next/image'
 import { QRCodeSVG } from 'qrcode.react'
 import styles from '../styles/Hero.module.css'
-import { makeLines, Line, TerminalSEOText } from './TerminalCard'
-import { motion } from 'framer-motion'
+import { makeLines, Line } from './TerminalCard'
 import { useTranslation } from '../hooks/useTranslation'
-import heroFr from '../data/fr/hero.fr.json'
-import heroEn from '../data/en/hero.en.json'
 
-const heroByLocale = { fr: heroFr, en: heroEn }
-
-const fadeIn = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }
-
-const staggerContainer = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
-}
 
 export default function Hero() {
-  const { t, locale } = useTranslation()
-  const heroData = heroByLocale[locale] ?? heroByLocale.fr
+  const { t, content } = useTranslation()
+  const heroData = content['hero']
   const lines = makeLines(heroData.terminal, Object.fromEntries(
     ['terminal.comment.management', 'terminal.comment.ai', 'terminal.comment.tech'].map(k => [k, t(k)])
   ))
@@ -28,12 +17,8 @@ export default function Hero() {
       <div className={styles.wrapper}>
         <div className="hero-grid">
           {/* LEFT */}
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            animate="visible"
-          >
-            <motion.div variants={fadeIn} transition={{ duration: 0.5, ease: 'easeOut' }} className={styles.photoWrap}>
+          <div>
+            <div className={styles.photoWrap}>
               <Image src="/othmen.png" alt={heroData.name} width={68} height={68} className={styles.photo} priority />
               <div style={{ flex: 1 }}>
                 <div className={styles.photoName}>{heroData.name}</div>
@@ -51,37 +36,32 @@ export default function Hero() {
                 />
                 <div className={styles.qrLabel}>LinkedIn</div>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div variants={fadeIn} transition={{ duration: 0.5, ease: 'easeOut' }} className={styles.eyebrow}>
+            <div className={styles.eyebrow}>
               {heroData.eyebrow}
-            </motion.div>
+            </div>
 
-            <motion.h1 variants={fadeIn} transition={{ duration: 0.5, ease: 'easeOut' }} className={styles.h1}>
+            <h1 className={styles.h1}>
               <span className={styles.dim}>{heroData.name.split(' ')[0]}</span>
               <span className={styles.accent}>{heroData.name.split(' ')[1]}</span>
-              <span className={styles.h1Suffix}>{heroData.stats[0].num} {t('hero.yearsImpact')}</span>
-            </motion.h1>
+              <span className={styles.h1Suffix}>{heroData.role}</span>
+            </h1>
 
-            <motion.p variants={fadeIn} transition={{ duration: 0.5, ease: 'easeOut' }} className={styles.desc}>
+            <p className={styles.desc}>
               {heroData.description}
-            </motion.p>
+            </p>
 
-            <motion.div variants={fadeIn} transition={{ duration: 0.5, ease: 'easeOut' }} className={styles.cta}>
+            <div className={styles.cta}>
               <a href="#experience" className={`btn-primary ${styles.btnPrimary}`}>{t('hero.cta.journey')}</a>
               <a href="#ai-chat" className={`btn-ghost ${styles.btnGhost}`}>{t('hero.cta.chat')}</a>
-            </motion.div>
+            </div>
 
-            <motion.div variants={fadeIn} transition={{ duration: 0.5, ease: 'easeOut' }}>
-              {/* stats rendered below in stats-bar */}
-            </motion.div>
-          </motion.div>
+          </div>
 
           {/* RIGHT — terminal (hidden on mobile via CSS) */}
           <div className={`terminal-card ${styles.terminal}`} style={{ position: 'relative' }}>
-            <TerminalSEOText locale={locale} translations={Object.fromEntries(
-              ['terminal.seo.intro','terminal.seo.team','terminal.seo.engineers','terminal.seo.location','terminal.seo.status','terminal.seo.management','terminal.seo.aiSkills','terminal.seo.tech'].map(k => [k, t(k)])
-            )} />
+
             <div className={styles.termBar}>
               {['#ff5f57', '#febc2e', '#28c840'].map(bg => (
                 <span key={bg} className={styles.dot} style={{ background: bg }} />
@@ -95,19 +75,14 @@ export default function Hero() {
         </div>
 
         {/* STATS */}
-        <motion.div
-          className="stats-bar"
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.7 }}
-        >
+        <div className="stats-bar">
           {heroData.stats.map(({ num, label }) => (
             <div key={label} className={styles.statCell}>
               <div className={styles.statNum}>{num}</div>
               <div className={styles.statLbl}>{label}</div>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   )

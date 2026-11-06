@@ -53,7 +53,7 @@ export function useChat() {
     setLoading(true)
     setMessages(prev => [...prev, { role: 'user', text: msg }])
     const controller = new AbortController()
-    const timeoutId = setTimeout(() => controller.abort(), 15000)
+    const timeoutId = setTimeout(() => controller.abort(), 20000)
     try {
       const res = await fetch('/api/chat', {
         method: 'POST',

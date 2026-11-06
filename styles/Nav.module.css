@@ -100,6 +100,7 @@
 }
 
 .langBtn {
+  text-decoration: none;
   background: var(--surface2);
   border: 1px solid var(--border2);
   border-radius: 6px;
