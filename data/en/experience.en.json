@@ -34,7 +34,7 @@
     "title": "Senior Web Developer",
     "bullets": [
       "Design and development of complex business applications with Symfony and Angular",
-      "Development of e-procurement, SRM and supplier management platforms",
+      "Development of e-procurement SaaS B2B, SRM and supplier management platforms",
       "Creation of collaborative platforms integrating DMS and validation workflows"
     ],
     "ai": false
@@ -67,7 +67,9 @@
     "company": "Centre Z",
     "loc": "Tunisia",
     "title": "Computer Science Trainer",
-    "bullets": ["Delivered computer science training"],
+    "bullets": [
+      "Delivered computer science training"
+    ],
     "ai": false
   }
 ]

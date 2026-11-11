@@ -34,7 +34,7 @@
     "title": "Développeur Web Senior",
     "bullets": [
       "Conception et développement d'applications métiers complexes avec Symfony et Angular",
-      "Développement de plateformes e-Achat, SRM et outils de gestion des fournisseurs",
+      "Développement de plateformes e-Achat SaaS B2B, SRM et outils de gestion des fournisseurs",
       "Création de plateformes collaboratives intégrant GED et workflows de validation"
     ],
     "ai": false
@@ -67,7 +67,9 @@
     "company": "Centre Z",
     "loc": "Tunisie",
     "title": "Formateur en informatique",
-    "bullets": ["Animation de formations en informatique"],
+    "bullets": [
+      "Animation de formations en informatique"
+    ],
     "ai": false
   }
 ]
