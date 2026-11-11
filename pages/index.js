@@ -105,7 +105,7 @@ export default function Home() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ProfilePage",
-            "dateModified": "2026-11-06",
+            "dateModified": "2026-11-11",
             "mainEntity": {
               "@id": "https://omzeh.tn/#person",
               "@type": "Person",

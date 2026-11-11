@@ -23,7 +23,10 @@
       "Leading a team of web developers on critical multi-client projects",
       "Technical architecture, task breakdown, effort estimation and schedule management",
       "Participation in tenders, impact analysis and technical scoping",
-      "Supervising test cycles (integration, regression) and delivery validation"
+      "Supervising test cycles (integration, regression) and delivery validation",
+      "Writing and clarifying specifications, impact analysis and code reviews",
+      "Coaching developers and taking part in technical interviews",
+      "Contributing to initiatives supporting the company's ISO 9001 certification process, without a personal ISO 9001 certification"
     ],
     "ai": false
   },
@@ -35,7 +38,10 @@
     "bullets": [
       "Design and development of complex business applications with Symfony and Angular",
       "Development of e-procurement SaaS B2B, SRM and supplier management platforms",
-      "Creation of collaborative platforms integrating DMS and validation workflows"
+      "Creation of collaborative platforms integrating DMS and validation workflows",
+      "Developing a client exchange platform with requests, comments, replies, file sharing, history and email notifications",
+      "Developing an insurance decision database populated through Excel imports and web services",
+      "Managing users, organizations, roles, documents and tickets in a supplier platform"
     ],
     "ai": false
   },
@@ -47,7 +53,8 @@
     "bullets": [
       "Development of business applications with Symfony (CRM, mini-ERP)",
       "Administration and evolution of Moodle and Claroline platforms",
-      "Development of LMS modules and customizations"
+      "Development of LMS modules and customizations",
+      "Developing a website generator and building WordPress and Joomla websites"
     ],
     "ai": false
   },
@@ -58,7 +65,7 @@
     "title": "Web Developer",
     "bullets": [
       "Development of e-learning solutions based on Moodle",
-      "Design of a skills management application"
+      "PHP skills management application: self-assessment, identifying skills gaps and automatically assigning suitable e-learning paths"
     ],
     "ai": false
   },

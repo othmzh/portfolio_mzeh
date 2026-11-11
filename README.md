@@ -59,6 +59,14 @@ La clé de quota `portfolio-chat:v1` doit rester commune aux déploiements utili
 
 En production, une configuration Redis absente, partielle ou indisponible suspend les appels Groq (503 avec un message public générique). Hors production seulement, l'absence complète de Redis utilise un compteur en mémoire. La clé Groq reste côté serveur et les erreurs techniques du fournisseur ne sont pas exposées au visiteur.
 
+### Informations de l'assistant
+
+`lib/chat-profile.mjs` construit les informations de l'assistant depuis les mêmes JSON français que le portfolio : identité, compétences, expériences, certifications, études de cas et ouverture aux opportunités. Cette base factuelle est commune aux réponses FR/EN. `data/assistant-profile.json` contient les objectifs professionnels confirmés, la formation et les noms de clients à anonymiser. Le contenu est relu à chaque requête admise ; sa publication nécessite toujours un rebuild et un redéploiement sur Vercel. `outputFileTracingIncludes` embarque ces données avec la route `/api/chat`.
+
+Les champs sont sélectionnés avant transmission au fournisseur : les noms d'employeurs et les noms de clients listés dans `clientNamesToAnonymize` sont masqués, les URL de références projets et les témoignages sont exclus. Lors de l'ajout d'un cas client, ajouter son nom à cette liste. Les technologies et les organismes de formation restent nommés. Cette sélection réduit l'exposition des références ; les consignes du modèle ne garantissent pas à elles seules toutes ses réponses.
+
+Les réponses distinguent le socle historique PHP/Symfony/Angular/JavaScript des technologies du portfolio, les chiffres de contexte des résultats personnels, les attestations obtenues de la préparation PMP, et l'ouverture aux opportunités d'une disponibilité immédiate. Ne pas ajouter de gains chiffrés sans preuve.
+
 ### Sessions locales et publication
 
 Les nouvelles sessions sont stockées séparément dans `.admin-sessions/`, avec une expiration propre à chaque jeton contrôlée à chaque requête. Les anciennes sessions `.sessions.json` sont invalidées : reconnectez-vous une fois après cette mise à jour. Ne publiez pas le serveur de développement sur Internet. La production rejette `/admin` avec 404 et les API admin avec 403.

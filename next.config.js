@@ -29,6 +29,9 @@ const securityHeaders = [
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  outputFileTracingIncludes: {
+    '/api/chat': ['./data/fr/*.fr.json', './data/assistant-profile.json'],
+  },
   i18n: {
     locales: ['fr', 'en'],
     defaultLocale: 'fr',

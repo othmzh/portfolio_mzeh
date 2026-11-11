@@ -23,7 +23,10 @@
       "Leadership d'une équipe de développeurs web sur des projets critiques multi-clients",
       "Architecture technique, découpage des tâches, estimation des charges et pilotage des plannings",
       "Participation aux appels d'offres, analyses d'impact et chiffrage technique",
-      "Supervision des cycles de tests (intégration, TNR) et validation des livraisons"
+      "Supervision des cycles de tests (intégration, TNR) et validation des livraisons",
+      "Rédaction et clarification des spécifications, analyses d'impact et revues de code",
+      "Accompagnement des développeurs et participation aux entretiens techniques",
+      "Contribution à des initiatives soutenant la démarche de certification ISO 9001 de l'entreprise, sans certification personnelle ISO 9001"
     ],
     "ai": false
   },
@@ -35,7 +38,10 @@
     "bullets": [
       "Conception et développement d'applications métiers complexes avec Symfony et Angular",
       "Développement de plateformes e-Achat SaaS B2B, SRM et outils de gestion des fournisseurs",
-      "Création de plateformes collaboratives intégrant GED et workflows de validation"
+      "Création de plateformes collaboratives intégrant GED et workflows de validation",
+      "Développement d'un espace d'échange client : demandes, commentaires, réponses, partage de fichiers, historique et notifications email",
+      "Développement d'une base de décisions pour l'assurance, alimentée par des imports Excel et des webservices",
+      "Gestion des utilisateurs, organisations et rôles, documents et tickets dans une plateforme fournisseurs"
     ],
     "ai": false
   },
@@ -47,7 +53,8 @@
     "bullets": [
       "Développement d'applications métiers sous Symfony (CRM, mini-ERP)",
       "Administration et évolution de plateformes Moodle et Claroline",
-      "Développement de modules et personnalisations LMS"
+      "Développement de modules et personnalisations LMS",
+      "Développement d'un générateur de sites web et réalisation de sites WordPress et Joomla"
     ],
     "ai": false
   },
@@ -58,7 +65,7 @@
     "title": "Développeur Web",
     "bullets": [
       "Développement de solutions e-learning basées sur Moodle",
-      "Conception d'une application de gestion des compétences"
+      "Application PHP de gestion des compétences : autoévaluation, identification des écarts et affectation automatique de parcours e-learning adaptés"
     ],
     "ai": false
   },

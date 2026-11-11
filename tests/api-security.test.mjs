@@ -56,6 +56,9 @@ test('valid FR and EN messages retain the reply contract and provider errors sta
       const body = JSON.parse(options.body)
       assert.equal(body.messages[1].content, 'Tell me about Othmen')
       assert.ok(body.messages[0].content.includes(locale === 'en' ? 'Always respond in English' : 'Réponds toujours en français'))
+      assert.ok(body.messages[0].content.includes('Pilotage de projets IT'))
+      assert.ok(body.messages[0].content.includes('Claude 101'))
+      assert.ok(!/Witik|OneTech|Sofia Holding|sofia-technologies\.com/i.test(body.messages[0].content))
       return { ok: true, json: async () => ({ choices: [{ message: { content: 'A valid reply' } }] }) }
     })
     const res = response()

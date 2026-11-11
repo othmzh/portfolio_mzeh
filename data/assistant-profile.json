@@ -1,0 +1,23 @@
+{
+  "reviewedAt": "2026-11-11",
+  "positioning": "Engineering Manager | IT Delivery & Technical Project Management | Agile & SaaS",
+  "targetRoles": [
+    "Engineering Management",
+    "IT Delivery Management",
+    "Technical Project Management",
+    "Program Management"
+  ],
+  "priorityMissions": [
+    "Pilotage de projets IT",
+    "Pilotage du delivery technique"
+  ],
+  "portfolioTechnologies": ["Node.js", "Next.js", "React"],
+  "education": [
+    {
+      "degree": "Maîtrise en Informatique Appliquée",
+      "institution": "FSJEGJ",
+      "period": "2004–2008"
+    }
+  ],
+  "clientNamesToAnonymize": ["OneTech"]
+}
