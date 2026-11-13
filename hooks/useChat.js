@@ -32,11 +32,17 @@ export function useChat() {
   const [loading, setLoading] = useState(false)
   const [showSugg, setShowSugg] = useState(true)
   const messagesRef = useRef(null)
+  const requestRef = useRef(null)
 
   useEffect(() => {
     setMessages([{ role: 'ai', text: WELCOME[lang] }])
     setShowSugg(true)
     setInput('')
+    setLoading(false)
+    return () => {
+      requestRef.current?.abort()
+      requestRef.current = null
+    }
   }, [lang])
 
   useEffect(() => {
@@ -47,12 +53,13 @@ export function useChat() {
 
   const send = async (text) => {
     const msg = text || input.trim()
-    if (!msg || loading) return
+    if (!msg || loading || requestRef.current) return
     setInput('')
     setShowSugg(false)
     setLoading(true)
     setMessages(prev => [...prev, { role: 'user', text: msg }])
     const controller = new AbortController()
+    requestRef.current = controller
     const timeoutId = setTimeout(() => controller.abort(), 20000)
     try {
       const res = await fetch('/api/chat', {
@@ -63,16 +70,19 @@ export function useChat() {
       })
       const data = await res.json()
       const reply = data.reply || data.error || ERROR_FALLBACK[lang]
-      setMessages(prev => [...prev, { role: 'ai', text: reply }])
+      if (requestRef.current === controller) setMessages(prev => [...prev, { role: 'ai', text: reply }])
     } catch (err) {
       const text = err.name === 'AbortError'
         ? ERROR_TIMEOUT[lang]
         : ERROR_GENERIC[lang]
-      setMessages(prev => [...prev, { role: 'ai', text }])
+      if (requestRef.current === controller) setMessages(prev => [...prev, { role: 'ai', text }])
     } finally {
       clearTimeout(timeoutId)
+      if (requestRef.current === controller) {
+        requestRef.current = null
+        setLoading(false)
+      }
     }
-    setLoading(false)
   }
 
   return { messages, input, setInput, loading, showSugg, messagesRef, send }

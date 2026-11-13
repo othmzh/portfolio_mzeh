@@ -11,7 +11,6 @@ export default function SectionBubbles() {
     { id: 'case-studies', label: t('nav.links.caseStudies') },
     { id: 'certifications', label: t('nav.links.certifications') },
     { id: 'testimonials', label: t('nav.links.testimonials') },
-    { id: 'ai-chat', label: t('nav.links.chat') },
     { id: 'contact', label: t('nav.links.contact') },
   ]
   const [active, setActive] = useState('hero')

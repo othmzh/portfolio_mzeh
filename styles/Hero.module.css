@@ -14,32 +14,14 @@
   margin: 0 auto;
 }
 
+.mainContent { min-width: 0; }
+
 .photoWrap {
   display: flex;
   align-items: center;
   gap: 14px;
   margin-bottom: 2rem;
   flex-wrap: wrap;
-}
-
-.qrWrap {
-  padding: 6px;
-  background: var(--surface2);
-  border: 1px solid var(--border2);
-  border-radius: 8px;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
-}
-
-.qrLabel {
-  font-family: var(--mono);
-  font-size: 9px;
-  color: var(--accent);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 .photo {
@@ -117,9 +99,10 @@
 }
 
 .cta {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr) minmax(0, 1.2fr);
+  align-items: stretch;
+  gap: 8px;
 }
 
 .availability {
@@ -133,7 +116,13 @@
 .btnPrimary {
   display: inline-flex;
   align-items: center;
-  padding: 13px 26px;
+  justify-content: center;
+  min-width: 0;
+  min-height: 48px;
+  padding: 12px 8px;
+  text-align: center;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
   border-radius: 6px;
   font-size: 13px;
   font-weight: 600;
@@ -146,7 +135,13 @@
 .btnGhost {
   display: inline-flex;
   align-items: center;
-  padding: 13px 26px;
+  justify-content: center;
+  min-width: 0;
+  min-height: 48px;
+  padding: 12px 8px;
+  text-align: center;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
   border-radius: 6px;
   font-size: 13px;
   font-weight: 600;

@@ -1,10 +1,9 @@
 import { useTranslation } from '../hooks/useTranslation'
+import { useChatWidget } from '../hooks/useChatWidget'
 import styles from '../styles/WhatsAppButton.module.css'
 
 const WA_NUMBER = '21653795988'
-const FREELANCE_PROFILES = [
-  { name: 'Malt', href: 'https://www.malt.fr/profile/othmenmzeh', logo: '/malt-logo.png' },
-]
+const LINKEDIN_PROFILE = 'https://linkedin.com/in/othmen-mzeh'
 
 const MESSAGE = {
   fr: "Bonjour Othmen, j'ai visité votre portfolio et je souhaite vous contacter.",
@@ -13,14 +12,16 @@ const MESSAGE = {
 
 export default function WhatsAppButton() {
   const { locale, t } = useTranslation()
+  const { openChat } = useChatWidget()
   const text = encodeURIComponent(MESSAGE[locale] ?? MESSAGE.fr)
   const href = `https://wa.me/${WA_NUMBER}?text=${text}`
 
   return (
     <div className={styles.actions}>
-      <a className={styles.actionButton} href="#hero">
-        <span aria-hidden="true">↑</span> {t('footer.backToTop')}
-      </a>
+      {t('chat.open') !== 'chat.open' && <button id="chatbot-launcher" type="button" className={`${styles.actionButton} ${styles.chatButton}`} onClick={openChat} aria-label={t('chat.open')} aria-haspopup="dialog" aria-controls="portfolio-chatbot">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-8 8H5l-3 2v-10a9 9 0 0 1 18 0Z"/><path d="M7 10h8M7 14h5"/></svg>
+        <span>{t('chat.launcher')}</span>
+      </button>}
       <a
         href={href}
         target="_blank"
@@ -34,23 +35,12 @@ export default function WhatsAppButton() {
         </svg>
         <span>WhatsApp</span>
       </a>
-      {FREELANCE_PROFILES.map(profile => (
-        <a
-          key={profile.name}
-          className={styles.actionButton}
-          href={profile.href}
-          target="_blank"
-          rel="noreferrer"
-          aria-label={profile.name}
-        >
-          <img
-            className={styles.platformLogo}
-            src={profile.logo}
-            alt=""
-            aria-hidden="true"
-          />
-        </a>
-      ))}
+      <a className={styles.actionButton} href={LINKEDIN_PROFILE} target="_blank" rel="noreferrer" aria-label={locale === 'en' ? 'View my LinkedIn profile' : 'Voir mon profil LinkedIn'}>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.75H4.98V9.2h2.95v9.55ZM6.46 7.9a1.71 1.71 0 1 1 0-3.42 1.71 1.71 0 0 1 0 3.42Zm12.29 10.85H15.8V14.1c0-1.11-.02-2.54-1.55-2.54-1.55 0-1.79 1.21-1.79 2.46v4.73H9.51V9.2h2.83v1.3h.04c.39-.74 1.36-1.53 2.8-1.53 3 0 3.57 1.97 3.57 4.53v5.25Z" />
+        </svg>
+        <span>LinkedIn</span>
+      </a>
     </div>
   )
 }

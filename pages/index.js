@@ -7,11 +7,11 @@ import Experience from '../components/Experience'
 import CaseStudies from '../components/CaseStudies'
 import Certifications from '../components/Certifications'
 import Testimonials from '../components/Testimonials'
-import DeferredChat from '../components/DeferredChat'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import { useTranslation } from '../hooks/useTranslation'
 import { loadPublicProps } from '../lib/public-content.mjs'
+import { CONTENT_UPDATED_AT } from '../lib/site.mjs'
 
 export default function Home() {
   const { t, locale } = useTranslation()
@@ -105,7 +105,7 @@ export default function Home() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ProfilePage",
-            "dateModified": "2026-11-11",
+            "dateModified": CONTENT_UPDATED_AT,
             "mainEntity": {
               "@id": "https://omzeh.tn/#person",
               "@type": "Person",
@@ -144,7 +144,6 @@ export default function Home() {
         <CaseStudies />
         <Certifications />
         <Testimonials />
-        <DeferredChat />
         <Contact />
       </main>
 

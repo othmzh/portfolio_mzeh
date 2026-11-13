@@ -12,7 +12,29 @@
       "Technical recruiting, onboarding and upskilling engineers",
       "Establishing continuous improvement practices: actionable retrospectives, code standards, living documentation"
     ],
-    "ai": true
+    "ai": true,
+    "responsibilities": [
+      {
+        "title": "Team coordination and management",
+        "body": "I lead a 10-person delivery team: 6 developers, 2 QA engineers, 1 product owner and myself as Tech Lead Delivery. My scope includes Agile/Scrum practices and tracking the team’s velocity, quality and cohesion."
+      },
+      {
+        "title": "Backlog, releases and priorities",
+        "body": "I manage the backlog in Azure DevOps and coordinate business, product, QA and engineering stakeholders. I track releases, risks and priorities for a B2B SaaS platform serving 20,000+ users and 100+ clients, with around two production releases per month."
+      },
+      {
+        "title": "Hiring and engineer development",
+        "body": "I contribute to technical hiring, onboarding and engineers’ skills development. Code reviews are part of this support, drawing on my software development and technical leadership experience."
+      },
+      {
+        "title": "Quality and continuous improvement",
+        "body": "I structure shared practices through code standards, living documentation and actionable retrospectives. Monitoring deliverable quality is part of release coordination."
+      },
+      {
+        "title": "Integrating AI into engineering practices",
+        "body": "I introduced three practices into the team’s workflow: Claude Code-assisted reviews, shared prompts and automated quality checklists. AI supports the work while the team retains responsibility for technical decisions and deliverables."
+      }
+    ]
   },
   {
     "period": "Jan. 2019 — Aug. 2021",
@@ -28,7 +50,33 @@
       "Coaching developers and taking part in technical interviews",
       "Contributing to initiatives supporting the company's ISO 9001 certification process, without a personal ISO 9001 certification"
     ],
-    "ai": false
+    "ai": false,
+    "responsibilities": [
+      {
+        "title": "Technical leadership and architecture",
+        "body": "I supported a team of web developers working on critical projects for multiple clients. My role included technical architecture and breaking work down into tasks."
+      },
+      {
+        "title": "Estimation and planning",
+        "body": "I estimated effort and managed project schedules. These responsibilities connected technical decisions with the organization of the team’s work."
+      },
+      {
+        "title": "Tenders and impact analysis",
+        "body": "I contributed to tenders through impact analysis and technical estimates. This work supported project preparation and evaluation."
+      },
+      {
+        "title": "Integration, testing and delivery",
+        "body": "I supervised integration and regression testing, as well as delivery validation. This extended my technical coordination responsibilities through to delivery."
+      },
+      {
+        "title": "Specifications and developer support",
+        "body": "I wrote and clarified specifications, performed impact analysis and took part in code reviews. I also supported developers and participated in technical interviews."
+      },
+      {
+        "title": "Contributing to quality initiatives",
+        "body": "I contributed to initiatives supporting the company’s ISO 9001 certification process. This contribution does not constitute a personal ISO 9001 certification."
+      }
+    ]
   },
   {
     "period": "May 2017 — Dec. 2018",

@@ -1,12 +1,12 @@
 import Image from 'next/image'
-import { QRCodeSVG } from 'qrcode.react'
+import Link from 'next/link'
 import styles from '../styles/Hero.module.css'
 import { makeLines, Line } from './TerminalCard'
 import { useTranslation } from '../hooks/useTranslation'
 
 
 export default function Hero() {
-  const { t, content } = useTranslation()
+  const { t, content, locale } = useTranslation()
   const heroData = content['hero']
   const cvLink = content.contact.links.find(link => link.href?.endsWith('.pdf'))
   const lines = makeLines(heroData.terminal, Object.fromEntries(
@@ -18,24 +18,12 @@ export default function Hero() {
       <div className={styles.wrapper}>
         <div className="hero-grid">
           {/* LEFT */}
-          <div>
+          <div className={styles.mainContent}>
             <div className={styles.photoWrap}>
               <Image src="/othmen.png" alt={heroData.name} width={68} height={68} className={styles.photo} priority />
               <div style={{ flex: 1 }}>
                 <div className={styles.photoName}>{heroData.name}</div>
                 <div className={styles.photoRole}>{heroData.role} · {heroData.location} {heroData.flag}</div>
-              </div>
-              <div className={styles.qrWrap}>
-                <QRCodeSVG
-                  value={heroData.linkedinUrl}
-                  size={48}
-                  bgColor="transparent"
-                  fgColor="var(--accent)"
-                  level="M"
-                  aria-label={t('hero.qr.label')}
-                  role="img"
-                />
-                <div className={styles.qrLabel}>LinkedIn</div>
               </div>
             </div>
 
@@ -55,7 +43,7 @@ export default function Hero() {
 
             <div className={styles.cta}>
               <a href="#experience" className={`btn-primary ${styles.btnPrimary}`}>{t('hero.cta.journey')}</a>
-              <a href="#ai-chat" className={`btn-ghost ${styles.btnGhost}`}>{t('hero.cta.chat')}</a>
+              <Link href="/approche-ia-management" locale={locale} className={`btn-ghost ${styles.btnGhost}`}>{t('hero.cta.chat')}</Link>
               {cvLink && <a href={cvLink.href} download className={`btn-ghost ${styles.btnGhost}`}>{t('hero.cta.cv')}</a>}
             </div>
             <p className={styles.availability}>{content.contact.introSecond}</p>

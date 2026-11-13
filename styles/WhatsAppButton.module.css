@@ -34,12 +34,16 @@
   transform: translateY(-1px);
 }
 
-.platformLogo {
-  width: 72px;
-  height: 24px;
-  display: block;
-  object-fit: contain;
+.chatButton {
+  min-height: 44px;
+  color: var(--btn-primary-text);
+  background: var(--accent);
+  border-color: var(--accent);
+  font-family: var(--sans);
+  font-weight: 700;
+  cursor: pointer;
 }
+.chatButton:hover { color: var(--btn-primary-text); }
 
 .actionButton:focus-visible {
   outline: 2px solid var(--accent);

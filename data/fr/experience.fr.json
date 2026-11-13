@@ -12,7 +12,29 @@
       "Recrutements techniques, onboarding et montée en compétences des ingénieurs",
       "Mise en place de pratiques d'amélioration continue : retrospectives actionnables, standards de code, documentation vivante"
     ],
-    "ai": true
+    "ai": true,
+    "responsibilities": [
+      {
+        "title": "Coordination et management de l’équipe",
+        "body": "Je pilote une équipe delivery de 10 personnes : 6 développeurs, 2 QA, 1 PO et moi-même comme Tech Lead Delivery. Mon périmètre comprend l’organisation Agile/Scrum et le suivi de la vélocité, de la qualité et de la cohésion de l’équipe."
+      },
+      {
+        "title": "Backlog, releases et priorités",
+        "body": "Je pilote le backlog dans Azure DevOps et coordonne les échanges entre métier, produit, QA et développement. Je suis les releases, les risques et les priorités sur une plateforme SaaS B2B utilisée par plus de 20 000 personnes et 100+ clients, avec environ deux mises en production par mois."
+      },
+      {
+        "title": "Recrutement et progression des ingénieurs",
+        "body": "Je participe aux recrutements techniques, à l’onboarding et à la montée en compétences des ingénieurs. Les revues de code font partie de cet accompagnement, en lien avec mon expérience de développement et de leadership technique."
+      },
+      {
+        "title": "Qualité et amélioration continue",
+        "body": "Je structure des pratiques communes à travers les standards de code, une documentation vivante et des rétrospectives actionnables. Le suivi de la qualité des livrables accompagne la coordination des releases."
+      },
+      {
+        "title": "Intégration de l’IA dans les pratiques",
+        "body": "J’ai intégré trois pratiques au workflow de l’équipe : les revues assistées par Claude Code, les prompts partagés et les checklists qualité automatisées. L’IA assiste le travail, tandis que l’équipe conserve la responsabilité des décisions techniques et des livrables."
+      }
+    ]
   },
   {
     "period": "Jan. 2019 — Août 2021",
@@ -28,7 +50,33 @@
       "Accompagnement des développeurs et participation aux entretiens techniques",
       "Contribution à des initiatives soutenant la démarche de certification ISO 9001 de l'entreprise, sans certification personnelle ISO 9001"
     ],
-    "ai": false
+    "ai": false,
+    "responsibilities": [
+      {
+        "title": "Leadership technique et architecture",
+        "body": "J’accompagnais une équipe de développeurs web sur des projets critiques multi-clients. Mon rôle comprenait l’architecture technique et le découpage du travail en tâches."
+      },
+      {
+        "title": "Estimation et planification",
+        "body": "J’estimais les charges et pilotais les plannings des projets. Ces responsabilités reliaient les choix techniques à l’organisation du travail de l’équipe."
+      },
+      {
+        "title": "Appels d’offres et analyse d’impact",
+        "body": "Je participais aux appels d’offres en réalisant des analyses d’impact et du chiffrage technique. Cette contribution intervenait dans la préparation et l’évaluation des projets."
+      },
+      {
+        "title": "Intégration, tests et livraisons",
+        "body": "Je supervisais les cycles de tests d’intégration et de non-régression, ainsi que la validation des livraisons. Ce périmètre complétait le pilotage technique des projets jusqu’à leur livraison."
+      },
+      {
+        "title": "Spécifications et accompagnement des développeurs",
+        "body": "Je rédigeais et clarifiais les spécifications, réalisais les analyses d’impact et participais aux revues de code. J’accompagnais également les développeurs et participais aux entretiens techniques."
+      },
+      {
+        "title": "Contribution à la démarche qualité",
+        "body": "Je contribuais à des initiatives soutenant la démarche de certification ISO 9001 de l’entreprise. Cette contribution ne constitue pas une certification personnelle ISO 9001."
+      }
+    ]
   },
   {
     "period": "Mai 2017 — Déc. 2018",

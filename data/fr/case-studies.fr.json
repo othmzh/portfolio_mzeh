@@ -1,15 +1,78 @@
 [
   {
-    "title": "Adoption de l’IA dans les revues de code",
-    "context": "Chez Witik, l’équipe delivery de 10 personnes (6 développeurs, 2 QA, 1 PO et moi comme Tech Lead Delivery) contribue à une plateforme SaaS B2B utilisée par plus de 20 000 utilisateurs et 100 clients.",
-    "action": "J’ai intégré Claude Code aux revues assistées, structuré les prompts et mis en place des checklists qualité automatisées.",
-    "result": "Trois pratiques sont désormais structurées dans le workflow d’équipe : revue assistée, prompts partagés et checklists qualité. Aucun avant/après chiffré fiable n’est disponible pour quantifier leur effet sur le lead time ou le taux de défauts."
-  },
-  {
     "title": "Pilotage du delivery chez Witik",
     "context": "L’équipe delivery de 10 personnes devait coordonner roadmap technique, releases et priorités métier sur une plateforme comptant 100+ clients.",
     "action": "J’ai piloté le backlog et les releases via Azure DevOps, coordonné métier/produit/QA/développement et suivi les risques et les priorités.",
-    "result": "Le delivery soutenait un rythme moyen d’environ 2 mises en production par mois sur une plateforme utilisée par plus de 20 000 personnes et 100+ clients."
+    "result": "Le delivery soutenait un rythme moyen d’environ 2 mises en production par mois sur une plateforme utilisée par plus de 20 000 personnes et 100+ clients.",
+    "slug": "delivery-witik",
+    "category": "Delivery SaaS",
+    "summary": "Coordonner une équipe de 10 personnes et les releases d’une plateforme utilisée par 20 000+ personnes.",
+    "details": [
+      {
+        "title": "Relier métier, produit et technique",
+        "body": "Je pilote le backlog via Azure DevOps et coordonne les échanges entre métier, produit, QA et développement. Le suivi des risques et des priorités fait partie de ce pilotage."
+      },
+      {
+        "title": "Accompagner les livraisons de bout en bout",
+        "body": "Mon périmètre comprend le suivi des releases, la qualité des livrables et la coordination d’une équipe composée de 6 développeurs, 2 QA, 1 PO et moi-même comme Tech Lead Delivery."
+      }
+    ],
+    "takeaways": [
+      "Coordination d’une équipe pluridisciplinaire de 10 personnes.",
+      "Pilotage du backlog, des risques et des releases avec Azure DevOps.",
+      "Expérience d’un SaaS B2B utilisé par 100+ clients."
+    ],
+    "evidenceNote": "Les chiffres décrivent le périmètre de la plateforme et sa cadence de livraison. Ils ne mesurent pas une amélioration attribuable à une action isolée."
+  },
+  {
+    "slug": "leadership-equipe",
+    "category": "Leadership humain",
+    "title": "Accompagner les ingénieurs chez Witik",
+    "summary": "Recrutement, onboarding et montée en compétences au sein d’une équipe delivery.",
+    "context": "Chez Witik, je pilote une équipe delivery de 10 personnes réunissant développement, QA et produit.",
+    "action": "Je participe aux recrutements techniques, à l’onboarding et à la montée en compétences des ingénieurs. J’accompagne l’équipe par les revues de code et des pratiques d’amélioration continue.",
+    "result": "Le recrutement, l’intégration et l’accompagnement des ingénieurs sont intégrés à mon périmètre de management. Les recommandations de mes collègues soulignent ma disponibilité, la confiance accordée à l’équipe et le développement de son autonomie.",
+    "details": [
+      {
+        "title": "Accompagner le parcours des ingénieurs",
+        "body": "Mes responsabilités couvrent les recrutements techniques, l’onboarding et l’accompagnement de la montée en compétences. Mon expérience de développement soutient le dialogue avec les ingénieurs."
+      },
+      {
+        "title": "Installer des pratiques collectives",
+        "body": "J’anime une démarche d’amélioration continue fondée sur des rétrospectives actionnables, des standards de code et une documentation vivante."
+      }
+    ],
+    "takeaways": [
+      "Management de proximité associé à une expérience technique.",
+      "Accompagnement des recrutements, de l’intégration et de la progression.",
+      "Pratiques partagées et amélioration continue."
+    ],
+    "evidenceNote": "Cette étude décrit mes responsabilités et s’appuie sur les recommandations publiées dans le portfolio. Aucun taux de rétention ni gain chiffré de performance n’est avancé."
+  },
+  {
+    "title": "Adoption de l’IA dans les revues de code",
+    "context": "Chez Witik, l’équipe delivery de 10 personnes (6 développeurs, 2 QA, 1 PO et moi comme Tech Lead Delivery) contribue à une plateforme SaaS B2B utilisée par plus de 20 000 utilisateurs et 100 clients.",
+    "action": "J’ai intégré Claude Code aux revues assistées, structuré les prompts et mis en place des checklists qualité automatisées.",
+    "result": "Trois pratiques sont désormais structurées dans le workflow d’équipe : revue assistée, prompts partagés et checklists qualité. Aucun avant/après chiffré fiable n’est disponible pour quantifier leur effet sur le lead time ou le taux de défauts.",
+    "slug": "ia-revues-code",
+    "category": "IA & qualité",
+    "summary": "Structurer trois pratiques partagées : revues assistées, prompts et checklists qualité.",
+    "details": [
+      {
+        "title": "Partir des pratiques d’ingénierie",
+        "body": "J’ai introduit Claude Code dans les revues assistées, structuré les prompts et mis en place des checklists qualité automatisées. Le besoin de l’équipe guide l’usage de l’outil."
+      },
+      {
+        "title": "Garder le jugement humain",
+        "body": "L’IA assiste le travail ; l’équipe garde la responsabilité des décisions techniques et des livrables. Le rôle du manager est d’accompagner l’adoption et de préserver la qualité."
+      }
+    ],
+    "takeaways": [
+      "Adoption de l’IA au niveau du workflow d’équipe.",
+      "Prompts et checklists partagés.",
+      "Responsabilité technique conservée par l’équipe."
+    ],
+    "evidenceNote": "Les trois pratiques sont intégrées au workflow. Aucun avant/après fiable n’est disponible pour quantifier un effet sur le lead time ou le taux de défauts."
   },
   {
     "title": "Projets multi-clients et SRM chez Sofia Holding",
@@ -17,6 +80,25 @@
     "linkLabel": "Voir la référence SRM ↗",
     "context": "Les projets critiques multi-clients comprenaient une plateforme Supplier Management (SRM) pour faciliter la communication et l’intégration des fournisseurs de OneTech.",
     "action": "J’ai piloté l’architecture, le découpage et l’estimation des tâches, les plannings, les cycles d’intégration et de non-régression, puis la validation des livraisons.",
-    "result": "La référence disponible décrit le périmètre fonctionnel de la plateforme SRM ; aucun résultat public vérifiable sur les délais, le nombre de fournisseurs intégrés ou la satisfaction client n’est disponible."
+    "result": "La référence disponible décrit le périmètre fonctionnel de la plateforme SRM ; aucun résultat public vérifiable sur les délais, le nombre de fournisseurs intégrés ou la satisfaction client n’est disponible.",
+    "slug": "srm-sofia",
+    "category": "Projets multi-clients",
+    "summary": "Piloter l’architecture, la planification et la validation de projets web chez Sofia Holding.",
+    "details": [
+      {
+        "title": "Organiser le travail technique",
+        "body": "Mon rôle de Team Leader Web comprenait l’architecture technique, le découpage des tâches, l’estimation des charges et le pilotage des plannings sur des projets multi-clients."
+      },
+      {
+        "title": "Suivre l’intégration et la validation",
+        "body": "J’ai supervisé les cycles de tests d’intégration et de non-régression ainsi que la validation des livraisons. Mon parcours chez Sofia Holding comprend également le développement de plateformes SRM et d’outils de gestion des fournisseurs."
+      }
+    ],
+    "takeaways": [
+      "Passage du développement senior au leadership technique.",
+      "Architecture, estimation et coordination des livraisons.",
+      "Supervision de l’intégration et de la non-régression."
+    ],
+    "evidenceNote": "La référence externe décrit le périmètre fonctionnel du produit SRM. Elle ne prouve pas à elle seule ma contribution personnelle ; aucun résultat chiffré public n’est avancé."
   }
 ]

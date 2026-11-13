@@ -1,0 +1,33 @@
+.dialog {
+  position: fixed;
+  inset: auto 24px max(24px, env(safe-area-inset-bottom)) auto;
+  width: min(440px, calc(100vw - 32px));
+  height: min(660px, calc(100dvh - 48px));
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: 18px;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.4);
+}
+.dialog[open] { display: flex; flex-direction: column; }
+.dialog::backdrop { background: rgba(0, 0, 0, 0.28); }
+.header { display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--surface2); border-bottom: 1px solid var(--border); flex-shrink: 0; }
+.avatar { width: 38px; height: 38px; display: grid; place-items: center; flex-shrink: 0; border: 1px solid var(--accent); border-radius: 12px; color: var(--accent); background: var(--tag-bg); font: 700 13px var(--mono); }
+.title { margin: 0; color: var(--text); font-size: 15px !important; line-height: 1.35; }
+.subtitle { color: var(--text2); font-size: 12px; line-height: 1.4; margin-top: 4px; }
+.close { display: grid; place-items: center; margin-left: auto; width: 40px; height: 40px; flex-shrink: 0; padding: 0; background: transparent; border: 1px solid var(--border2); border-radius: 10px; color: var(--text); font-size: 25px; cursor: pointer; }
+.close:hover { color: var(--accent); border-color: var(--accent); }
+.body { display: flex; flex: 1; min-height: 0; }
+.loading { align-self: center; width: 100%; padding: 24px; color: var(--text2); line-height: 1.6; }
+.loading button { margin-top: 16px; padding: 12px 18px; color: var(--btn-primary-text); background: var(--accent); border: 0; border-radius: 8px; cursor: pointer; }
+.privacy { flex-shrink: 0; margin: 0; padding: 10px 16px 14px; color: var(--text3); font-size: 11px; line-height: 1.5; border-top: 1px solid var(--border); }
+@media (max-width: 520px) {
+  .dialog { inset: auto 8px max(8px, env(safe-area-inset-bottom)) 8px; width: auto; height: min(680px, calc(100dvh - 16px - env(safe-area-inset-bottom))); border-radius: 14px; }
+  .header { padding: 12px; gap: 10px; }
+  .privacy { padding: 8px 12px 10px; }
+}

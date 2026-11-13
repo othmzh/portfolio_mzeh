@@ -36,19 +36,10 @@ export default function AIChat() {
 
   return (
     <div className={styles.wrapper}>
-          {/* Header */}
-          <div className={styles.header}>
-            <div className={styles.avatar}>AI</div>
-            <div>
-              <div className={styles.aiName}>{t('chat.aiName')}</div>
-              <div className={styles.aiSub}>{t('chat.aiStatus')}</div>
-            </div>
-          </div>
-
           {/* Messages */}
-          <div ref={messagesRef} className={styles.messages}>
+          <div ref={messagesRef} className={styles.messages} role="log" aria-live="polite" aria-relevant="additions text" aria-label={t('chat.messages')}>
             {messages.map((m, i) => (
-              <div key={i} className={styles.msgRow}>
+              <div key={i} className={`${styles.msgRow}${m.role === 'user' ? ` ${styles.msgRowUser}` : ''}`}>
                 <div className={`${styles.ava} ${m.role === 'ai' ? styles.avaAI : styles.avaUser}`}>
                   {m.role === 'ai' ? 'AI' : t('chat.you')}
                 </div>
@@ -63,7 +54,8 @@ export default function AIChat() {
               <div className={styles.msgRow}>
                 <div className={`${styles.ava} ${styles.avaAI}`}>AI</div>
                 <div className={`${styles.bubble} ${styles.bubbleLoading}`}>
-                  <div className={styles.dots}>
+                  <span className={styles.srOnly}>{t('chat.typing')}</span>
+                  <div className={styles.dots} aria-hidden="true">
                     {[0, 0.2, 0.4].map((d, i) => (
                       <span key={i} className={styles.dotAnim} style={{ animationDelay: `${d}s` }} />
                     ))}
@@ -77,30 +69,30 @@ export default function AIChat() {
           {showSugg && (
             <div className={styles.sugg}>
               {SUGGESTIONS.map(q => (
-                <button key={q} className={`sugg-btn ${styles.suggBtn}`} onClick={() => send(q)}>{q}</button>
+                <button type="button" key={q} className={`sugg-btn ${styles.suggBtn}`} disabled={loading} onClick={() => send(q)}>{q}</button>
               ))}
             </div>
           )}
 
           {/* Input */}
-          <div className={styles.inputArea}>
+          <form className={styles.inputArea} onSubmit={event => { event.preventDefault(); send() }}>
             <input
               aria-label={t('chat.placeholder')}
               maxLength={2000}
               value={input}
               onChange={e => setInput(e.target.value)}
-              onKeyDown={e => e.key === 'Enter' && send()}
+              onKeyDown={event => { if (event.key === 'Enter' && event.nativeEvent.isComposing) event.preventDefault() }}
               placeholder={t('chat.placeholder')}
               className={styles.input}
             />
             <button
-              onClick={() => send()}
-              disabled={loading}
+              type="submit"
+              disabled={loading || !input.trim()}
               className={`${styles.sendBtn}${loading ? ` ${styles.sendDisabled}` : ''}`}
             >
               {t('chat.send')}
             </button>
-          </div>
+          </form>
     </div>
   )
 }
