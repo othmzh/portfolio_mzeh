@@ -127,7 +127,7 @@
   font-size: 13px;
   font-weight: 600;
   text-decoration: none;
-  background: var(--accent);
+  background: var(--primary-bg);
   color: var(--btn-primary-text);
   font-family: var(--sans);
 }
@@ -153,7 +153,8 @@
 }
 
 .terminal {
-  background: var(--surface);
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
   border: 1px solid var(--border2);
   border-radius: 10px;
   overflow: hidden;
@@ -197,10 +198,28 @@
 }
 
 .statCell {
-  background: var(--bg2);
+  background: var(--soft-card-bg);
   padding: 1.1rem 0.75rem;
   min-width: 0;
   text-align: center;
+}
+
+:global([data-theme="light"]) .statsGrid {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+
+:global([data-theme="light"]) .photo {
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.75), 0 10px 24px rgba(0, 143, 115, 0.16);
+}
+
+:global([data-theme="light"]) .accent {
+  background: linear-gradient(115deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .statNum {

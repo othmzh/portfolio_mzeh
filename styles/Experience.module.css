@@ -3,7 +3,7 @@
   padding: 80px 5vw;
   position: relative;
   z-index: 1;
-  background: var(--bg);
+  background: transparent;
 }
 
 .container {
@@ -118,7 +118,8 @@
   padding: 18px;
   border: 1px solid var(--border);
   border-radius: 8px;
-  background: var(--surface);
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
 }
 .responsibility h4 { margin-bottom: 10px; color: var(--text); font-size: 15px; line-height: 1.4; }
 .responsibility p { color: var(--text2); font-size: 14px; line-height: 1.75; }

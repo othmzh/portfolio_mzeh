@@ -1,5 +1,5 @@
 .section {
-  background: var(--bg2);
+  background: transparent;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   padding: 100px 5vw;

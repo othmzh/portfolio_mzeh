@@ -1,7 +1,9 @@
 .page {
+  position: relative;
+  z-index: 1;
   min-height: 100vh;
   padding: 72px 6vw;
-  background: var(--bg);
+  background: transparent;
   color: var(--text);
 }
 
@@ -48,6 +50,16 @@
   border-top: 1px solid var(--border);
   margin-top: 48px;
 }
+
+:global([data-theme="light"]) .sections {
+  padding: 0 clamp(18px, 3vw, 30px);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+}
+
+:global([data-theme="light"]) .section:last-child { border-bottom: 0; }
 
 .section {
   border-bottom: 1px solid var(--border);

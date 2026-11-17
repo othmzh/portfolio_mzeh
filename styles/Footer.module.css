@@ -1,5 +1,5 @@
 .footer {
-  background: var(--bg2);
+  background: transparent;
   border-top: 1px solid var(--border);
   padding: 1rem 5vw;
   position: relative;

@@ -1,5 +1,5 @@
 .section {
-  background: var(--bg2);
+  background: transparent;
   border-top: 1px solid var(--border);
   padding: 100px 5vw;
   position: relative;
@@ -55,7 +55,8 @@
   border-radius: 8px;
   text-decoration: none;
   color: var(--text);
-  background: var(--surface);
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
 }
 
 .copyLink {

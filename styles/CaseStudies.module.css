@@ -3,7 +3,7 @@
   position: relative;
   z-index: 1;
   padding: 88px 5vw;
-  background: var(--bg2);
+  background: transparent;
   border-top: 1px solid var(--border);
 }
 
@@ -54,14 +54,23 @@
   padding: clamp(22px, 3vw, 30px);
   border: 1px solid var(--border);
   border-radius: 12px;
-  background: var(--surface);
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
   display: flex;
   flex-direction: column;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
 .card:hover {
   border-color: var(--border2);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  :global([data-theme="light"]) .card:hover {
+    border-color: var(--tag-border);
+    transform: translateY(-3px);
+    box-shadow: var(--card-shadow-hover);
+  }
 }
 
 .category {

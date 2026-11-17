@@ -79,7 +79,8 @@
   padding: 25px;
   border: 1px solid var(--border);
   border-radius: 10px;
-  background: var(--surface);
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
 }
 
 .overviewItem h2,
@@ -162,7 +163,8 @@
   padding: 22px 24px;
   border-left: 3px solid var(--border2);
   border-radius: 0 8px 8px 0;
-  background: var(--bg2);
+  background: var(--soft-card-bg);
+  box-shadow: var(--card-shadow);
 }
 
 .evidence h2 {
@@ -217,7 +219,8 @@
 
 .contactLink {
   color: var(--btn-primary-text);
-  background: var(--accent);
+  background: var(--primary-bg);
+  box-shadow: var(--primary-shadow);
   border: 1px solid var(--accent);
 }
 

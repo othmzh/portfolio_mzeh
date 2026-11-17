@@ -50,6 +50,8 @@ const c = {
 
 const s = {
   page: {
+    position: 'relative',
+    zIndex: 1,
     minHeight: '100vh',
     display: 'flex',
     flexDirection: 'column',
@@ -57,7 +59,7 @@ const s = {
     justifyContent: 'center',
     gap: '2rem',
     padding: '5vw',
-    background: 'var(--bg)',
+    background: 'transparent',
     fontFamily: 'var(--sans)',
   },
   terminal: {

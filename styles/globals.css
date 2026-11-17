@@ -7,8 +7,16 @@
   --bg2: #0d1117;
   --glow-a: rgba(0, 212, 170, 0.10);
   --glow-b: rgba(0, 151, 255, 0.09);
+  --glow-c: transparent;
   --surface: #161d27;
   --surface2: #1c2430;
+  --card-bg: var(--surface);
+  --soft-card-bg: var(--bg2);
+  --card-shadow: none;
+  --card-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.3);
+  --testimonial-shadow: 0 18px 50px rgba(0, 0, 0, 0.14);
+  --primary-bg: var(--accent);
+  --primary-shadow: none;
   --border: #1e2d3d;
   --border2: #253447;
   --accent: #00d4aa;
@@ -29,12 +37,22 @@
 }
 
 [data-theme="light"] {
-  --bg: #f0f4f8;
+  --bg: #f4f8fc;
   --bg2: #e8edf3;
-  --glow-a: rgba(0, 143, 115, 0.055);
-  --glow-b: rgba(0, 99, 204, 0.05);
+  --glow-a: rgba(0, 143, 115, 0.15);
+  --glow-b: rgba(0, 99, 204, 0.13);
+  --glow-c: rgba(115, 80, 210, 0.09);
   --surface: #ffffff;
   --surface2: #f5f7fa;
+  --card-bg:
+    radial-gradient(ellipse at top right, rgba(0, 143, 115, 0.07), transparent 65%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(246, 251, 255, 0.94));
+  --soft-card-bg: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(237, 247, 253, 0.94));
+  --card-shadow: 0 12px 32px rgba(45, 80, 115, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  --card-shadow-hover: 0 18px 40px rgba(35, 90, 120, 0.14), inset 0 1px 0 #ffffff;
+  --testimonial-shadow: var(--card-shadow);
+  --primary-bg: linear-gradient(120deg, #00866b, #007b91);
+  --primary-shadow: 0 8px 22px rgba(0, 132, 116, 0.2);
   --border: #d1dae6;
   --border2: #b8c5d6;
   --accent: #008f73;
@@ -42,8 +60,8 @@
   --text: #0f172a;
   --text2: #3d5068;
   --text3: #6b7d90;
-  --nav-bg: rgba(240,244,248,0.92);
-  --grid-color: rgba(0,143,115,0.04);
+  --nav-bg: rgba(244,248,252,0.9);
+  --grid-color: rgba(0, 110, 140, 0.045);
   --btn-primary-text: #ffffff;
   --tag-bg: rgba(0,143,115,0.08);
   --tag-border: rgba(0,143,115,0.2);
@@ -66,10 +84,9 @@ section[id] { scroll-margin-top: 80px; }
 
 body {
   font-family: var(--sans);
-  background:
-    radial-gradient(ellipse 60% 520px at 12% 4%, var(--glow-a), transparent 72%),
-    radial-gradient(ellipse 55% 480px at 88% 8%, var(--glow-b), transparent 72%),
-    var(--bg);
+  background: var(--bg);
+  position: relative;
+  isolation: isolate;
   color: var(--text);
   font-size: 16px;
   line-height: 1.6;
@@ -82,12 +99,36 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  z-index: 0;
+  z-index: -2;
   pointer-events: none;
   background-image:
+    radial-gradient(ellipse 60vw 60vh at 12% 18%, var(--glow-a), transparent 72%),
+    radial-gradient(ellipse 55vw 65vh at 88% 30%, var(--glow-b), transparent 72%),
+    radial-gradient(ellipse 65vw 55vh at 45% 95%, var(--glow-c), transparent 75%),
     linear-gradient(var(--grid-color) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-  background-size: 60px 60px;
+  background-size: auto, auto, auto, 60px 60px, 60px 60px;
+}
+
+[data-theme="light"] body::after {
+  content: '';
+  position: fixed;
+  inset: -8%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 45% 40% at 65% 70%, rgba(85, 110, 225, 0.1), transparent 75%),
+    radial-gradient(ellipse 35% 45% at 25% 45%, rgba(0, 165, 150, 0.08), transparent 75%);
+  animation: ambientDrift 24s ease-in-out infinite alternate;
+}
+
+@keyframes ambientDrift {
+  from { transform: translate3d(-2%, -1%, 0); }
+  to { transform: translate3d(2%, 1%, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-theme="light"] body::after { animation: none; }
 }
 
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
@@ -159,7 +200,8 @@ body::before {
 
 /* ── HOVER STATES ── */
 .btn-primary {
-  transition: opacity 0.15s, transform 0.15s;
+  box-shadow: var(--primary-shadow);
+  transition: opacity 0.15s, transform 0.15s, box-shadow 0.15s;
 }
 .btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
 
@@ -171,11 +213,22 @@ body::before {
 .skill-card {
   transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
 }
+[data-theme="light"] .skill-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+}
+[data-theme="light"] .skills-grid {
+  gap: 16px;
+  background: transparent;
+}
 .skill-card:hover {
   background: var(--surface2) !important;
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--card-shadow-hover);
 }
+[data-theme="light"] .skill-card:hover { background: var(--card-bg) !important; }
 
 .exp-item-inner {
   transition: color 0.15s;

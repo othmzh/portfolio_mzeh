@@ -13,7 +13,7 @@
 .links { display: flex; align-items: center; justify-content: flex-end; gap: clamp(8px, 1.2vw, 18px); flex: 1; order: 1; list-style: none; }
 .link, .contactLink { display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 8px 4px; color: var(--text2); font-size: 13px; font-weight: 500; line-height: 1.35; text-decoration: none; white-space: nowrap; transition: color 0.15s, background 0.15s; }
 .link:hover, .link[aria-current] { color: var(--accent); }
-.contactLink { padding: 10px 16px; border: 1px solid var(--accent); border-radius: 8px; background: var(--accent); color: var(--btn-primary-text); font-weight: 700; }
+.contactLink { padding: 10px 16px; border: 1px solid var(--accent); border-radius: 8px; background: var(--primary-bg); box-shadow: var(--primary-shadow); color: var(--btn-primary-text); font-weight: 700; }
 .contactLink:hover { opacity: 0.85; }
 .right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; order: 2; }
 .themeToggle, .menuToggle, .langBtn { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; color: var(--text2); background: var(--surface2); border: 1px solid var(--border2); border-radius: 8px; text-decoration: none; cursor: pointer; flex-shrink: 0; }
